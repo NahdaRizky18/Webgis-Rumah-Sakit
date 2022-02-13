@@ -57,52 +57,48 @@
             <!-- ./col -->
         </div>
         <div>
+            <!-- small box -->
+
             <div class="row">
-                <!-- small box -->
-                <div class="col-lg-8 card p-4 ms-2">
+                @foreach ($list_poli as $item)
+                    <div class="col-md-4">
 
-                    <div class="row">
-                        @foreach ($list_poli as $item)
-                            <div class="col-md-4">
-
-                                <div class="small-box {{ $colors[$loop->index] }} p-3">
-                                    <div class="inner">
-                                        <h5>{{ $item->rumahsakit }}</h5>
-                                    </div>
-                                    @php
-                                        $home = new HomeController;
-                                        $getPoli = $home->getPoli($item->rumahsakit);
-                                    @endphp
-                                    @foreach ($getPoli as $item)
-                                        @if ($item->poli != '-' || !$item->poli)
-                                            <div class="small-box bg-white m-1 ">
-                                                <div class="inner">
-                                                    <p class="mb-0">{{ $item->poli }}</p>
-                                                </div>
-                                            </div>
-                                        @endif
-                                    @endforeach
-                                </div>
+                        <div class="small-box {{ $colors[$loop->index] }} p-3">
+                            <div class="inner">
+                                <h5>{{ $item->rumahsakit }}</h5>
                             </div>
-                        @endforeach
-                    </div>
-                </div>
-                <section class="col connectedSortable">
-                    <div class="card bg-gradient-primary">
-                        <div class="card-header border-0">
-                            <h3 class="card-title">
-                                <i class="fas fa-map-marker-alt mr-1"></i>
-                                Maps
-                            </h3>
-
+                            @php
+                                $home = new HomeController();
+                                $getPoli = $home->getPoli($item->rumahsakit);
+                            @endphp
+                            @foreach ($getPoli as $item)
+                                @if ($item->poli != '-' || !$item->poli)
+                                    <div class="small-box bg-white m-1 ">
+                                        <div class="inner">
+                                            <p class="mb-0">{{ $item->poli }}</p>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
                         </div>
-                        <div class="card-body">
-                            <div id="map" style="height: 300px; width: 100%;"></div>
-                        </div>
-
                     </div>
-                </section>
+                @endforeach
             </div>
+            <section class="col connectedSortable">
+                <div class="card bg-gradient-primary">
+                    <div class="card-header border-0">
+                        <h3 class="card-title">
+                            <i class="fas fa-map-marker-alt mr-1"></i>
+                            Maps
+                        </h3>
+
+                    </div>
+                    <div class="card-body">
+                        <div id="map" style="height: 300px; width: 100%;"></div>
+                    </div>
+
+                </div>
+            </section>
         </div>
     </div>
 
@@ -159,7 +155,7 @@
         integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript">
-        var s = [5.554630942893766, 95.31709742351293];
+        var s = [5.3811231139126, 95.958859920501];
         var color = {!! json_encode($color) !!};
         var datamap = {!! json_encode($data) !!}
         var map = L.map('map').setView(
