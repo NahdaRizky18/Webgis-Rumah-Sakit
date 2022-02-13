@@ -69,7 +69,11 @@
                                     <div class="inner">
                                         <h5>{{ $item->rumahsakit }}</h5>
                                     </div>
-                                    @foreach (HomeController::getPoli($item->rumahsakit) as $item)
+                                    @php
+                                        $home = new HomeController;
+                                        $getPoli = $home->getPoli($item->rumahsakit);
+                                    @endphp
+                                    @foreach ($getPoli as $item)
                                         @if ($item->poli != '-' || !$item->poli)
                                             <div class="small-box bg-white m-1 ">
                                                 <div class="inner">
