@@ -70,14 +70,14 @@
                                         <h5>{{ $item->rumahsakit }}</h5>
                                     </div>
                                     @foreach (HomeController::getPoli($item->rumahsakit) as $item)
-                                        <div class="small-box bg-white m-1 ">
-                                            <div class="inner">
-                                                <p class="mb-0">{{ $item->poli }}</p>
+                                        @if ($item->poli != '-' || !$item->poli)
+                                            <div class="small-box bg-white m-1 ">
+                                                <div class="inner">
+                                                    <p class="mb-0">{{ $item->poli }}</p>
+                                                </div>
                                             </div>
-                                        </div>
+                                        @endif
                                     @endforeach
-
-
                                 </div>
                             </div>
                         @endforeach
