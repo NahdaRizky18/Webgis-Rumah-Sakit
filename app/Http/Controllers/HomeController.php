@@ -40,7 +40,7 @@ class HomeController extends Controller
         $index = 0;
         $index2 = 0;
         $tematik = Tematik::all();
-        $data = HalamanData2::all();
+        $data = HalamanData::all();
         foreach ($tematik as $item) {
             $geofile[$index] = 'storage/' . $item->geojson;
             $index++;
