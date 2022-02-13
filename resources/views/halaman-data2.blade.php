@@ -44,16 +44,13 @@
                                 <td>{{ $item->spesialis2 }}</td>
                                 <td>{{ $item->poli }}</td>
                                 <td class="w-25">
-
                                     <form action="{{ route('delete data2', ['id' => $item->id]) }}" method="get">
-
                                         <a href="{{ route('edit data2', ['id' => $item->id]) }}" class="edit"><i
                                                 class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                                         <button type="submit" class="delete show_confirm border-0 p-0 bg-transparent"><i
                                                 class="material-icons" data-toggle="tooltip"
                                                 title="Delete">&#xE872;</i></button>
                                     </form>
-
                                 </td>
                             </tr>
                         @endforeach
