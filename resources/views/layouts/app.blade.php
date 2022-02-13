@@ -80,7 +80,7 @@
                         <div id="drop" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                     document.getElementById('logout-form').submit();">
+                                                                                                         document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
@@ -99,7 +99,7 @@
                 <!-- Brand Logo -->
                 <a href="index3.html" class="brand-link">
 
-                    <span class="brand-text font-weight-light">RK</span>
+                    <span class="brand-text font-weight-light">RUMAH SAKIT</span>
                 </a>
 
                 <!-- Sidebar -->

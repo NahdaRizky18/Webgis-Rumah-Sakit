@@ -44,7 +44,7 @@
             <!-- ./col -->
             <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-danger">
+                <div class="small-box " style="background-color: #74959A">
                     <div class="inner">
                         <h3>{{ $poli }}</h3>
 
@@ -63,7 +63,7 @@
                 @foreach ($list_poli as $item)
                     <div class="col">
 
-                        <div class="small-box {{ $colors[$loop->index] }} p-3">
+                        <div class="small-box  p-3" style="background-color:{{ $colors[$loop->index] }}">
                             <div class="inner">
                                 <h5>{{ $item->rumahsakit }}</h5>
                             </div>
@@ -94,7 +94,7 @@
 
                     </div>
                     <div class="card-body">
-                        <div id="map" style="height: 300px; width: 100%;"></div>
+                        <div id="map" style="height: 500px; width: 100%;"></div>
                     </div>
 
                 </div>
