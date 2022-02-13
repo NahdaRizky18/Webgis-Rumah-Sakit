@@ -61,7 +61,7 @@
 
             <div class="row">
                 @foreach ($list_poli as $item)
-                    <div class="col-md-4">
+                    <div class="col">
 
                         <div class="small-box {{ $colors[$loop->index] }} p-3">
                             <div class="inner">
