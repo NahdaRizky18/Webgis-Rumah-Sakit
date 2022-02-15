@@ -16,12 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/halaman-data', [App\Http\Controllers\HalamanData::class, 'index'])->name('halaman data');
+Route::get('/maps-user', [App\Http\Controllers\UserController::class, 'map'])->name('Map user');
+Route::get('/maps-data', [App\Http\Controllers\UserController::class, 'data'])->name('Data user');
 Route::post('/input-data', [App\Http\Controllers\HalamanData::class, 'store'])->name('data lokasi rumah sakit');
 Route::get('/edit-data/{id}', [App\Http\Controllers\HalamanData::class, 'edit'])->name('edit data');
 Route::post('/update-data/{id}', [App\Http\Controllers\HalamanData::class, 'update'])->name('update data');
