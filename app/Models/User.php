@@ -19,8 +19,10 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'level',
         'email',
         'password',
+        'halaman_data2_id'
     ];
 
     /**
@@ -41,4 +43,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function rumahsakit(){
+        return $this->belongsTo(HalamanData2::class,'halaman_data2_id','id');
+    }
 }
