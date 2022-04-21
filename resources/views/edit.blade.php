@@ -57,6 +57,10 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
+                            <label>No HP</label>
+                            <input name="no_hp" value="{{$data->ho_hp}}" type="number" class="form-control" required>
+                        </div>
+                        <div class="form-group">
                             <label>Dokter Spesialis</label>
                             <input name="spesialis" type="number" class="form-control" required
                                 value="{{ $data->dokter_spesialis }}">

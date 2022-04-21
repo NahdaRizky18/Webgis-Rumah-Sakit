@@ -20,6 +20,10 @@
                                     <td>Rumah sakit</td>
                                     <td>{{ $data->rumah_sakit }}</td>
                                 </tr>
+                                 <tr>
+                                    <td>Nomor HP</td>
+                                    <td>{{ $data->no_hp }}</td>
+                                </tr>
                                 <tr>
                                     <td>Jumlah Poliklinik</td>
                                     <td>{{ $data->jumlah_poliklinik }}</td>
@@ -36,6 +40,7 @@
                                     <td>Dokter Spesialis</td>
                                     <td>{{ $data->dokter_spesialis }}</td>
                                 </tr>
+                                
                                 <tr>
                                     <td>Perawat</td>
                                     <td>{{ $data->perawat }}</td>

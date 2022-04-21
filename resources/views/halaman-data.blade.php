@@ -27,6 +27,7 @@
                             <th>Kecamatan</th>
                             <th>Alamat</th>
                             <th>Rumah Sakit</th>
+                            <th>Nomor HP</th>
                             <th>Jumlah Poliklinik</th>
                             <th>Jumlah kamar</th>
                             <th>Dokter Umum</th>
@@ -44,6 +45,7 @@
                                 <td>{{ $item->tematik->kecamatan }}</td>
                                 <td>{{ $item->alamat }}</td>
                                 <td>{{ $item->rumah_sakit }}</td>
+                                <td>{{ $item->no_hp }}</td>
                                 <td>{{ $item->jumlah_poliklinik }}</td>
                                 <td>{{ $item->jumlah_kamar }}</td>
                                 <td>{{ $item->dokter_umum }}</td>

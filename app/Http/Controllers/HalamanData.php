@@ -55,6 +55,7 @@ class HalamanData extends Controller
             'dokter_umum' => $request->umum,
             'dokter_spesialis' => $request->spesialis,
             'perawat' => $request->perawat,
+            'no_hp' => $request->no_hp,
             'gambar' => $fileName,
             'long' => $request->long,
             'lat' => $request->lat
@@ -118,6 +119,7 @@ class HalamanData extends Controller
             'jumlah_kamar' => $request->kamar,
             'dokter_umum' => $request->umum,
             'dokter_spesialis' => $request->spesialis,
+            'no_hp' => $request->no_hp,
             'perawat' => $request->perawat,
             'gambar' => $fileName,
             'long' => $request->long,
