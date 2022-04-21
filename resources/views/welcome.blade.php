@@ -277,8 +277,8 @@ http://www.tooplate.com/view/2091-ziggy
                     icon: icon
                 })
                 .bindPopup("<strong>" + data[i][3] +
-                    "</strong><br/> <div class='text-center'></div><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(&quot;" +
-                    data[i][4] + "&quot;,&quot;" + data[i][3] + "&quot;)'>Pilih</button>")
+                    '</strong><br/> <div class="text-center"></div><button class="w-100 btn btn-outline-primary mt-1" onclick="return keSini(&quot;' +
+                    data[i][4] + '&quot;,&quot;' + data[i][3] + '&quot;)">Pilih</button>')
                 .addTo(map);
         }
 
