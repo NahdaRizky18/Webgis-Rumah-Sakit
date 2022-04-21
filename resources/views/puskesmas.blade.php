@@ -41,7 +41,7 @@
                                 <td>{{ $item->tematik->kecamatan }}</td>
                                 <td>{{ $item->alamat }}</td>
                                 <td>{{ $item->puskesmas ? $item->puskesmas : $item->klinik }}</td>
-                                <td>{{ $item->Ketersediaan ? 'TERSEDIA':'TIDAK TERSEDIA' }}</td>
+                                <td>{{ $item->ketersediaan ? 'TERSEDIA':'TIDAK TERSEDIA' }}</td>
                                 <td>{{ $item->no_hp }}</td>
                            
                                 <td class="w-25">

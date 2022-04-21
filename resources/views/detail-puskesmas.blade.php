@@ -17,8 +17,8 @@
                                     <td>{{ $data->tematik->kecamatan }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Puskesmas</td>
-                                    <td>{{ $data->puskesmas }}</td>
+                                    <td>Rawat Inap</td>
+                                    <td>{{ $data->puskesmas ? $data->puskesmas : $data->klinik }}</td>
                                 </tr>
                                 <tr>
                                     <td>Ketersediaan</td>
