@@ -14,7 +14,7 @@ class AddNoHpToHalamanDatas extends Migration
     public function up()
     {
         Schema::table('halaman_data', function (Blueprint $table) {
-            $table->string('ho_hp')->nullable();
+            $table->string('no_hp')->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class AddNoHpToHalamanDatas extends Migration
     public function down()
     {
         Schema::table('halaman_data', function (Blueprint $table) {
-            //
+            $table->dropColumn('ho_hp');
         });
     }
 }
