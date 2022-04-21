@@ -31,7 +31,11 @@ class GuessController extends Controller
             $color[$item->kecamatan] = $item->warna;
         }
         foreach ($data as $item) {
-            $coor[$index2] = [$item->alamat, $item->lat, $item->long,$item->rumah_sakit,$item->id];
+            $nilai = 0;
+            if ($item->rumahsakit->sum('nilai')) {
+                $nilai = $item->rumahsakit->sum('nilai') / $item->rumahsakit->count();
+            }
+            $coor[$index2] = [$item->alamat, $item->lat, $item->long, $item->rumah_sakit, $item->id, $nilai];
             $index2++;
         }
         return view('welcome', [

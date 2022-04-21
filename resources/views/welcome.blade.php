@@ -34,7 +34,7 @@ http://www.tooplate.com/view/2091-ziggy
     <link href="{{ asset('storage/css/tooplate-style.css') }}" rel="stylesheet">
 
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin="">
     </script>
@@ -165,6 +165,7 @@ http://www.tooplate.com/view/2091-ziggy
 
     <section class="sixth-section">
         <div class="container">
+            <h4>Saran</h4>
             <div class="row">
                 <div class="col-md-6">
                     <div class="card">
@@ -172,16 +173,16 @@ http://www.tooplate.com/view/2091-ziggy
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <form action="{{route('post saran')}}" method="post">
+                    <form action="{{ route('post saran') }}" method="post">
                         @csrf
                         <div class="form-group">
                             <label for="rm">Rumah sakit</label>
                             <input type="text" id="rm" class="form-control shadow" required disabled>
                             <input type="hidden" id="rm_id" name="rumah_sakit" required>
                         </div>
-                          <div class="form-group mt-4">
+                        <div class="form-group mt-4">
                             <label for="email">Email</label>
-                            <input name="email" id="email" class="form-control shadow"/>
+                            <input name="email" id="email" class="form-control shadow" />
                         </div>
                         <div class="form-group mt-4">
                             <label for="nilai">Nilai</label>
@@ -266,6 +267,17 @@ http://www.tooplate.com/view/2091-ziggy
 
             info.update(layer.feature.properties);
         }
+
+        function nilai(nilai) {
+            var m = '';
+            for (var n = 0; n < nilai; ++n) {
+                m += '<i class="fa-solid fa-star' +
+                    (nilai == n + .5 ? '-half' : "") +
+                    '" aria-hidden="true"></i>';
+                "<br/>";
+            }
+            return m;
+        }
         var icon = L.icon({
             iconUrl: "{{ asset('storage/img/hospital.png') }}",
             iconSize: [38, 38], // size of the icon
@@ -277,7 +289,9 @@ http://www.tooplate.com/view/2091-ziggy
                     icon: icon
                 })
                 .bindPopup("<strong>" + data[i][3] +
-                    '</strong><br/> <div class="text-center"></div><button class="w-100 btn btn-outline-primary mt-1" onclick="return keSini(&quot;' +
+                    '</strong><br/> <div class="text-center"></div><div>' +
+                    nilai(data[i][5]) +
+                    '</div><button class="w-100 btn btn-outline-primary mt-1" onclick="return keSini(&quot;' +
                     data[i][4] + '&quot;,&quot;' + data[i][3] + '&quot;)">Pilih</button>')
                 .addTo(map);
         }

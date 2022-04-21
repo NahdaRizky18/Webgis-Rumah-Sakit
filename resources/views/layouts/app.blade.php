@@ -49,7 +49,7 @@
                             class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link">Home</a>
+                    <a href="{{ route('home') }}" class="nav-link">Home</a>
                 </li>
 
             </ul>
@@ -80,7 +80,7 @@
                         <div id="drop" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                             document.getElementById('logout-form').submit();">
+                                                                                                                                 document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
@@ -201,11 +201,11 @@
                                         </p>
                                     </a>
                                 </li>
-                                  <li class="nav-item">
-                                            <a href="{{ route('ruangan') }}" class="nav-link">
-                                                <p>Ruangan</p>
-                                            </a>
-                                        </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('ruangan') }}" class="nav-link">
+                                        <p>Ruangan</p>
+                                    </a>
+                                </li>
                             @endif
 
                         </ul>

@@ -13,4 +13,7 @@ class HalamanData extends Model
     {
         return $this->belongsTo(Tematik::class, 'tematik_id', 'id');
     }
+    public function rumahsakit(){
+        return $this->hasMany(Saran::class,'rumah_sakit','rumah_sakit');
+    }
 }
