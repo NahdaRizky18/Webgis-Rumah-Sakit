@@ -13,8 +13,14 @@ class RuteMapController extends Controller
         $arr = [];
         $index = 0;
         $data = HalamanData::all();
+        $data2 = Puskesmas::all();
 
         foreach ($data as $item) {
+            $info[$index] = [$item->alamat, $item->lat, $item->long, $item->rumah_sakit];
+            $index++;
+        }
+        $index = 0;
+        foreach ($data2 as $item) {
             $info[$index] = [$item->alamat, $item->lat, $item->long, $item->rumah_sakit];
             $index++;
         }

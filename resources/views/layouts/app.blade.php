@@ -151,7 +151,7 @@
                                     <a href="{{ route('rute rumahsakit') }}" class="nav-link">
                                         <i class="nav-icon fa-solid fa-map-location"></i>
                                         <p>
-                                            Rute Rumah Sakit
+                                            Rute
                                         </p>
                                     </a>
                                 </li>
@@ -163,14 +163,7 @@
                                         </p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('rute puskesmas') }}" class="nav-link">
-                                        <i class="nav-icon fa-solid fa-map-location"></i>
-                                        <p>
-                                            Rute Puskesmas
-                                        </p>
-                                    </a>
-                                </li>
+                              
                                 <li class="nav-item menu-open">
                                     <a href="#" class="nav-link ">
                                         <i class="nav-icon fa-solid fa-database"></i>
