@@ -21,7 +21,7 @@ class RuteMapController extends Controller
         }
         $index = 0;
         foreach ($data2 as $item) {
-            $info[$index] = [$item->alamat, $item->lat, $item->long, $item->rumah_sakit];
+            $info[$index] = [$item->alamat, $item->lat, $item->long, $item->puskesmas ? $item->puskesmas : $item->klinik ];
             $index++;
         }
         return view('rute', [
