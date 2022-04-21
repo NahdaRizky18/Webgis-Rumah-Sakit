@@ -47,6 +47,9 @@ Route::get('/puskesmas-delete/{id}', [App\Http\Controllers\PuskesmasController::
 Route::post('/puskesmas-update/{id}', [App\Http\Controllers\PuskesmasController::class, 'update'])->name('update puskesmas');
 Route::post('/puskesmas-store', [App\Http\Controllers\PuskesmasController::class, 'store'])->name('data puskesmas');
 Route::get('/maps-user', [App\Http\Controllers\UserController::class, 'map'])->name('Map user');
+Route::get('/maps-puskesmas', [App\Http\Controllers\PuskesmasController::class, 'map'])->name('map puskesmas');
+Route::get('/rute-rumahsakit', [App\Http\Controllers\RuteMapController::class, 'rumahsakit'])->name('rute rumahsakit');
+Route::get('/rute-puskesmas', [App\Http\Controllers\RuteMapController::class, 'puskesmas'])->name('rute puskesmas');
 Route::get('/maps-data', [App\Http\Controllers\UserController::class, 'data'])->name('Data user');
 Route::post('/input-data', [App\Http\Controllers\HalamanData::class, 'store'])->name('data lokasi rumah sakit');
 Route::get('/edit-data/{id}', [App\Http\Controllers\HalamanData::class, 'edit'])->name('edit data');

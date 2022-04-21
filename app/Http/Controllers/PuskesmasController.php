@@ -22,7 +22,32 @@ class PuskesmasController extends Controller
             'data' => Puskesmas::with('tematik')->get()
         ]);
     }
-
+    public function map()
+    {
+        $geofile = [];
+        $color = [];
+        $coor = [];
+        $index = 0;
+        $index2 = 0;
+        $tematik = Tematik::all();
+        $data = Puskesmas::all();
+        foreach ($tematik as $item) {
+            $geofile[$index] = 'storage/' . $item->geojson;
+            $index++;
+        }
+        foreach ($tematik as $item) {
+            $color[$item->kecamatan] = $item->warna;
+        }
+        foreach ($data as $item) {
+            $coor[$index2] = [$item->alamat, $item->lat, $item->long];
+            $index2++;
+        }
+        return view('maps', [
+            'geofile' => $geofile,
+            'color' => $color,
+            'data' => $coor
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *

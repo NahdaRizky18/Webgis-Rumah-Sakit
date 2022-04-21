@@ -80,7 +80,7 @@
                         <div id="drop" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                 document.getElementById('logout-form').submit();">
+                                                                                                                                         document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
@@ -143,11 +143,34 @@
                                     <a href="{{ route('maps') }}" class="nav-link">
                                         <i class="nav-icon fa-solid fa-map-location"></i>
                                         <p>
-                                            Maps
+                                            Maps Rumah Sakit
                                         </p>
                                     </a>
                                 </li>
-
+                                <li class="nav-item">
+                                    <a href="{{ route('rute rumahsakit') }}" class="nav-link">
+                                        <i class="nav-icon fa-solid fa-map-location"></i>
+                                        <p>
+                                            Rute Rumah Sakit
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('map puskesmas') }}" class="nav-link">
+                                        <i class="nav-icon fa-solid fa-map-location"></i>
+                                        <p>
+                                            Map Puskesmas
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('rute puskesmas') }}" class="nav-link">
+                                        <i class="nav-icon fa-solid fa-map-location"></i>
+                                        <p>
+                                            Rute Puskesmas
+                                        </p>
+                                    </a>
+                                </li>
                                 <li class="nav-item menu-open">
                                     <a href="#" class="nav-link ">
                                         <i class="nav-icon fa-solid fa-database"></i>
