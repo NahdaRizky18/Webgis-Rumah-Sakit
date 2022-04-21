@@ -12,14 +12,21 @@ use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
     public function map(){
-   
+
+        $colors = ['#495371', '#74959A', '#98B4AA', '#1C658C', '#398AB9'];
+        $data = new HalamanData();
+        $data2 = new HalamanData2();
+        $poli = $data2->where('poli', '!=', '-')->groupBy('poli')->get()->count();
+        $dokter = $data->sum(DB::raw('dokter_umum + dokter_spesialis'));
+        $perawat = $data->sum(DB::raw('perawat'));
+        $list_poli = $data2->groupBy('rumahsakit')->get();
         $geofile = [];
         $color = [];
         $coor = [];
         $index = 0;
         $index2 = 0;
         $tematik = Tematik::all();
-        $data = HalamanData2::all();
+        $data = HalamanData::all();
         foreach ($tematik as $item) {
             $geofile[$index] = 'storage/' . $item->geojson;
             $index++;
@@ -31,11 +38,16 @@ class UserController extends Controller
             $coor[$index2] = [$item->alamat, $item->lat, $item->long];
             $index2++;
         }
-
         return view('mapUser', [
+            'list_poli' => $list_poli,
+            'poli' => $poli,
+            'dokter' => $dokter,
+            'perawat' => $perawat,
+            'colors' => $colors,
             'geofile' => $geofile,
             'color' => $color,
-            'data' => $coor
+            'data' => $coor,
+            'tematik' => $tematik,
         ]);
     }
     public function data()

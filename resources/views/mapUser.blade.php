@@ -152,117 +152,126 @@ crossorigin="">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
 integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script type="text/javascript">
-    var s = [5.554630942893766, 95.31709742351293];
-    var color = {!! json_encode($color) !!};
-    var datamap = {!! json_encode($data) !!}
-    var map = L.map('map').setView(
-        s, 11
-    );
+<!-- Leaflet JavaScript -->
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin="">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
+        integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+        var s = [5.3811231139126, 95.958859920501];
+        var color = {!! json_encode($color) !!};
+        var datamap = {!! json_encode($data) !!}
+        var map = L.map('map').setView(
+            s, 11
+        );
 
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
 
-    var info = L.control();
+        var info = L.control();
 
-    info.onAdd = function(map) {
-        this._div = L.DomUtil.create('div', 'info');
-        this.update();
-        return this._div;
-    };
-    //menampilkan pop up info tematik
-    info.update = function(props) {
-        this._div.innerHTML = '<h4>Kecamatan</h4>' + (props ?
-            '<b>' + props.NAMOBJ + '</b><br />' + props.MhsSIF + ' orang' :
-            'Gerakkan mouse Anda');
-    };
-
-    info.addTo(map);
-
-    function style(feature) {
-        return {
-            weight: 2,
-            opacity: 1,
-            color: 'white',
-            dashArray: '3',
-            fillOpacity: 0.7,
-            fillColor: color[feature.properties.NAMOBJ]
+        info.onAdd = function(map) {
+            this._div = L.DomUtil.create('div', 'info');
+            this.update();
+            return this._div;
+        };
+        //menampilkan pop up info tematik
+        info.update = function(props) {
+            this._div.innerHTML = '<h4>Kecamatan</h4>' + (props ?
+                '<b>' + props.NAMOBJ + '</b><br />' + props.MhsSIF + ' orang' :
+                'Gerakkan mouse Anda');
         };
 
-    }
-    //memunculkan highlight pada peta
-    function highlightFeature(e) {
-        var layer = e.target;
+        info.addTo(map);
 
-        layer.setStyle({
-            weight: 5,
-            color: '#666',
-            dashArray: '',
-            fillOpacity: 0.7
-        });
+        function style(feature) {
+            return {
+                weight: 2,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: 0.7,
+                fillColor: color[feature.properties.NAMOBJ]
+            };
 
-        if (!L.Browser.ie && !L.Browser.opera) {
-            layer.bringToFront();
+        }
+        //memunculkan highlight pada peta
+        function highlightFeature(e) {
+            var layer = e.target;
+
+            layer.setStyle({
+                weight: 5,
+                color: '#666',
+                dashArray: '',
+                fillOpacity: 0.7
+            });
+
+            if (!L.Browser.ie && !L.Browser.opera) {
+                layer.bringToFront();
+            }
+
+            info.update(layer.feature.properties);
+        }
+        for (var i = 0; i < datamap.length; i++) {
+            marker = new L.marker([datamap[i][1], datamap[i][2]])
+                .bindPopup(datamap[i][0])
+                .addTo(map);
+        }
+        var geojson;
+
+        function resetHighlight(e) {
+            geojsonLayer.resetStyle(e.target);
+            info.update();
         }
 
-        info.update(layer.feature.properties);
-    }
-    for (var i = 0; i < datamap.length; i++) {
-        marker = new L.marker([datamap[i][1], datamap[i][2]])
-            .bindPopup(datamap[i][0])
-            .addTo(map);
-    }
-    var geojson;
-
-    function resetHighlight(e) {
-        geojsonLayer.resetStyle(e.target);
-        info.update();
-    }
-
-    function zoomToFeature(e) {
-        map.fitBounds(e.target.getBounds());
-    }
-
-    function onEachFeature(feature, layer) {
-        layer.on({
-            mouseover: highlightFeature,
-            mouseout: resetHighlight,
-            click: zoomToFeature
-        });
-    }
-    var geojsonLayer = new L.GeoJSON.AJAX({!! json_encode($geofile) !!}, {
-        style: style,
-        onEachFeature: onEachFeature
-    });
-    geojsonLayer.addTo(map);
-
-    var legend = L.control({
-        position: 'bottomright'
-    });
-
-    //pemanggilan legend
-    legend.onAdd = function(map) {
-
-        var div = L.DomUtil.create('div', 'info legend'),
-            grades = [0, 12, 25, 37, 50, 62, 75, 87], //pretty break untuk 8
-            labels = [],
-            from, to;
-
-        for (var i = 0; i < grades.length; i++) {
-            from = grades[i];
-            to = grades[i + 1];
-
-            labels.push(
-                '<i style="background:' + getColor(from + 1) + '"></i> ' +
-                from + (to ? '&ndash;' + to : '+'));
+        function zoomToFeature(e) {
+            map.fitBounds(e.target.getBounds());
         }
 
-        div.innerHTML = '<h4>Legenda:</h4><br>' + labels.join('<br>');
-        return div;
-    };
+        function onEachFeature(feature, layer) {
+            layer.on({
+                mouseover: highlightFeature,
+                mouseout: resetHighlight,
+                click: zoomToFeature
+            });
+        }
+        var geojsonLayer = new L.GeoJSON.AJAX({!! json_encode($geofile) !!}, {
+            style: style,
+            onEachFeature: onEachFeature
+        });
+        geojsonLayer.addTo(map);
 
-    legend.addTo(map);
-</script>
+        var legend = L.control({
+            position: 'bottomright'
+        });
+
+        //pemanggilan legend
+        legend.onAdd = function(map) {
+
+            var div = L.DomUtil.create('div', 'info legend'),
+                grades = [0, 12, 25, 37, 50, 62, 75, 87], //pretty break untuk 8
+                labels = [],
+                from, to;
+
+            for (var i = 0; i < grades.length; i++) {
+                from = grades[i];
+                to = grades[i + 1];
+
+                labels.push(
+                    '<i style="background:' + getColor(from + 1) + '"></i> ' +
+                    from + (to ? '&ndash;' + to : '+'));
+            }
+
+            div.innerHTML = '<h4>Legenda:</h4><br>' + labels.join('<br>');
+            return div;
+        };
+
+        legend.addTo(map);
+    </script>
