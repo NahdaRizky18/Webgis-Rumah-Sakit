@@ -140,7 +140,19 @@ http://www.tooplate.com/view/2091-ziggy
                             <div class="icon">
                                 <i class="fa-solid fa-database h1"></i>
                             </div>
-                            <h4>Data</h4>
+                            <h4>Jadwal Poliklinik</h4>
+                            <p>Sed pulvinar ipsum id leo volutpat, in convallis lectus molestie. Aliquam nisi sapien,
+                                faucibus eu consequat id, egestas vitae augue.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-7">
+                    <a href="{{ route('data dokter') }}" class="btn btn-outline-info py-2">
+                        <div class="service-item">
+                            <div class="icon">
+                                <i class="fa-solid fa-database h1"></i>
+                            </div>
+                            <h4>Data Dokter</h4>
                             <p>Sed pulvinar ipsum id leo volutpat, in convallis lectus molestie. Aliquam nisi sapien,
                                 faucibus eu consequat id, egestas vitae augue.</p>
                         </div>

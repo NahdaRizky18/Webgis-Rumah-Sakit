@@ -50,8 +50,13 @@ http://www.tooplate.com/view/2091-ziggy
             style="border-bottom:1px solid cyan;">
             <h4>Maps</h4>
         </a>
-        <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn" >
-            <h4>Data</h4>
+         <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn"
+            >
+            <h4>Jadwal Poliklinik</h4>
+        </a>
+         <a href="{{ route('data dokter') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn"
+           >
+            <h4>Data Dokter</h4>
         </a>
         <a href="#" class="text-decoration-none text-white m-4 py-1 me-2 btn">
             <h4>Panduan</h4>

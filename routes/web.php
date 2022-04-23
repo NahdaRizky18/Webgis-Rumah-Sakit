@@ -14,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/rumah-sakit/saran', [App\Http\Controllers\RumahSakitController::class, 'saran'])->name( 'saran');
+Route::get('/rumah-sakit/saran-delete/{id}', [App\Http\Controllers\RumahSakitController::class, 'destroySaran'])->name('delete saran');
+Route::get( '/rs', [ App\Http\Controllers\HomeController::class, 'rs'])->name('rs');
+Route::get('/data-dokter', [App\Http\Controllers\GuessController::class, 'dokter'])->name('data dokter');
+Route::get('/rs-user', [App\Http\Controllers\GuessController::class, 'rsUser'])->name('rs user');
+Route::get('/rs-jadwal/{id}', [App\Http\Controllers\HomeController::class, 'jadwal'])->name('rs jadwal');
+Route::get('/rs-jadwal-user/{id}', [App\Http\Controllers\GuessController::class, 'jadwalUser'])->name('rs jadwal user');
 Route::get('/', [App\Http\Controllers\GuessController::class, 'index'])->name('welcome');
 Route::post('/saran', [App\Http\Controllers\GuessController::class, 'store'])->name('post saran');
 Auth::routes();
@@ -50,7 +57,7 @@ Route::get('/maps-user', [App\Http\Controllers\UserController::class, 'map'])->n
 Route::get('/maps-puskesmas', [App\Http\Controllers\PuskesmasController::class, 'map'])->name('map puskesmas');
 Route::get('/rute-rumahsakit', [App\Http\Controllers\RuteMapController::class, 'rumahsakit'])->name('rute rumahsakit');
 Route::get('/rute-puskesmas', [App\Http\Controllers\RuteMapController::class, 'puskesmas'])->name('rute puskesmas');
-Route::get('/maps-data', [App\Http\Controllers\UserController::class, 'data'])->name('Data user');
+Route::get('/maps-data/{id?}/{kelas_id?}', [App\Http\Controllers\UserController::class, 'data'])->name('Data user');
 Route::post('/input-data', [App\Http\Controllers\HalamanData::class, 'store'])->name('data lokasi rumah sakit');
 Route::get('/edit-data/{id}', [App\Http\Controllers\HalamanData::class, 'edit'])->name('edit data');
 Route::post('/update-data/{id}', [App\Http\Controllers\HalamanData::class, 'update'])->name('update data');

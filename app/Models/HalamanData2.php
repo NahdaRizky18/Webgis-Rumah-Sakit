@@ -13,4 +13,7 @@ class HalamanData2 extends Model
     {
         return $this->belongsTo(Tematik::class, 'tematik_id', 'id');
     }
+    public function jadwal(){
+        return $this->hasMany(Jadwal::class,'halaman_data2_id','id');
+    }
 }

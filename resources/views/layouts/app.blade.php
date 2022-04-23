@@ -80,7 +80,7 @@
                         <div id="drop" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                         document.getElementById('logout-form').submit();">
+                                                                                                                                                 document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
@@ -95,7 +95,7 @@
         </nav>
         @guest
         @else
-            <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <aside class="main-sidebar sidebar-dark-primary elevation-4 position-fixed">
                 <!-- Brand Logo -->
                 <a href="index3.html" class="brand-link">
 
@@ -140,65 +140,58 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('maps') }}" class="nav-link">
-                                        <i class="nav-icon fa-solid fa-map-location"></i>
-                                        <p>
-                                            Maps Rumah Sakit
-                                        </p>
+                                    <a data-bs-toggle="collapse" href="#maps-r"
+                                        class="nav-link btn bg-transparent text-white text-start w-100"
+                                        aria-controls="manajemen" role="button" aria-expanded="true">
+                                        <i class="nav-icon fa-solid fa-map"></i>
+                                        Maps
+                                        <i class="fas fa-sort-down float-end"></i>
                                     </a>
+
+                                    <div class="collapse {{ in_array(request()->route()->getName(),['maps', 'map puskesmas','rute rumahsakit'])? 'show': '' }}" id="maps-r" style="">
+                                        <ul class="nav ms-4 ps-3">
+                                            <li class="nav-item w-100 ">
+                                                <a class="dropdown-item {{ request()->route()->getName() == 'maps'? 'text-white bg-info': '' }}" href="{{ route('maps') }}">Rumah Sakit</a>
+                                            </li>
+                                            <li class="nav-item w-100">
+                                                <a class="dropdown-item {{ request()->route()->getName() == 'map puskesmas'? 'text-white bg-info': '' }}" href="{{ route('map puskesmas') }}">Map
+                                                    Puskesmas</a>
+                                            </li>
+                                            <li class="nav-item  w-100 ">
+                                                <a class="dropdown-item {{ request()->route()->getName() == 'rute rumahsakit'? 'text-white bg-info': '' }}" href="{{ route('rute rumahsakit') }}">Rute</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('rute rumahsakit') }}" class="nav-link">
-                                        <i class="nav-icon fa-solid fa-map-location"></i>
-                                        <p>
-                                            Rute
-                                        </p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('map puskesmas') }}" class="nav-link">
-                                        <i class="nav-icon fa-solid fa-map-location"></i>
-                                        <p>
-                                            Map Puskesmas
-                                        </p>
-                                    </a>
-                                </li>
-                              
-                                <li class="nav-item menu-open">
-                                    <a href="#" class="nav-link ">
+                                    <a data-bs-toggle="collapse" href="#data-r"
+                                        class="nav-link btn bg-transparent text-white text-start w-100"
+                                        aria-controls="manajemen" role="button" aria-expanded="true">
                                         <i class="nav-icon fa-solid fa-database"></i>
-                                        <p>
-                                            Data
-                                            <i class="right fas fa-angle-left"></i>
-                                        </p>
+                                        Data
+                                        <i class="fas fa-sort-down float-end"></i>
                                     </a>
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item">
-                                            <a href="{{ route('halaman data') }}" class="nav-link ">
-                                                <p>data lokasi rumah sakit</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="{{ route('halaman data2') }}" class="nav-link">
-                                                <p>Data dokter</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="{{ route('puskesmas') }}" class="nav-link ">
-                                                <p>Rawat Inap</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="{{ route('halaman tematik') }}" class="nav-link">
-                                                <p>Data Tematik</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="{{ route('rumah sakit') }}" class="nav-link">
-                                                <p>Rumah Sakit</p>
-                                            </a>
-                                        </li>
-                                    </ul>
+
+                                    <div class="collapse {{ in_array(request()->route()->getName(),['halaman data', 'puskesmas','halaman tematik','rumah sakit'])? 'show': '' }}" id="data-r" style="">
+                                        <ul class="nav ms-4 ps-3">
+                                            <li class="nav-item w-100">
+                                                <a class="dropdown-item {{ request()->route()->getName() == 'halaman data'? 'text-white bg-info': '' }}" href="{{ route('halaman data') }}">Data lokasi
+                                                    rumah sakit</a>
+                                            </li>
+
+                                            <li class="nav-item w-100">
+                                                <a class="dropdown-item {{ request()->route()->getName() == 'puskesmas'? 'text-white bg-info': '' }}" href="{{ route('puskesmas') }}">Rawat Inap</a>
+                                            </li>
+                                            <li class="nav-item  w-100">
+                                                <a class="dropdown-item {{ request()->route()->getName() == 'halaman tematik'? 'text-white bg-info': '' }}"
+                                                    href="{{ route('halaman tematik') }}">Tematik</a>
+                                            </li>
+                                            <li class="nav-item  w-100">
+                                                <a class="dropdown-item {{ request()->route()->getName() == 'rumah sakit'? 'text-white bg-info': '' }}" href="{{ route('rumah sakit') }}">Rumah
+                                                    Sakit</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('maps') }}" class="nav-link">
@@ -218,8 +211,18 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
+                                    <a href="{{ route('halaman data2') }}" class="nav-link">
+                                        <p>Data dokter</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="{{ route('ruangan') }}" class="nav-link">
                                         <p>Ruangan</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('saran') }}" class="nav-link">
+                                        <p>Saran</p>
                                     </a>
                                 </li>
                             @endif

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HalamanData2;
 use App\Models\Jadwal;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,7 @@ class JadwalController extends Controller
     {
         $data = Jadwal::where('user_id',auth()->user()->id)->get();
         return view('jadwal',[
-            'data'=>$data
+            'data'=>$data,
         ]);
     }
 
@@ -27,7 +28,10 @@ class JadwalController extends Controller
      */
     public function create()
     {
-        return view('tambah-jadwal');
+        $dokters = HalamanData2::where('rumahsakit',auth()->user()->rumahsakit)->get();
+        return view('tambah-jadwal',[
+            'dokters' => $dokters
+        ]);
     }
 
     /**
@@ -61,8 +65,9 @@ class JadwalController extends Controller
      */
     public function edit($id)
     {
+        $dokters = HalamanData2::where('rumahsakit',auth()->user()->rumahsakit)->get();
         $data = Jadwal::find($id);
-        return view('edit-jadwal',['data'=>$data,'id'=>$id]);
+        return view('edit-jadwal',['data'=>$data,'id'=>$id, 'dokters' => $dokters]);
     }
 
     /**

@@ -63,11 +63,9 @@ class HalamanData2 extends Controller
      */
     public function edit($id)
     {
-        $tematik = Tematik::all();
         return view('edit2', [
             'data' => ModelsHalamanData2::with('tematik')->find($id),
             'id' => $id,
-            'tematik' => $tematik,
         ]);
     }
 

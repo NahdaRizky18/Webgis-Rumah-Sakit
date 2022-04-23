@@ -22,7 +22,7 @@ class User extends Authenticatable
         'level',
         'email',
         'password',
-        'halaman_data2_id'
+        'rumahsakit'
     ];
 
     /**
@@ -45,5 +45,14 @@ class User extends Authenticatable
     ];
     public function rumahsakit(){
         return $this->belongsTo(HalamanData2::class,'halaman_data2_id','id');
+    }
+    public function jadwal(){
+        return $this->hasMany(Jadwal::class,'user_id','id');
+    }
+    public function dokter(){
+        return $this->hasMany(HalamanData2::class,'rumahsakit','rumahsakit');
+    }
+    public function ruangan(){
+        return $this->hasMany(Ruangan::class,'user_id','id');
     }
 }

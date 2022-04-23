@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\HalamanData;
 use App\Models\HalamanData2;
+use App\Models\Saran;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -48,7 +49,7 @@ class RumahSakitController extends Controller
             'password' => Hash::make($request->password),
             'email' => $request->email,
             'level' => 'RS',
-            'halaman_data2_id' => $request->halaman_data2_id
+            'rumahsakit' => $request->rumahsakit
         ]);
         return redirect()->route('rumah sakit');
     }
@@ -79,7 +80,14 @@ class RumahSakitController extends Controller
             'rumahsakit' => $rumahsakit
         ]);
     }
-
+    public function saran(){
+        $data = Saran::where('rumah_sakit',auth()->user()->rumahsakit)->get();
+        return view('saran',['data'=>$data]);
+    }
+    public function destroySaran($id){
+        Saran::find($id)->delete();
+        return back();
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -95,7 +103,7 @@ class RumahSakitController extends Controller
         $user-> password = Hash::make($request->password);
         }
         $user->email = $request->email;
-        $user->halaman_data2_id = $request->halaman_data2_id;
+        $user->rumahsakit = $request->rumahsakit;
         $user->save();
         return redirect()->route('rumah sakit');
     }

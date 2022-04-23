@@ -38,7 +38,7 @@
                                 </td>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->email }}</td>
-                                <td>{{ $item->rumahsakit->rumahsakit }}</td>
+                                <td>{{ $item->rumahsakit }}</td>
                                 <td class="w-25">
                                     <form action="{{ route('delete rumahsakit', ['id' => $item->id]) }}" method="get">
                                         <a href="{{ route('edit rumahsakit', ['id' => $item->id]) }}" class="edit"><i

@@ -8,25 +8,23 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Hari</label>
-                            <select name="hari" class="form-control">
-                                <option value="">--pilih hari--</option>
-                                <option value="Senin">Senin</option>
-                                <option value="Selasa">Selasa</option>
-                                <option value="Rabu">Rabu</option>
-                                <option value="Kamis">Kamis</option>
-                                <option value="Jumat">Jumat</option>
-                                <option value="Sabtu">Sabtu</option>
-                                <option value="Minggu">Minggu</option>
+                            <label>Dokter</label>
+                            <select name="halaman_data2_id" class="form-control">
+                                <option value="">--pilih dokter--</option>
+                                @foreach ($dokters as $item)
+                                    <option value="{{$item->id}}">{{$item->nama_dokter}} ({{$item->spesialis2}})</option>
+                                @endforeach
                             </select>
                         </div>
-                         <div class="form-group">
-                            <label>Jam</label>
-                             <input name="jam" type="time" class="form-control" required>
-                             <input name="user_id" type="hidden" value="{{auth()->user()->id}}" class="form-control" required>
+                       
+                        <div class="form-group">
+                            <label>Jadwal</label>
+                            <input name="jadwal" type="datetime-local" class="form-control" required>
+                            <input name="user_id" type="hidden" value="{{ auth()->user()->id }}" class="form-control"
+                                required>
                         </div>
                     </div>
-                </div>  
+                </div>
 
                 <button class="btn btn-primary float-end mt-4" type="submit">Tambah</button>
             </form>

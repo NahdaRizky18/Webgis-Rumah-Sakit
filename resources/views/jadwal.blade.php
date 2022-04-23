@@ -24,8 +24,8 @@
                             <th>
                                 No
                             </th>
-                            <th>Hari</th>
-                            <th>Jam</th>
+                            <th>Dokter</th>
+                            <th>jadwal</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -35,8 +35,8 @@
                                 <td>
                                     {{ $loop->iteration }}
                                 </td>
-                                <td>{{ $item->hari }}</td>
-                                <td>{{ $item->jam }}</td>
+                                <td>{{ $item->dokter->nama_dokter }}</td>
+                                <td>{{ $item->jadwal->isoFormat('LLLL') }}</td>
                                 <td class="w-25">
                                     <form action="{{ route('delete jadwal', ['id' => $item->id]) }}" method="get">
                                         <a href="{{ route('edit jadwal', ['id' => $item->id]) }}"

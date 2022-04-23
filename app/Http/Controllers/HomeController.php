@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\HalamanData;
 use App\Models\HalamanData2;
+use App\Models\Jadwal;
 use App\Models\Tematik;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -69,4 +71,27 @@ class HomeController extends Controller
         $poli = HalamanData2::where('rumahsakit', $rm)->groupBy('poli')->get();
         return $poli;
     }
+    public function rs(){
+        return view('rs');
+    }
+   
+    public function jadwal($id){
+        $rs = "";
+        if ($id == 1) {
+            $rs = 'RSUD TGK.CHICK DITIRO';
+        }else if($id == 2){
+            $rs = "RSUD ABDULLAH SYAFI'I";
+        } else if ($id == 3) {
+            $rs = 'RS CITRA HUSADA';
+        } else if ($id == 4) {
+            $rs = 'RS MUFID';
+        } else if ($id == 5) {
+            $rs = 'RS IBNU SINA';
+        }
+        $colors = ['#495371', '#74959A', '#98B4AA', '#1C658C', '#398AB9'];
+
+        $data = User::where('rumahsakit',$rs)->first();
+        return view('rs-jadwal',['data'=>$data,'colors'=>$colors]);
+    }
+    
 }
