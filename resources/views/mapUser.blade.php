@@ -62,7 +62,7 @@ http://www.tooplate.com/view/2091-ziggy
     </section>
 
     <section class="second-section p-0">
-        <div class="card w-100 m-4 d-block">
+        <div class="card w-100 m-4 d-block border-0">
             
             <a href="{{ route('Map user', ['state' => 0]) }}" style="width: fit-content" class="btn text-white {{$state == 0 ? 'btn-success':'btn-info'}}">Rumah Sakit</a>
             <a href="{{ route('Map user', ['state' => 1]) }}" style="width: fit-content" class="btn text-white {{$state == 1 ? 'btn-success':'btn-info'}}">Puskesmas</a>
