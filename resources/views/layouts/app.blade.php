@@ -87,7 +87,7 @@
                         <div id="drop" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                                         document.getElementById('logout-form').submit();">
+                                                                                                                                                             document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
@@ -104,9 +104,15 @@
         @else
             <aside class="main-sidebar sidebar-dark-primary elevation-4 position-fixed">
                 <!-- Brand Logo -->
-                <a href="index3.html" class="brand-link">
-
-                    <span class="brand-text font-weight-light">RUMAH SAKIT</span>
+                <a href="#" class="brand-link" style="text-decoration: none">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="{{ asset('storage/img/logo.jpeg') }}" width="450" alt="">
+                        </div>
+                        <div class="col">
+                            <span class=" font-weight-light" > RUMAH SAKIT</span>
+                        </div>
+                    </div>
                 </a>
 
                 <!-- Sidebar -->

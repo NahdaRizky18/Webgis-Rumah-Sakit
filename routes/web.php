@@ -44,7 +44,7 @@ Route::post('/rumah-sakit/store', [App\Http\Controllers\RumahSakitController::cl
 Route::get('/rumah-sakit/edit/{id}', [App\Http\Controllers\RumahSakitController::class, 'edit'])->name('edit rumahsakit');
 Route::post('/rumah-sakit/update/{id}', [App\Http\Controllers\RumahSakitController::class, 'update'])->name('update rumahsakit');
 Route::get('/rumah-sakit/delete/{id}', [App\Http\Controllers\RumahSakitController::class, 'destroy'])->name('delete rumahsakit');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home/{id?}/{kelas_id?}', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/halaman-data', [App\Http\Controllers\HalamanData::class, 'index'])->name('halaman data');
 Route::get('/puskesmas', [App\Http\Controllers\PuskesmasController::class, 'index'])->name('puskesmas');
 Route::get('/puskesmas-get/{id}', [App\Http\Controllers\PuskesmasController::class, 'show'])->name('detail puskesmas');

@@ -176,7 +176,7 @@ http://www.tooplate.com/view/2091-ziggy
                     </select>
                     @if (count($kelasData))
                         <div>
-                            <a href="{{ route('Data user') }}" class="form-control border-0"><i class="fa-solid fa-arrow-left"></i></a>
+                            <a href="{{ route('Data user',['id'=>$id]) }}" class="form-control border-0"><i class="fa-solid fa-arrow-left"></i></a>
                         </div>
                         <div class="my-2 border" style="max-height:15rem;overflow-y:auto">
                             <table class="tableFixHead ">
