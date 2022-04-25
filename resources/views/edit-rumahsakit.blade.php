@@ -23,11 +23,11 @@
                             <label>Rumah Sakit</label>
                             <select name="rumahsakit" class="form-control">
                                 <option value="">pilih Rumah Sakit</option>
-                                <option value="RSUD TGK.CHICK DITIRO"> RSUD TGK.CHICK DITIRO </option>
-                                <option value="RSUD ABDULLAH SYAFI'I"> RSUD ABDULLAH SYAFI'I </option>
-                                <option value="RS CITRA HUSADA"> RS CITRA HUSADA </option>
-                                <option value="RS MUFID"> RS MUFID</option>
-                                <option value="RS IBNU SINA"> RS IBNU SINA </option>
+                                <option {{$data->rumahsakit == 'RSUD TGK.CHICK DITIRO'? 'selected' : ''}} value="RSUD TGK.CHICK DITIRO"> RSUD TGK.CHICK DITIRO </option>
+                                <option {{$data->rumahsakit == "RSUD ABDULLAH SYAFI'I"? 'selected' : ''}} value="RSUD ABDULLAH SYAFI'I"> RSUD ABDULLAH SYAFI'I </option>
+                                <option {{$data->rumahsakit == 'RS CITRA HUSADA'? 'selected' : ''}} value="RS CITRA HUSADA"> RS CITRA HUSADA </option>
+                                <option {{$data->rumahsakit == 'RS MUFID'? 'selected' : ''}} value="RS MUFID"> RS MUFID</option>
+                                <option {{$data->rumahsakit == 'RS IBNU SINA'? 'selected' : ''}} value="RS IBNU SINA"> RS IBNU SINA </option>
                             </select>
                         </div>
                     </div>
