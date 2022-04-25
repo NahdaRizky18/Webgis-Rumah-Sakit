@@ -21,7 +21,7 @@
                         </div>
                         <div class="form-group">
                             <label>Rumah Sakit</label>
-                            <select name="halaman_data2_id" class="form-control">
+                            <select name="rumahsakit" class="form-control">
                                 <option value="">pilih Rumah Sakit</option>
                                 <option value="RSUD TGK.CHICK DITIRO"> RSUD TGK.CHICK DITIRO </option>
                                 <option value="RSUD ABDULLAH SYAFI'I"> RSUD ABDULLAH SYAFI'I </option>
