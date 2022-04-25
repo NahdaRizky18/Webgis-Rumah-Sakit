@@ -46,6 +46,7 @@ class UserController extends Controller
             $coor[$index2] = [$item->alamat, $item->lat, $item->long, $item->rumah_sakit? $item->rumah_sakit : ($item->puskesmas? $item->puskesmas : $item->klinik),$item->no_hp,$item->gambar? $item->gambar : ''];
             $index2++;
         }
+        $kecamatan = $tematik->pluck('kecamatan');
         return view('mapUser', [
             'list_poli' => $list_poli,
             'poli' => $poli,
@@ -56,7 +57,8 @@ class UserController extends Controller
             'color' => $color,
             'data' => $coor,
             'tematik' => $tematik,
-            'state'=>$state
+            'state'=>$state,
+            'kecamatan' => $kecamatan
         ]);
     }
     public function data($id = null, $kelas_id = null)

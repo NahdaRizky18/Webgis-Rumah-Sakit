@@ -63,9 +63,11 @@ http://www.tooplate.com/view/2091-ziggy
 
     <section class="second-section p-0">
         <div class="card w-100 m-4 d-block border-0">
-            
-            <a href="{{ route('Map user', ['state' => 0]) }}" style="width: fit-content" class="btn text-white {{$state == 0 ? 'btn-success':'btn-info'}}">Rumah Sakit</a>
-            <a href="{{ route('Map user', ['state' => 1]) }}" style="width: fit-content" class="btn text-white {{$state == 1 ? 'btn-success':'btn-info'}}">Puskesmas</a>
+
+            <a href="{{ route('Map user', ['state' => 0]) }}" style="width: fit-content"
+                class="btn text-white {{ $state == 0 ? 'btn-success' : 'btn-info' }}">Rumah Sakit</a>
+            <a href="{{ route('Map user', ['state' => 1]) }}" style="width: fit-content"
+                class="btn text-white {{ $state == 1 ? 'btn-success' : 'btn-info' }}">Puskesmas</a>
         </div>
         <div class="card bg-primary m-4">
 
@@ -149,6 +151,12 @@ http://www.tooplate.com/view/2091-ziggy
         opacity: 0.7;
     }
 
+    .leaflet-right .leaflet-control {
+        max-height: 8rem;
+        overflow-y: auto;
+        padding: 5px;
+    }
+
 </style>
 
 <!-- Leaflet JavaScript -->
@@ -173,6 +181,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     var s = [5.3811231139126, 95.958859920501];
     var color = {!! json_encode($color) !!};
     var datamap = {!! json_encode($data) !!}
+    var kecamatan = {!! json_encode($kecamatan) !!}
     var map = L.map('map').setView(
         s, 11
     );
@@ -229,7 +238,9 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     }
     for (var i = 0; i < datamap.length; i++) {
         marker = new L.marker([datamap[i][1], datamap[i][2]])
-            .bindPopup((datamap[i][5]?"<div class='text-center'><img width='200' src='{{ asset('storage/') }}/"+datamap[i][5]+"'></div>":"")+datamap[i][0] +"<br/>"+ datamap[i][3] +"<br/> No HP :"+datamap[i][4] )
+            .bindPopup((datamap[i][5] ? "<div class='text-center'><img width='200' src='{{ asset('storage/') }}/" +
+                    datamap[i][5] + "'></div>" : "") + datamap[i][0] + "<br/>" + datamap[i][3] + "<br/> No HP :" +
+                datamap[i][4])
             .addTo(map);
     }
     var geojson;
@@ -265,19 +276,14 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
         var div = L.DomUtil.create('div', 'info legend'),
             grades = [0, 12, 25, 37, 50, 62, 75, 87], //pretty break untuk 8
-            labels = [],
             from, to;
-
-        for (var i = 0; i < grades.length; i++) {
-            from = grades[i];
-            to = grades[i + 1];
-
+        labels = []
+        for (var i = 0; i < kecamatan.length; i++) {
             labels.push(
-                '<i style="background:' + getColor(from + 1) + '"></i> ' +
-                from + (to ? '&ndash;' + to : '+'));
+                '<i style="background:' + color[kecamatan[i]] + '"></i> - ' + kecamatan[i]);
         }
 
-        div.innerHTML = '<h4>Legenda:</h4><br>' + labels.join('<br>');
+        div.innerHTML = '<h4>Legenda:</h4>' + labels.join('<br>');
         return div;
     };
 
