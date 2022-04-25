@@ -18,7 +18,11 @@ class UserController extends Controller
     {
 
         $colors = ['#495371', '#74959A', '#98B4AA', '#1C658C', '#398AB9'];
-        $data = new HalamanData();
+        if ($state) {
+            $data = Puskesmas::all();
+        } else {
+            $data = HalamanData::all();
+        }
         $data2 = new HalamanData2();
         $poli = $data2->where('poli', '!=', '-')->groupBy('poli')->get()->count();
         $dokter = $data->sum(DB::raw('dokter_umum + dokter_spesialis'));
@@ -30,11 +34,7 @@ class UserController extends Controller
         $index = 0;
         $index2 = 0;
         $tematik = Tematik::all();
-        if ($state) {
-            $data = Puskesmas::all();
-        } else {
-            $data = HalamanData::all();
-        }
+       
         foreach ($tematik as $item) {
             $geofile[$index] = 'storage/' . $item->geojson;
             $index++;
@@ -43,7 +43,7 @@ class UserController extends Controller
             $color[$item->kecamatan] = $item->warna;
         }
         foreach ($data as $item) {
-            $coor[$index2] = [$item->alamat, $item->lat, $item->long];
+            $coor[$index2] = [$item->alamat, $item->lat, $item->long, $item->rumah_sakit? $item->rumah_sakit : ($item->puskesmas? $item->puskesmas : $item->klinik),$item->no_hp,$item->gambar? $item->gambar : ''];
             $index2++;
         }
         return view('mapUser', [
