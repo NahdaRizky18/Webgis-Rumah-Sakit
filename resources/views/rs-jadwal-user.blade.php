@@ -113,7 +113,7 @@ http://www.tooplate.com/view/2091-ziggy
                 @foreach ($data->dokter as $item)
                     <div class="col">
                         <!-- small box -->
-                        <div class="card p-2 text-white" style="background-color:{{ $colors[$loop->index] }}">
+                        <div class="card p-2 text-white" style="background-color:{{ $colors[$loop->index % 2 == 0] }}">
                                 <h5>{{ strtoupper($item->nama_dokter) }}</h5>
                                 @foreach ($item->jadwal as $jadwal)
                                     <div class="mb-2">
