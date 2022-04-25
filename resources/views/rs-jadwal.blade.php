@@ -8,7 +8,7 @@
             @foreach ($data->dokter as $item)
                 <div class="col">
                     <!-- small box -->
-                    <div class="small-box text-white" style="background-color:{{ $colors[$loop->index] }}">
+                    <div class="small-box text-white" style="background-color:{{ $colors[$loop->index % 2 ==0 ] }}">
                         <div class="inner">
                             <h4>{{ strtoupper($item->nama_dokter) }}</h4>
                             @foreach ($item->jadwal as $jadwal)
