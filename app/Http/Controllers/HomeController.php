@@ -120,7 +120,7 @@ class HomeController extends Controller
         }
         $colors = ['#495371', '#74959A', '#98B4AA', '#1C658C', '#398AB9'];
 
-        $data = User::where('rumahsakit',$rs)->first();
+        $data = User::whereHas('dokter')->where('rumahsakit', $rs)->first();
         return view('rs-jadwal',['data'=>$data,'colors'=>$colors]);
     }
     
