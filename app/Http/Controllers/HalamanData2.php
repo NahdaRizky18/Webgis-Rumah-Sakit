@@ -18,7 +18,7 @@ class HalamanData2 extends Controller
     public function index()
     {
         return view("halaman-data2", [
-            'data' => ModelsHalamanData2::with('tematik')->get()
+            'data' => ModelsHalamanData2::with('tematik')->where('rumahsakit',auth()->user()->rumahsakit)->get()
         ]);
     }
 
