@@ -77,7 +77,7 @@ http://www.tooplate.com/view/2091-ziggy
 
 
     <section class="w-100" style="background-color: #2B333F">
-        <a href="{{ route('login') }}" class="text-decoration-none text-white m-4 py-1 btn btn-outline-info me-2">
+         <a href="{{ route('login') }}" class="text-decoration-none text-white m-4 py-1 btn btn-outline-info me-2">
             <h4>Log in</h4>
         </a>
         <a href="{{ route('welcome') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
@@ -88,7 +88,11 @@ http://www.tooplate.com/view/2091-ziggy
         </a>
         <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn"
             style="border-bottom:1px solid cyan;">
-            <h4>Data</h4>
+            <h4>Jadwal Poliklinik</h4>
+        </a>
+         <a href="{{ route('data dokter') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn"
+          >
+            <h4>Data Dokter</h4>
         </a>
         <a href="#" class="text-decoration-none text-white m-4 py-1 me-2 btn">
             <h4>Panduan</h4>
@@ -112,14 +116,18 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="row">
                 @foreach ($data->dokter as $item)
                     @if (count($item->jadwal))
-                        <div class="col">
+                        <div class="col-md-2">
                             <!-- small box -->
                             <div class="card p-2 text-white"
                                 style="background-color:{{ $colors[$loop->index % 2 == 0] }}">
                                 <h5>{{ strtoupper($item->nama_dokter) }}</h5>
                                 @foreach ($item->jadwal as $jadwal)
                                     <div class="mb-2">
-                                        <p class="mb-0 text-white">Jadwal : {{ $jadwal->jadwal->isoFormat('LLLL') }}
+                                        <p class="mb-0 text-white">Jadwal : {{ $jadwal->jadwal->isoFormat('LL') }}
+                                           
+                                        </p>
+                                        <p class="mb-0 text-white">
+                                             Pukul {{$jadwal->jadwal->isoFormat('H:MM a')}}
                                         </p>
                                     </div>
                                 @endforeach

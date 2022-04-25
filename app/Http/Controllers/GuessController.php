@@ -133,7 +133,7 @@ class GuessController extends Controller
         }
         $colors = ['#495371', '#74959A', '#98B4AA', '#1C658C', '#398AB9'];
 
-        $data = User::whereHas('jadwal')->where('rumahsakit', $rs)->first();
+        $data = User::whereHas('dokter')->where('rumahsakit', $rs)->first();
         return view('rs-jadwal-user', ['data' => $data, 'colors' => $colors]);
     }
     public function dokter(){

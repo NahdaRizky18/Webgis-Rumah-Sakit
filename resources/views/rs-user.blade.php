@@ -78,20 +78,24 @@ http://www.tooplate.com/view/2091-ziggy
 
     <section class="w-100" style="background-color: #2B333F">
         <a href="{{ route('login') }}" class="text-decoration-none text-white m-4 py-1 btn btn-outline-info me-2">
-            <h5>Log in</h5>
+            <h4>Log in</h4>
         </a>
         <a href="{{ route('welcome') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h5>Home</h5>
+            <h4>Home</h4>
         </a>
         <a href="{{ route('Map user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h5>Maps</h5>
+            <h4>Maps</h4>
         </a>
         <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn"
             style="border-bottom:1px solid cyan;">
-            <h5>Data</h5>
+            <h4>Jadwal Poliklinik</h4>
+        </a>
+         <a href="{{ route('data dokter') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn"
+          >
+            <h4>Data Dokter</h4>
         </a>
         <a href="#" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h5>Panduan</h5>
+            <h4>Panduan</h4>
         </a>
     </section>
 
