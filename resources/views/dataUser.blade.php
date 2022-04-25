@@ -178,6 +178,7 @@ http://www.tooplate.com/view/2091-ziggy
                         <option {{ $id == 5 ? 'selected' : '' }} value="5"> RS IBNU SINA </option>
                     </select>
                     @if (count($kelasData))
+                    <a href="{{route('Data user')}}" class="form-control">Kembali</a>
                         <div class="my-2 border" style="max-height:15rem;overflow-y:auto">
                             <table class="tableFixHead ">
                                 <thead>
