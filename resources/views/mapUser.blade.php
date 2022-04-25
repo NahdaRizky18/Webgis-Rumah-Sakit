@@ -229,7 +229,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     }
     for (var i = 0; i < datamap.length; i++) {
         marker = new L.marker([datamap[i][1], datamap[i][2]])
-            .bindPopup((datamap[i][5]?"<div class='text-center'><img src='{{ asset('storage/') }}/"+datamap[i][5]+"'></div>":"")+datamap[i][0] +"<br/>"+ datamap[i][3] +"<br/> No HP :"+datamap[i][4] )
+            .bindPopup((datamap[i][5]?"<div class='text-center'><img width='200' src='{{ asset('storage/') }}/"+datamap[i][5]+"'></div>":"")+datamap[i][0] +"<br/>"+ datamap[i][3] +"<br/> No HP :"+datamap[i][4] )
             .addTo(map);
     }
     var geojson;
