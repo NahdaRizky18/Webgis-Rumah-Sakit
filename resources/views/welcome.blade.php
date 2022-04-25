@@ -119,11 +119,11 @@ http://www.tooplate.com/view/2091-ziggy
         </div>
     </section>
 
-    <section class="second-section">
+    <section class="second-section" style="margin-top: -20rem">
         <div class="container">
             <div class="row mx-auto">
                 <div class="col-md-3 col-sm-6">
-                    <a href="{{ route('Map user') }}" class="btn btn-outline-info py-2">
+                    <a href="{{ route('Map user') }}" class="btn bg-white btn-outline-info py-2">
                         <div class="service-item">
                             <div class="icon">
                                 <i class="fa-solid fa-map-location h1"></i>
@@ -135,7 +135,7 @@ http://www.tooplate.com/view/2091-ziggy
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-7">
-                    <a href="{{ route('Data user') }}" class="btn btn-outline-info py-2">
+                    <a href="{{ route('Data user') }}" class="btn bg-white btn-outline-info py-2">
                         <div class="service-item">
                             <div class="icon">
                                 <i class="fa-solid fa-database h1"></i>
@@ -147,7 +147,7 @@ http://www.tooplate.com/view/2091-ziggy
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-7">
-                    <a href="{{ route('data dokter') }}" class="btn btn-outline-info py-2">
+                    <a href="{{ route('data dokter') }}" class="btn bg-white btn-outline-info py-2">
                         <div class="service-item">
                             <div class="icon">
                                 <i class="fa-solid fa-database h1"></i>
@@ -159,7 +159,7 @@ http://www.tooplate.com/view/2091-ziggy
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <a href="#" class="btn btn-outline-info py-2">
+                    <a href="#" class="btn bg-white btn-outline-info py-2">
                         <div class="service-item">
                             <div class="icon">
                                 <i class="fa-solid fa-book h1"></i>
