@@ -221,7 +221,7 @@
                                     <a href="{{ route('jadwal') }}" class="nav-link">
                                         <i class="nav-icon fas fa-th"></i>
                                         <p>
-                                            Dashboard
+                                            Jadwal
                                         </p>
                                     </a>
                                 </li>
