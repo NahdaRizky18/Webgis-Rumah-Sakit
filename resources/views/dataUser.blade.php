@@ -235,7 +235,7 @@ http://www.tooplate.com/view/2091-ziggy
                         <div class="col">
 
                             <div class="card p-3 mb-3 text-white  p-3"
-                                style="background-color:{{ $colors[$loop->index] }}">
+                                style="background-color:{{ $colors[$loop->index % 2 == 0] }}">
                                 <div class="inner">
                                     <h5>{{ $item->rumahsakit }}</h5>
                                 </div>

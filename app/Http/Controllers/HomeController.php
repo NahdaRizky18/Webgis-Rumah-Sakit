@@ -54,6 +54,7 @@ class HomeController extends Controller
             $coor[$index2] = [$item->alamat, $item->lat, $item->long];
             $index2++;
         }
+        $kecamatan = $tematik->pluck('kecamatan');
         return view('home', [
             'list_poli' => $list_poli,
             'poli' => $poli,
@@ -64,6 +65,7 @@ class HomeController extends Controller
             'color' => $color,
             'data' => $coor,
             'tematik' => $tematik,
+            'kecamatan'=> $kecamatan
         ]);
     }
     public function getPoli($rm)
