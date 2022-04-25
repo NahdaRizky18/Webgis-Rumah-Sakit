@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\HalamanData;
 use App\Models\HalamanData2;
+use App\Models\Puskesmas;
 use App\Models\Ruangan;
 use App\Models\Tematik;
 use App\Models\User;
@@ -13,7 +14,8 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    public function map(){
+    public function map($state = 0)
+    {
 
         $colors = ['#495371', '#74959A', '#98B4AA', '#1C658C', '#398AB9'];
         $data = new HalamanData();
@@ -28,7 +30,11 @@ class UserController extends Controller
         $index = 0;
         $index2 = 0;
         $tematik = Tematik::all();
-        $data = HalamanData::all();
+        if ($state) {
+            $data = Puskesmas::all();
+        } else {
+            $data = HalamanData::all();
+        }
         foreach ($tematik as $item) {
             $geofile[$index] = 'storage/' . $item->geojson;
             $index++;
@@ -50,9 +56,10 @@ class UserController extends Controller
             'color' => $color,
             'data' => $coor,
             'tematik' => $tematik,
+            'state'=>$state
         ]);
     }
-    public function data($id = null,$kelas_id = null)
+    public function data($id = null, $kelas_id = null)
     {
         $rs = "";
         if ($id == 1) {
@@ -73,7 +80,7 @@ class UserController extends Controller
         $dokter = $data->sum(DB::raw('dokter_umum + dokter_spesialis'));
         $perawat = $data->sum(DB::raw('perawat'));
         $list_poli = $data2->groupBy('rumahsakit')->get();
-        $user = User::where('rumahsakit',$rs)->first();
+        $user = User::where('rumahsakit', $rs)->first();
         $kelas = $user->ruangan->unique('kelas');
         $kelasData = Ruangan::where('kelas', $kelas_id)->get();
         $ruangan = [];
@@ -92,8 +99,8 @@ class UserController extends Controller
             'colors' => $colors,
             'kelas' => $kelas,
             'ruangan' => $ruangan,
-            'kelasData'=> $kelasData,
-            'id'=>$id
+            'kelasData' => $kelasData,
+            'id' => $id
         ]);
     }
 }

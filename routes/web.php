@@ -53,7 +53,7 @@ Route::get('/puskesmas-tambah', [App\Http\Controllers\PuskesmasController::class
 Route::get('/puskesmas-delete/{id}', [App\Http\Controllers\PuskesmasController::class, 'destroy'])->name('delete puskesmas');
 Route::post('/puskesmas-update/{id}', [App\Http\Controllers\PuskesmasController::class, 'update'])->name('update puskesmas');
 Route::post('/puskesmas-store', [App\Http\Controllers\PuskesmasController::class, 'store'])->name('data puskesmas');
-Route::get('/maps-user', [App\Http\Controllers\UserController::class, 'map'])->name('Map user');
+Route::get('/maps-user/{state?}', [App\Http\Controllers\UserController::class, 'map'])->name('Map user');
 Route::get('/maps-puskesmas', [App\Http\Controllers\PuskesmasController::class, 'map'])->name('map puskesmas');
 Route::get('/rute-rumahsakit', [App\Http\Controllers\RuteMapController::class, 'rumahsakit'])->name('rute rumahsakit');
 Route::get('/rute-puskesmas', [App\Http\Controllers\RuteMapController::class, 'puskesmas'])->name('rute puskesmas');
