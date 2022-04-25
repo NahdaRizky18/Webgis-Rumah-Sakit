@@ -83,7 +83,7 @@ http://www.tooplate.com/view/2091-ziggy
        
     </section>
 
-    <section class="second-section">
+    <section class="second-section p-4">
 
         <style>
             .rm {
@@ -100,13 +100,14 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="row">
                 @foreach ($data->dokter as $item)
                     @if (count($item->jadwal))
-                        <div class="col-md-2">
+                        <div class="col-md-4">
                             <!-- small box -->
                             <div class="card p-2 text-white"
                                 style="background-color:{{ $colors[$loop->index % 2 == 0] }}">
                                 <h5>{{ strtoupper($item->nama_dokter) }}</h5>
                                 @foreach ($item->jadwal as $jadwal)
                                     <div class="mb-2">
+                                        <p  class="mb-0 text-white"> Spesialis {{$item->spesialis2}}</p>
                                         <p class="mb-0 text-white">Jadwal : {{ $jadwal->jadwal->isoFormat('LL') }}
                                            
                                         </p>
