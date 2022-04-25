@@ -61,6 +61,27 @@ class UserController extends Controller
             'kecamatan' => $kecamatan
         ]);
     }
+    public function ruteUser(){
+        $coor = [];
+        $arr = [];
+        $index = 0;
+        $data = HalamanData::all();
+        $data2 = Puskesmas::all();
+
+        foreach ($data as $item) {
+            $info[$index] = [$item->alamat, $item->lat, $item->long, $item->rumah_sakit];
+            $index++;
+        }
+        foreach ($data2 as $item) {
+            $info[$index] = [$item->alamat, $item->lat, $item->long, $item->puskesmas ? $item->puskesmas : $item->klinik];
+            $index++;
+        }
+        return view('ruteUser', [
+            'geofile' => [],
+            'color' => [],
+            'data' => $info,
+        ]);
+    }
     public function data($id = null, $kelas_id = null)
     {
         $rs = "";

@@ -85,6 +85,9 @@ http://www.tooplate.com/view/2091-ziggy
         <a href="{{ route('Map user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
             <h4>Maps</h4>
         </a>
+        <a href="{{ route('rute user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
+            <h4>Rute</h4>
+        </a>
         <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn"
             style="border-bottom:1px solid cyan;">
             <h4>Jadwal Poliklinik</h4>

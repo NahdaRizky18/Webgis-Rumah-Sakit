@@ -44,10 +44,10 @@ http://www.tooplate.com/view/2091-ziggy
             <h4>Home</h4>
         </a>
         <a href="{{ route('Map user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn"
-            style="border-bottom:1px solid cyan;">
+           >
             <h4>Maps</h4>
         </a>
-        <a href="{{ route('rute user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
+        <a href="{{ route('rute user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn" style="border-bottom:1px solid cyan;">
             <h4>Rute</h4>
         </a>
         <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
@@ -62,13 +62,7 @@ http://www.tooplate.com/view/2091-ziggy
     </section>
 
     <section class="second-section p-0">
-        <div class="card w-100 m-4 d-block border-0">
-
-            <a href="{{ route('Map user', ['state' => 0]) }}" style="width: fit-content"
-                class="btn text-white {{ $state == 0 ? 'btn-success' : 'btn-info' }}">Rumah Sakit</a>
-            <a href="{{ route('Map user', ['state' => 1]) }}" style="width: fit-content"
-                class="btn text-white {{ $state == 1 ? 'btn-success' : 'btn-info' }}">Puskesmas</a>
-        </div>
+        
         <div class="card bg-primary m-4">
 
             <div class="card-header border-0">
@@ -158,42 +152,27 @@ http://www.tooplate.com/view/2091-ziggy
     }
 
 </style>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin="">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
+        integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
 
-<!-- Leaflet JavaScript -->
-<!-- Make sure you put this AFTER Leaflet's CSS -->
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-crossorigin="">
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
-integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
-crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<!-- Leaflet JavaScript -->
-<!-- Make sure you put this AFTER Leaflet's CSS -->
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-crossorigin="">
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
-integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
-crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ asset('storage/js/leaflet-routing-machine/dist/leaflet-routing-machine.min.js') }}">
+    </script>
 <script type="text/javascript">
     var s = [5.3811231139126, 95.958859920501];
-    var color = {!! json_encode($color) !!};
-    var datamap = {!! json_encode($data) !!}
-    var kecamatan = {!! json_encode($kecamatan) !!}
+    var data = {!! json_encode($data) !!}
     var map = L.map('map').setView(
         s, 11
     );
-
-
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
-
-
     var info = L.control();
-
     info.onAdd = function(map) {
         this._div = L.DomUtil.create('div', 'info');
         this.update();
@@ -205,20 +184,6 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             '<b>' + props.NAMOBJ + '</b><br />' + props.MhsSIF + ' orang' :
             'Gerakkan mouse Anda');
     };
-
-    info.addTo(map);
-
-    function style(feature) {
-        return {
-            weight: 2,
-            opacity: 1,
-            color: 'white',
-            dashArray: '3',
-            fillOpacity: 0.7,
-            fillColor: color[feature.properties.NAMOBJ]
-        };
-
-    }
     //memunculkan highlight pada peta
     function highlightFeature(e) {
         var layer = e.target;
@@ -236,18 +201,20 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
         info.update(layer.feature.properties);
     }
-    for (var i = 0; i < datamap.length; i++) {
-        marker = new L.marker([datamap[i][1], datamap[i][2]])
-            .bindPopup((datamap[i][5] ? "<div class='text-center'><img width='200' src='{{ asset('storage/') }}/" +
-                    datamap[i][5] + "'></div>" : "") + datamap[i][0] + "<br/>" + datamap[i][3] + "<br/> No HP :" +
-                datamap[i][4])
-            .addTo(map);
-    }
-    var geojson;
+    var icon = L.icon({
+        iconUrl: "{{ asset('storage/img/hospital.png') }}",
+        iconSize: [38, 38], // size of the icon
 
-    function resetHighlight(e) {
-        geojsonLayer.resetStyle(e.target);
-        info.update();
+    });
+    var userMarker = new L.marker();
+    for (var i = 0; i < data.length; i++) {
+        marker = new L.marker([data[i][1], data[i][2]], {
+                icon: icon
+            })
+            .bindPopup("<strong>" + data[i][3] +
+                "</strong><br/><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(" + data[i][
+                1] + "," + data[i][2] + ")'>Ke Sini</button>")
+            .addTo(map);
     }
 
     function zoomToFeature(e) {
@@ -261,31 +228,37 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             click: zoomToFeature
         });
     }
-    var geojsonLayer = new L.GeoJSON.AJAX({!! json_encode($geofile) !!}, {
-        style: style,
-        onEachFeature: onEachFeature
-    });
-    geojsonLayer.addTo(map);
+    var latPoint = "";
+    var longPoint = "";
 
-    var legend = L.control({
-        position: 'bottomright'
-    });
-
-    //pemanggilan legend
-    legend.onAdd = function(map) {
-
-        var div = L.DomUtil.create('div', 'info legend'),
-            grades = [0, 12, 25, 37, 50, 62, 75, 87], //pretty break untuk 8
-            from, to;
-        labels = []
-        for (var i = 0; i < kecamatan.length; i++) {
-            labels.push(
-                '<i style="background:' + color[kecamatan[i]] + '"></i> - ' + kecamatan[i]);
-        }
-
-        div.innerHTML = '<h4>Legenda:</h4>' + labels.join('<br>');
-        return div;
+    function updateMarker(lat, lng) {
+        latPoint = lat;
+        longPoint = lng;
+        userMarker
+            .setLatLng([lat, lng]);
+        return false;
     };
+    // var dataPoint = [];
+    // for (var i = 0; i < data.length; i++) {
+    //     dataPoint[i] = L.latLng(data[i][1], data[i][2]);
+    // }
+    var control = L.Routing.control({
+        waypoints: [],
+        routeWhileDragging: true,
+    });
+    control.addTo(map);
 
-    legend.addTo(map);
+    function keSini(lat, lng) {
+        var latLng = L.latLng(lat, lng);
+        control.spliceWaypoints(control.getWaypoints().length - 1, 1, latLng);
+    }
+
+    map.on('click', function(e) {
+        let latitude = e.latlng.lat.toString().substring(0, 15);
+        let longitude = e.latlng.lng.toString().substring(0, 15);
+        control.setWaypoints(L.latLng(latitude, longitude))
+        $('#latitude').val(latitude);
+        $('#longitude').val(longitude);
+        updateMarker(latitude, longitude);
+    });
 </script>
