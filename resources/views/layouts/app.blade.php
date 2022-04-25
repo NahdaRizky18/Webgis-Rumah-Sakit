@@ -49,7 +49,14 @@
                             class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="{{ route('home') }}" class="nav-link">Home</a>
+                    @if (auth()->user())
+                        @if (auth()->user()->level == 'ADMIN')
+                            <a href="{{ route('home') }}" class="nav-link">Home</a>
+                        @else
+                            <a href="{{ route('jadwal') }}" class="nav-link">Home</a>
+                        @endif
+                    @endif
+
                 </li>
 
             </ul>
@@ -80,7 +87,7 @@
                         <div id="drop" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                                 document.getElementById('logout-form').submit();">
+                                                                                                                                                         document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
@@ -148,17 +155,21 @@
                                         <i class="fas fa-sort-down float-end"></i>
                                     </a>
 
-                                    <div class="collapse {{ in_array(request()->route()->getName(),['maps', 'map puskesmas','rute rumahsakit'])? 'show': '' }}" id="maps-r" style="">
+                                    <div class="collapse {{ in_array(request()->route()->getName(),['maps', 'map puskesmas', 'rute rumahsakit'])? 'show': '' }}"
+                                        id="maps-r" style="">
                                         <ul class="nav ms-4 ps-3">
                                             <li class="nav-item w-100 ">
-                                                <a class="dropdown-item {{ request()->route()->getName() == 'maps'? 'text-white bg-info': '' }}" href="{{ route('maps') }}">Rumah Sakit</a>
+                                                <a class="dropdown-item {{ request()->route()->getName() == 'maps'? 'text-white bg-info': '' }}"
+                                                    href="{{ route('maps') }}">Rumah Sakit</a>
                                             </li>
                                             <li class="nav-item w-100">
-                                                <a class="dropdown-item {{ request()->route()->getName() == 'map puskesmas'? 'text-white bg-info': '' }}" href="{{ route('map puskesmas') }}">Map
+                                                <a class="dropdown-item {{ request()->route()->getName() == 'map puskesmas'? 'text-white bg-info': '' }}"
+                                                    href="{{ route('map puskesmas') }}">Map
                                                     Puskesmas</a>
                                             </li>
                                             <li class="nav-item  w-100 ">
-                                                <a class="dropdown-item {{ request()->route()->getName() == 'rute rumahsakit'? 'text-white bg-info': '' }}" href="{{ route('rute rumahsakit') }}">Rute</a>
+                                                <a class="dropdown-item {{ request()->route()->getName() == 'rute rumahsakit'? 'text-white bg-info': '' }}"
+                                                    href="{{ route('rute rumahsakit') }}">Rute</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -172,22 +183,26 @@
                                         <i class="fas fa-sort-down float-end"></i>
                                     </a>
 
-                                    <div class="collapse {{ in_array(request()->route()->getName(),['halaman data', 'puskesmas','halaman tematik','rumah sakit'])? 'show': '' }}" id="data-r" style="">
+                                    <div class="collapse {{ in_array(request()->route()->getName(),['halaman data', 'puskesmas', 'halaman tematik', 'rumah sakit'])? 'show': '' }}"
+                                        id="data-r" style="">
                                         <ul class="nav ms-4 ps-3">
                                             <li class="nav-item w-100">
-                                                <a class="dropdown-item {{ request()->route()->getName() == 'halaman data'? 'text-white bg-info': '' }}" href="{{ route('halaman data') }}">Data lokasi
+                                                <a class="dropdown-item {{ request()->route()->getName() == 'halaman data'? 'text-white bg-info': '' }}"
+                                                    href="{{ route('halaman data') }}">Data lokasi
                                                     rumah sakit</a>
                                             </li>
 
                                             <li class="nav-item w-100">
-                                                <a class="dropdown-item {{ request()->route()->getName() == 'puskesmas'? 'text-white bg-info': '' }}" href="{{ route('puskesmas') }}">Rawat Inap</a>
+                                                <a class="dropdown-item {{ request()->route()->getName() == 'puskesmas'? 'text-white bg-info': '' }}"
+                                                    href="{{ route('puskesmas') }}">Rawat Inap</a>
                                             </li>
                                             <li class="nav-item  w-100">
                                                 <a class="dropdown-item {{ request()->route()->getName() == 'halaman tematik'? 'text-white bg-info': '' }}"
                                                     href="{{ route('halaman tematik') }}">Tematik</a>
                                             </li>
                                             <li class="nav-item  w-100">
-                                                <a class="dropdown-item {{ request()->route()->getName() == 'rumah sakit'? 'text-white bg-info': '' }}" href="{{ route('rumah sakit') }}">Rumah
+                                                <a class="dropdown-item {{ request()->route()->getName() == 'rumah sakit'? 'text-white bg-info': '' }}"
+                                                    href="{{ route('rumah sakit') }}">Rumah
                                                     Sakit</a>
                                             </li>
                                         </ul>
