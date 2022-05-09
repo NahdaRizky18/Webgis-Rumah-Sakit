@@ -47,8 +47,8 @@
             <div class="col">
                 <!-- small box -->
                 <a href="{{ route('rs jadwal', ['id' => 1]) }}" style="text-decoration: none">
-                    <div class="small-box bg-info rm">
-                        <div class="inner">
+                    <div class="card p-2 text-white text-white" style="background-color: #99C4C8">
+                        <div class="text-center">
                             <p>RSUD TGK.CHICK DITIRO</p>
                         </div>
                     </div>
@@ -59,8 +59,8 @@
             <div class="col">
                 <!-- small box -->
                 <a href="{{ route('rs jadwal', ['id' => 2]) }}" style="text-decoration: none">
-                    <div class="small-box bg-success rm">
-                        <div class="inner">
+                    <div class="card p-2 text-white text-white" style="background-color: #A0BCC2">
+                        <div class="text-center">
                             <p>RSUD ABDULLAH SYAFI'I </p>
                         </div>
 
@@ -71,8 +71,8 @@
             <div class="col">
                 <!-- small box -->
                 <a href="{{ route('rs jadwal', ['id' => 3]) }}" style="text-decoration: none">
-                    <div class="small-box bg-warning rm">
-                        <div class="inner">
+                    <div class="card p-2 text-white text-white" style="background-color:  #74959A">
+                        <div class="text-center">
                             <p>RS CITRA HUSADA</p>
                         </div>
                     </div>
@@ -82,8 +82,8 @@
             <div class="col">
                 <!-- small box -->
                 <a href="{{ route('rs jadwal', ['id' => 4]) }}" style="text-decoration: none">
-                    <div class="small-box rm text-white" style="background-color: #74959A">
-                        <div class="inner">
+                    <div class="card p-2 text-white rm text-white" style="background-color: #68A7AD">
+                        <div class="text-center">
                             <p>RS MUFID</p>
                         </div>
                     </div>
@@ -92,8 +92,8 @@
             <div class="col">
                 <!-- small box -->
                 <a href="{{ route('rs jadwal', ['id' => 5]) }}" style="text-decoration: none">
-                    <div class="small-box rm text-white" style="background-color: #1c93a5">
-                        <div class="inner">
+                    <div class="card p-2 text-white rm text-white" style="background-color: #1c93a5">
+                        <div class="text-center">
                             <p>RS IBNU SINA</p>
                         </div>
                     </div>
@@ -110,7 +110,7 @@
                 <div class="card-body">
 
                     <select name="rumahsakit" id="rumahsakit" class="form-control">
-                        <option value="">pilih Rumah Sakit</option>
+                        <option value="">Pilih Rumah Sakit</option>
                         <option {{ $id == 1 ? 'selected' : '' }} value="1"> RSUD TGK.CHIK DITIRO </option>
                         <option {{ $id == 2 ? 'selected' : '' }} value="2"> RSUD ABDULLAH SYAFI'I </option>
                         <option {{ $id == 3 ? 'selected' : '' }} value="3"> RS CITRA HUSADA </option>
@@ -176,12 +176,12 @@
         </div>
         <div>
             <section class="col connectedSortable">
-                <div class="card bg-gradient-primary">
+                <div class="card" style="background-color: #99C4C8">
                     <div class="card-header border-0">
-                        <h3 class="card-title">
+                        <h4 class="card-title">
                             <i class="fas fa-map-marker-alt mr-1"></i>
                             Maps
-                        </h3>
+                        </h4>
 
                     </div>
                     <div class="card-body">

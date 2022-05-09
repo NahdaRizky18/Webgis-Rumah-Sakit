@@ -87,7 +87,7 @@
                         <div id="drop" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                                                 document.getElementById('logout-form').submit();">
+                                                                                                                                                                                                         document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
@@ -102,15 +102,15 @@
         </nav>
         @guest
         @else
-            <aside class="main-sidebar sidebar-dark-primary elevation-4 position-fixed">
+            <aside class="main-sidebar sidebar-dark-primary elevation-4 position-fixed" style="background-color: #68A7AD">
                 <!-- Brand Logo -->
                 <a href="#" class="brand-link" style="text-decoration: none">
                     <div class="row">
                         <div class="col-md-4">
-                            <img src="{{ asset('storage/img/logo.jpeg') }}" width="450" alt="">
+                            <img src="{{ asset('storage/img/logo.png') }}" width="450" alt="">
                         </div>
                         <div class="col">
-                            <span class=" font-weight-light"> RUMAH SAKIT</span>
+                            <span class=" font-weight-light"> RUMAH SAKIT <br> PIDIE</span>
                         </div>
                     </div>
                 </a>
@@ -123,19 +123,6 @@
 
 
                             {{ Auth::user()->name }}
-                        </div>
-                    </div>
-
-                    <!-- SidebarSearch Form -->
-                    <div class="form-inline">
-                        <div class="input-group" data-widget="sidebar-search">
-                            <input class="form-control form-control-sidebar" type="search" placeholder="Search"
-                                aria-label="Search">
-                            <div class="input-group-append">
-                                <button class="btn btn-sidebar">
-                                    <i class="fas fa-search fa-fw"></i>
-                                </button>
-                            </div>
                         </div>
                     </div>
                     <!-- Sidebar Menu -->
