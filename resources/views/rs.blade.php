@@ -21,7 +21,7 @@
                 <a href="{{ route('rs jadwal', ['id' => 1]) }}" style="text-decoration: none">
                     <div class="small-box bg-info rm">
                         <div class="inner">
-                            <p>RSUD TGK.CHICK DITIRO</p>
+                            <p>RSUD TGK.CHIK DITIRO</p>
                         </div>
                     </div>
                 </a>

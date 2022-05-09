@@ -16,7 +16,7 @@ Template 2091 Ziggy
 http://www.tooplate.com/view/2091-ziggy
 
 -->
-    <title>Ziggy HTML Template</title>
+    <title> WEBGIS Rumah Sakit</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -110,9 +110,9 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-content">
-                        <h2>Welcome To Ziggy</h2>
+                        <h2>Selamat Datang di WEBGIS Rumah Sakit Kabupaten Pidie</h2>
                         <div class="line-dec"></div>
-                        <span>This is clean &amp; professional html template</span>
+                        <span>Terkait Informasi Seputaran Rumah Sakit &amp; Lokasi Rumah Sakit</span>
                     </div>
                 </div>
             </div>
@@ -129,8 +129,8 @@ http://www.tooplate.com/view/2091-ziggy
                                 <i class="fa-solid fa-map-location h1"></i>
                             </div>
                             <h4>Maps</h4>
-                            <p>Aliquam ex velit, viverra eu tristique vel, rhoncus nec ligula. In vel massa sed dolor
-                                pharetra interdum vitae posuere.</p>
+                            <p>Menampilkan Lokasi Rumah Sakit dan fasilitas kesehatan yang menyediakan ruangan
+                                Rawat Inap .</p>
                         </div>
                     </a>
                 </div>
@@ -141,8 +141,8 @@ http://www.tooplate.com/view/2091-ziggy
                                 <i class="fa-solid fa-database h1"></i>
                             </div>
                             <h4>Jadwal Poliklinik</h4>
-                            <p>Sed pulvinar ipsum id leo volutpat, in convallis lectus molestie. Aliquam nisi sapien,
-                                faucibus eu consequat id, egestas vitae augue.</p>
+                            <p>Anda dapat melihat semua jadwal Poliklinik yang tersedia di setiap Rumah Sakit Di
+                                Kabupaten Pidie.</p>
                         </div>
                     </a>
                 </div>
@@ -153,8 +153,7 @@ http://www.tooplate.com/view/2091-ziggy
                                 <i class="fa-solid fa-database h1"></i>
                             </div>
                             <h4>Data Dokter</h4>
-                            <p>Sed pulvinar ipsum id leo volutpat, in convallis lectus molestie. Aliquam nisi sapien,
-                                faucibus eu consequat id, egestas vitae augue.</p>
+                            <p>Anda dapat mencari nama dokter spesial disetiap rumah sakit yang diinginkan.</p>
                         </div>
                     </a>
                 </div>
@@ -165,8 +164,7 @@ http://www.tooplate.com/view/2091-ziggy
                                 <i class="fa-solid fa-book h1"></i>
                             </div>
                             <h4>Panduan</h4>
-                            <p>Aliquam ex velit, viverra eu tristique vel, rhoncus nec ligula. In vel massa sed dolor
-                                pharetra interdum vitae posuere.</p>
+                            <p>Panduan untuk mengetahui cara mendapatkan informasi yang tersedia pada WebGIS ini.</p>
                         </div>
                     </a>
                 </div>
@@ -225,13 +223,8 @@ http://www.tooplate.com/view/2091-ziggy
                     <ul>
                         <li><a href="https://www.facebook.com/tooplate"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                     </ul>
-                    <p>Copyright &copy; 2017 Company Name
-
-                        | Design: <a href="https://www.facebook.com/tooplate" target="_parent">Tooplate</a></p>
+                    <p>Copyright &copy; Dinak Kesehatan Kabupaten Pidie</p>
                 </div>
             </div>
         </div>

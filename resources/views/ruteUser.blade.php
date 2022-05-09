@@ -16,7 +16,7 @@ Template 2091 Ziggy
 http://www.tooplate.com/view/2091-ziggy
 
 -->
-    <title>Ziggy HTML Template</title>
+    <title>WEBGIS Rumah Sakit</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -39,15 +39,15 @@ http://www.tooplate.com/view/2091-ziggy
 <body>
 
 
-    <section class="w-100" style="background-color: #2B333F">
+    <section class="w-100" style="background-color: #68A7AD">
         <a href="{{ route('welcome') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
             <h4>Home</h4>
         </a>
-        <a href="{{ route('Map user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn"
-           >
+        <a href="{{ route('Map user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
             <h4>Maps</h4>
         </a>
-        <a href="{{ route('rute user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn" style="border-bottom:1px solid cyan;">
+        <a href="{{ route('rute user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn"
+            style="border-bottom:1px solid cyan;">
             <h4>Rute</h4>
         </a>
         <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
@@ -62,7 +62,7 @@ http://www.tooplate.com/view/2091-ziggy
     </section>
 
     <section class="second-section p-0">
-        
+
         <div class="card bg-primary m-4">
 
             <div class="card-header border-0">
@@ -153,16 +153,16 @@ http://www.tooplate.com/view/2091-ziggy
 
 </style>
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin="">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
-        integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
+integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+crossorigin="">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
+integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
 
-    <script src="{{ asset('storage/js/leaflet-routing-machine/dist/leaflet-routing-machine.min.js') }}">
-    </script>
+<script src="{{ asset('storage/js/leaflet-routing-machine/dist/leaflet-routing-machine.min.js') }}">
+</script>
 <script type="text/javascript">
     var s = [5.3811231139126, 95.958859920501];
     var data = {!! json_encode($data) !!}
@@ -213,7 +213,8 @@ http://www.tooplate.com/view/2091-ziggy
             })
             .bindPopup("<strong>" + data[i][3] +
                 "</strong><br/><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(" + data[i][
-                1] + "," + data[i][2] + ")'>Ke Sini</button>")
+                    1
+                ] + "," + data[i][2] + ")'>Ke Sini</button>")
             .addTo(map);
     }
 

@@ -16,7 +16,7 @@ Template 2091 Ziggy
 http://www.tooplate.com/view/2091-ziggy
 
 -->
-    <title>Ziggy HTML Template</title>
+    <title>WEBGIS Rumah Sakit</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -77,10 +77,10 @@ http://www.tooplate.com/view/2091-ziggy
 
 
     <section class="w-100" style="background-color: #2B333F">
-         <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 btn btn-outline-info me-2">
+        <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 btn btn-outline-info me-2">
             <h4>Kembali</h4>
         </a>
-       
+
     </section>
 
     <section class="second-section p-4">
@@ -107,12 +107,12 @@ http://www.tooplate.com/view/2091-ziggy
                                 <h5>{{ $item->nama_dokter }}</h5>
                                 @foreach ($item->jadwal as $jadwal)
                                     <div class="mb-2">
-                                        <p  class="mb-0 text-white"> Spesialis {{$item->spesialis2}}</p>
+                                        <p class="mb-0 text-white"> Spesialis {{ $item->spesialis2 }}</p>
                                         <p class="mb-0 text-white">Jadwal : {{ $jadwal->jadwal->isoFormat('LL') }}
-                                           
+
                                         </p>
                                         <p class="mb-0 text-white">
-                                             Pukul {{$jadwal->jadwal->isoFormat('H:MM a')}}
+                                            Pukul {{ $jadwal->jadwal->isoFormat('H:MM a') }}
                                         </p>
                                     </div>
                                 @endforeach

@@ -18,7 +18,7 @@ Template 2091 Ziggy
 http://www.tooplate.com/view/2091-ziggy
 
 -->
-    <title>Ziggy HTML Template</title>
+    <title>Rumah Sakit</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -78,8 +78,8 @@ http://www.tooplate.com/view/2091-ziggy
 <body>
 
 
-    <section class="w-100" style="background-color: #2B333F">
-                <a href="{{ route('welcome') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
+    <section class="w-100" style="background-color: #68A7AD">
+        <a href="{{ route('welcome') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
             <h4>Home</h4>
         </a>
         <a href="{{ route('Map user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
@@ -102,14 +102,14 @@ http://www.tooplate.com/view/2091-ziggy
 
 
     <div class="container py-4">
-        <h4>Poliklinik yang tersedia</h4>
+        <h4>Jadwal Poliklinik </h4>
         <div class="row mb-2">
             <div class="col">
                 <!-- small box -->
                 <a href="{{ route('rs jadwal user', ['id' => 1]) }}" style="text-decoration: none">
-                    <div class="card p-2 text-white bg-info rm">
+                    <div class="card p-2 text-white rm text-white" style="background-color: #5584AC">
                         <div class="text-center">
-                            <h5>RSUD TGK.CHICK DITIRO</h5>
+                            <h6>RSUD TGK.CHIK DITIRO</h6>
                         </div>
                     </div>
                 </a>
@@ -119,9 +119,9 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="col">
                 <!-- small box -->
                 <a href="{{ route('rs jadwal user', ['id' => 2]) }}" style="text-decoration: none">
-                    <div class="card p-2 text-white bg-success rm">
+                    <div class="card p-2 text-white rm text-white" style="background-color: #A0BCC2">
                         <div class="text-center">
-                            <h5>RSUD ABDULLAH SYAFI'I </h5>
+                            <h6>RSUD ABDULLAH SYAFI'I </h6>
                         </div>
 
                     </div>
@@ -131,9 +131,9 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="col">
                 <!-- small box -->
                 <a href="{{ route('rs jadwal user', ['id' => 3]) }}" style="text-decoration: none">
-                    <div class="card p-2 text-white bg-warning rm">
+                    <div class="card p-2 text-white rm text-white" style="background-color: #68A7AD">
                         <div class="text-center">
-                            <h5>RS CITRA HUSADA</h5>
+                            <h6>RS CITRA HUSADA</h6>
                         </div>
                     </div>
                 </a>
@@ -144,7 +144,7 @@ http://www.tooplate.com/view/2091-ziggy
                 <a href="{{ route('rs jadwal user', ['id' => 4]) }}" style="text-decoration: none">
                     <div class="card p-2 text-white rm text-white" style="background-color: #74959A">
                         <div class="text-center">
-                            <h5>RS MUFID</h5>
+                            <h6>RS MUFID</h6>
                         </div>
                     </div>
                 </a>
@@ -154,7 +154,7 @@ http://www.tooplate.com/view/2091-ziggy
                 <a href="{{ route('rs jadwal user', ['id' => 5]) }}" style="text-decoration: none">
                     <div class="card p-2 text-white rm text-white" style="background-color: #1c93a5">
                         <div class="text-center">
-                            <h5>RS IBNU SINA</h5>
+                            <h6>RS IBNU SINA</h6>
                         </div>
                     </div>
                 </a>
@@ -170,8 +170,8 @@ http://www.tooplate.com/view/2091-ziggy
                 <div class="card-body">
 
                     <select name="rumahsakit" id="rumahsakit" class="form-control">
-                        <option value="">pilih Rumah Sakit</option>
-                        <option {{ $id == 1 ? 'selected' : '' }} value="1"> RSUD TGK.CHICK DITIRO </option>
+                        <option value="">Pilih Rumah Sakit</option>
+                        <option {{ $id == 1 ? 'selected' : '' }} value="1"> RSUD TGK.CHIK DITIRO </option>
                         <option {{ $id == 2 ? 'selected' : '' }} value="2"> RSUD ABDULLAH SYAFI'I </option>
                         <option {{ $id == 3 ? 'selected' : '' }} value="3"> RS CITRA HUSADA </option>
                         <option {{ $id == 4 ? 'selected' : '' }} value="4"> RS MUFID</option>
@@ -179,7 +179,8 @@ http://www.tooplate.com/view/2091-ziggy
                     </select>
                     @if (count($kelasData))
                         <div>
-                            <a href="{{ route('Data user',['id'=>$id]) }}" class="form-control border-0"><i class="fa-solid fa-arrow-left"></i></a>
+                            <a href="{{ route('Data user', ['id' => $id]) }}" class="form-control border-0"><i
+                                    class="fa-solid fa-arrow-left"></i></a>
                         </div>
                         <div class="my-2 border" style="max-height:15rem;overflow-y:auto">
                             <table class="tableFixHead ">
@@ -267,9 +268,7 @@ http://www.tooplate.com/view/2091-ziggy
                         <li><a href="#"><i class="fa fa-rss"></i></a></li>
                         <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                     </ul>
-                    <p class="text-white">Copyright &copy; 2017 Company Name
 
-                        | Design: <a href="https://www.facebook.com/tooplate" target="_parent">Tooplate</a></p>
                 </div>
             </div>
         </div>

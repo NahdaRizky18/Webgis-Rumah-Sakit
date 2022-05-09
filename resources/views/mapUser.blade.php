@@ -16,7 +16,7 @@ Template 2091 Ziggy
 http://www.tooplate.com/view/2091-ziggy
 
 -->
-    <title>Ziggy HTML Template</title>
+    <title> WEBGIS Rumah Sakit</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -39,7 +39,7 @@ http://www.tooplate.com/view/2091-ziggy
 <body>
 
 
-    <section class="w-100" style="background-color: #2B333F">
+    <section class="w-100" style="background-color: #68A7AD">
         <a href="{{ route('welcome') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
             <h4>Home</h4>
         </a>
@@ -64,9 +64,9 @@ http://www.tooplate.com/view/2091-ziggy
     <section class="second-section p-0">
         <div class="card w-100 m-4 d-block border-0">
 
-            <a href="{{ route('Map user', ['state' => 0]) }}" style="width: fit-content"
-                class="btn text-white {{ $state == 0 ? 'btn-success' : 'btn-info' }}">Rumah Sakit</a>
-            <a href="{{ route('Map user', ['state' => 1]) }}" style="width: fit-content"
+            <a href="{{ route('Map user', ['state' => 0]) }}" style="background-color: #68A7AD"
+                class="btn text-white  {{ $state == 0 ? 'btn-success' : 'btn-info' }}">Rumah Sakit</a>
+            <a href="{{ route('Map user', ['state' => 1]) }}" style="background-color: #5584AC"
                 class="btn text-white {{ $state == 1 ? 'btn-success' : 'btn-info' }}">Puskesmas</a>
         </div>
         <div class="card bg-primary m-4">

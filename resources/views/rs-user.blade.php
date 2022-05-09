@@ -16,7 +16,7 @@ Template 2091 Ziggy
 http://www.tooplate.com/view/2091-ziggy
 
 -->
-    <title>Ziggy HTML Template</title>
+    <title>WEBGIS Rumah Sakit</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -77,7 +77,7 @@ http://www.tooplate.com/view/2091-ziggy
 
 
     <section class="w-100" style="background-color: #2B333F">
-                <a href="{{ route('welcome') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
+        <a href="{{ route('welcome') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
             <h4>Home</h4>
         </a>
         <a href="{{ route('Map user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
@@ -87,8 +87,7 @@ http://www.tooplate.com/view/2091-ziggy
             style="border-bottom:1px solid cyan;">
             <h4>Jadwal Poliklinik</h4>
         </a>
-         <a href="{{ route('data dokter') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn"
-          >
+        <a href="{{ route('data dokter') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
             <h4>Data Dokter</h4>
         </a>
         <a href="#" class="text-decoration-none text-white m-4 py-1 me-2 btn">
@@ -116,7 +115,7 @@ http://www.tooplate.com/view/2091-ziggy
                     <a href="{{ route('rs jadwal user', ['id' => 1]) }}" style="text-decoration: none">
                         <div class="card p-2 text-white bg-info rm">
                             <div class="inner">
-                                <h5>RSUD TGK.CHICK DITIRO</h5>
+                                <h5>RSUD TGK.CHIK DITIRO</h5>
                             </div>
                         </div>
                     </a>

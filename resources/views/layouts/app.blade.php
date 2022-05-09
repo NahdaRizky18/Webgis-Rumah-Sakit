@@ -87,7 +87,7 @@
                         <div id="drop" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                                             document.getElementById('logout-form').submit();">
+                                                                                                                                                                 document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
@@ -110,7 +110,7 @@
                             <img src="{{ asset('storage/img/logo.jpeg') }}" width="450" alt="">
                         </div>
                         <div class="col">
-                            <span class=" font-weight-light" > RUMAH SAKIT</span>
+                            <span class=" font-weight-light"> RUMAH SAKIT</span>
                         </div>
                     </div>
                 </a>
@@ -170,7 +170,7 @@
                                             </li>
                                             <li class="nav-item w-100">
                                                 <a class="dropdown-item {{ request()->route()->getName() == 'map puskesmas'? 'text-white bg-info': '' }}"
-                                                    href="{{ route('map puskesmas') }}">Map
+                                                    href="{{ route('map puskesmas') }}">
                                                     Puskesmas</a>
                                             </li>
                                             <li class="nav-item  w-100 ">
@@ -194,17 +194,17 @@
                                         <ul class="nav ms-4 ps-3">
                                             <li class="nav-item w-100">
                                                 <a class="dropdown-item {{ request()->route()->getName() == 'halaman data'? 'text-white bg-info': '' }}"
-                                                    href="{{ route('halaman data') }}">Data lokasi
-                                                    rumah sakit</a>
+                                                    href="{{ route('halaman data') }}">Data Lokasi
+                                                    Rumah Sakit</a>
                                             </li>
 
                                             <li class="nav-item w-100">
                                                 <a class="dropdown-item {{ request()->route()->getName() == 'puskesmas'? 'text-white bg-info': '' }}"
-                                                    href="{{ route('puskesmas') }}">Rawat Inap</a>
+                                                    href="{{ route('puskesmas') }}">Data Lokasi Rawat Inap</a>
                                             </li>
                                             <li class="nav-item  w-100">
                                                 <a class="dropdown-item {{ request()->route()->getName() == 'halaman tematik'? 'text-white bg-info': '' }}"
-                                                    href="{{ route('halaman tematik') }}">Tematik</a>
+                                                    href="{{ route('halaman tematik') }}">Data Tematik</a>
                                             </li>
                                             <li class="nav-item  w-100">
                                                 <a class="dropdown-item {{ request()->route()->getName() == 'rumah sakit'? 'text-white bg-info': '' }}"
@@ -233,7 +233,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('halaman data2') }}" class="nav-link">
-                                        <p>Data dokter</p>
+                                        <p>Data Dokter</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">

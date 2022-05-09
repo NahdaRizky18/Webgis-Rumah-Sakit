@@ -111,7 +111,7 @@
 
                     <select name="rumahsakit" id="rumahsakit" class="form-control">
                         <option value="">pilih Rumah Sakit</option>
-                        <option {{ $id == 1 ? 'selected' : '' }} value="1"> RSUD TGK.CHICK DITIRO </option>
+                        <option {{ $id == 1 ? 'selected' : '' }} value="1"> RSUD TGK.CHIK DITIRO </option>
                         <option {{ $id == 2 ? 'selected' : '' }} value="2"> RSUD ABDULLAH SYAFI'I </option>
                         <option {{ $id == 3 ? 'selected' : '' }} value="3"> RS CITRA HUSADA </option>
                         <option {{ $id == 4 ? 'selected' : '' }} value="4"> RS MUFID</option>

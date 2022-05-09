@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <div class="container">
         <div class="card p-4">
             <form action="{{ route('update data', ['id' => $id]) }}" method="post" enctype="multipart/form-data">
@@ -26,8 +25,8 @@
                             <label>Rumah Sakit</label>
                             <select class="form-select" name="rumahsakit" required>
                                 <option value="">pilih Rumah Sakit</option>
-                                <option {{ $data->rumah_sakit == 'RSUD TGK.CHICK DITIRO' ? 'selected' : '' }}
-                                    value="RSUD TGK.CHICK DITIRO"> RSUD TGK.CHICK DITIRO </option>
+                                <option {{ $data->rumah_sakit == 'RSUD TGK.CHIK DITIRO' ? 'selected' : '' }}
+                                    value="RSUD TGK.CHIK DITIRO"> RSUD TGK.CHIK DITIRO </option>
                                 <option {{ $data->rumah_sakit == 'RSUD ABDULLAH SYAFI' ? 'selected' : '' }}
                                     value="RSUD ABDULLAH SYAFI'I"> RSUD ABDULLAH SYAFI'I </option>
                                 <option {{ $data->rumah_sakit == 'RS CITRA HUSADA' ? 'selected' : '' }}
@@ -58,7 +57,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>No HP</label>
-                            <input name="no_hp" value="{{$data->no_hp}}" type="number" class="form-control" required>
+                            <input name="no_hp" value="{{ $data->no_hp }}" type="number" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Dokter Spesialis</label>
@@ -94,8 +93,6 @@
         </div>
 
     </div>
-
-
 @endsection
 @section('styles')
     <!-- Leaflet CSS -->
@@ -111,7 +108,6 @@
 @endsection
 
 @push('scripts')
-
     <!-- Leaflet JavaScript -->
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"

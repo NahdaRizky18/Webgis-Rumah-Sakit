@@ -16,7 +16,7 @@ Template 2091 Ziggy
 http://www.tooplate.com/view/2091-ziggy
 
 -->
-    <title>Ziggy HTML Template</title>
+    <title>Rumah Sakit</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -32,7 +32,7 @@ http://www.tooplate.com/view/2091-ziggy
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="{{ asset('storage/css/tooplate-style.css') }}" rel="stylesheet">
-    
+
 
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
@@ -40,15 +40,14 @@ http://www.tooplate.com/view/2091-ziggy
 <body>
 
 
-    <section class="w-100" style="background-color: #2B333F">
-                <a href="{{ route('welcome') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
+    <section class="w-100" style="background-color: #68A7AD">
+        <a href="{{ route('welcome') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
             <h4>Home</h4>
         </a>
         <a href="{{ route('Map user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
             <h4>Maps</h4>
         </a>
-         <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn"
-            >
+        <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
             <h4>Jadwal Poliklinik</h4>
         </a>
         <a href="{{ route('data dokter') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn"
@@ -104,13 +103,8 @@ http://www.tooplate.com/view/2091-ziggy
                     <ul>
                         <li><a href="https://www.facebook.com/tooplate"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                     </ul>
-                    <p class="text-white">Copyright &copy; 2017 Company Name
-
-                        | Design: <a href="https://www.facebook.com/tooplate" target="_parent">Tooplate</a></p>
+                    <p>Copyright &copy; Dinak Kesehatan Pidie</p>
                 </div>
             </div>
         </div>
