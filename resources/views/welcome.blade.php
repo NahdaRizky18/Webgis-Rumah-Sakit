@@ -36,15 +36,13 @@ http://www.tooplate.com/view/2091-ziggy
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin="">
-    </script>
+        crossorigin=""></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
         integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
 
-    <script src="{{ asset('storage/js/leaflet-routing-machine/dist/leaflet-routing-machine.min.js') }}">
-    </script>
+    <script src="{{ asset('storage/js/leaflet-routing-machine/dist/leaflet-routing-machine.min.js') }}"></script>
 
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -130,7 +128,7 @@ http://www.tooplate.com/view/2091-ziggy
                             </div>
                             <h4>Maps</h4>
                             <p>Menampilkan Lokasi Rumah Sakit dan fasilitas kesehatan yang menyediakan ruangan
-                                Rawat Inap .</p>
+                                Rawat Inap.</p>
                         </div>
                     </a>
                 </div>
@@ -138,7 +136,7 @@ http://www.tooplate.com/view/2091-ziggy
                     <a href="{{ route('Data user') }}" class="btn bg-white btn-outline-info py-2">
                         <div class="service-item">
                             <div class="icon">
-                                <i class="fa-solid fa-database h1"></i>
+                                <i class="fa-solid  fa-th h1"></i>
                             </div>
                             <h4>Jadwal Poliklinik</h4>
                             <p>Anda dapat melihat semua jadwal Poliklinik yang tersedia di setiap Rumah Sakit Di

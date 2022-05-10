@@ -7,14 +7,15 @@
     <div class="container-xl">
         <div class="table-responsive">
             <div class="table-wrapper">
-                <div class="table-title">
+                <div class="table-title" style="background-color: #43919B">
                     <div class="row">
                         <div class="col-sm-6">
                             <h2>Data <b>Rumah Sakit</b></h2>
                         </div>
                         <div class="col-sm-6">
-                            <a href="{{ route('tambah rumahsakit') }}" class="btn btn-success"><i
-                                    class="material-icons">&#xE147;</i> <span>Masukkan Data Baru</span></a>
+                            <a href="{{ route('tambah rumahsakit') }}" class="btn btn-success"
+                                style="background-color:#99C4C8"><i class="material-icons">&#xE147;</i> <span>Masukkan Data
+                                    Baru</span></a>
                         </div>
                     </div>
                 </div>
@@ -41,8 +42,9 @@
                                 <td>{{ $item->rumahsakit }}</td>
                                 <td class="w-25">
                                     <form action="{{ route('delete rumahsakit', ['id' => $item->id]) }}" method="get">
-                                        <a href="{{ route('edit rumahsakit', ['id' => $item->id]) }}" class="edit"><i
-                                                class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                        <a href="{{ route('edit rumahsakit', ['id' => $item->id]) }}"
+                                            class="edit"><i class="material-icons" data-toggle="tooltip"
+                                                title="Edit">&#xE254;</i></a>
                                         <button type="submit" class="delete show_confirm border-0 p-0 bg-transparent"><i
                                                 class="material-icons" data-toggle="tooltip"
                                                 title="Delete">&#xE872;</i></button>

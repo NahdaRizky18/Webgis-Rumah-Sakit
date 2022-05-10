@@ -107,7 +107,7 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="col">
                 <!-- small box -->
                 <a href="{{ route('rs jadwal user', ['id' => 1]) }}" style="text-decoration: none">
-                    <div class="card p-2 text-white rm text-white" style="background-color: #A0BCC2">
+                    <div class="card p-2 text-white rm text-white" style="background-color: #99C4C8">
                         <div class="text-center">
                             <h6>RSUD TGK.CHIK DITIRO</h6>
                         </div>
@@ -119,7 +119,7 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="col">
                 <!-- small box -->
                 <a href="{{ route('rs jadwal user', ['id' => 2]) }}" style="text-decoration: none">
-                    <div class="card p-2 text-white rm text-white" style="background-color: #68A7AD">
+                    <div class="card p-2 text-white rm text-white" style="background-color: #A0BCC2">
                         <div class="text-center">
                             <h6>RSUD ABDULLAH SYAFI'I </h6>
                         </div>
@@ -131,7 +131,7 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="col">
                 <!-- small box -->
                 <a href="{{ route('rs jadwal user', ['id' => 3]) }}" style="text-decoration: none">
-                    <div class="card p-2 text-white rm text-white" style="background-color: #68A7AD">
+                    <div class="card p-2 text-white rm text-white" style="background-color: #74959A">
                         <div class="text-center">
                             <h6>RS CITRA HUSADA</h6>
                         </div>
@@ -142,7 +142,7 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="col">
                 <!-- small box -->
                 <a href="{{ route('rs jadwal user', ['id' => 4]) }}" style="text-decoration: none">
-                    <div class="card p-2 text-white rm text-white" style="background-color: #74959A">
+                    <div class="card p-2 text-white rm text-white" style="background-color: #68A7AD">
                         <div class="text-center">
                             <h6>RS MUFID</h6>
                         </div>
@@ -264,11 +264,8 @@ http://www.tooplate.com/view/2091-ziggy
                     <ul>
                         <li><a href="https://www.facebook.com/tooplate"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                     </ul>
-
+                    <p>Copyright &copy; Dinak Kesehatan Kabupaten Pidie | 2022</p>
                 </div>
             </div>
         </div>

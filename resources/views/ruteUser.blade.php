@@ -63,7 +63,7 @@ http://www.tooplate.com/view/2091-ziggy
 
     <section class="second-section p-0">
 
-        <div class="card bg-primary m-4">
+        <div class="card m-4" style="background-color: #99C4C8">
 
             <div class="card-header border-0">
                 <h3 class="card-title text-white">
@@ -85,13 +85,8 @@ http://www.tooplate.com/view/2091-ziggy
                     <ul>
                         <li><a href="https://www.facebook.com/tooplate"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                     </ul>
-                    <p class="text-white">Copyright &copy; 2017 Company Name
-
-                        | Design: <a href="https://www.facebook.com/tooplate" target="_parent">Tooplate</a></p>
+                    <p>Copyright &copy; Dinak Kesehatan Kabupaten Pidie | 2022</p>
                 </div>
             </div>
         </div>
@@ -154,15 +149,13 @@ http://www.tooplate.com/view/2091-ziggy
 </style>
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
 integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-crossorigin="">
-</script>
+crossorigin=""></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
 integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
 
-<script src="{{ asset('storage/js/leaflet-routing-machine/dist/leaflet-routing-machine.min.js') }}">
-</script>
+<script src="{{ asset('storage/js/leaflet-routing-machine/dist/leaflet-routing-machine.min.js') }}"></script>
 <script type="text/javascript">
     var s = [5.3811231139126, 95.958859920501];
     var data = {!! json_encode($data) !!}

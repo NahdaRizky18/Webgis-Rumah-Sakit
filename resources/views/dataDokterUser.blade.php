@@ -63,7 +63,7 @@ http://www.tooplate.com/view/2091-ziggy
     <section class="second-section p-0">
 
         <div class="card m-4">
-            <div class="card-header border-0">
+            <div class="card-header border-0" style="background-color: #A0BCC2">
                 <h3 class="card-title">
                     Data Dokter
                 </h3>

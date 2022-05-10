@@ -87,7 +87,7 @@
                         <div id="drop" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                                                                                         document.getElementById('logout-form').submit();">
+                                                                                                                                                                                                                                                     document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
@@ -132,7 +132,8 @@
                             @if (auth()->user()->level == 'ADMIN')
 
                                 <li class="nav-item">
-                                    <a href="{{ route('home') }}" class="nav-link">
+                                    <a href="{{ route('home') }}"
+                                        class="nav-link btn bg-transparent text-white text-start w-100">
                                         <i class="nav-icon fas fa-th"></i>
                                         <p>
                                             Dashboard
@@ -193,7 +194,7 @@
                                                 <a class="dropdown-item {{ request()->route()->getName() == 'halaman tematik'? 'text-white bg-info': '' }}"
                                                     href="{{ route('halaman tematik') }}">Data Tematik</a>
                                             </li>
-                                            <li class="nav-item  w-100">
+                                            <li class="nav-item ">
                                                 <a class="dropdown-item {{ request()->route()->getName() == 'rumah sakit'? 'text-white bg-info': '' }}"
                                                     href="{{ route('rumah sakit') }}">Rumah
                                                     Sakit</a>
@@ -202,7 +203,8 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('maps') }}" class="nav-link">
+                                    <a href="{{ route('maps') }}"
+                                        class="nav-link btn bg-transparent text-white text-start w-100">
                                         <i class="nav-icon fa-solid fa-book"></i>
                                         <p>
                                             Panduan
@@ -211,7 +213,8 @@
                                 </li>
                             @elseif(auth()->user()->level == 'RS')
                                 <li class="nav-item">
-                                    <a href="{{ route('jadwal') }}" class="nav-link">
+                                    <a href="{{ route('jadwal') }}"
+                                        class="nav-link btn bg-transparent text-white text-start w-100">
                                         <i class="nav-icon fas fa-th"></i>
                                         <p>
                                             Jadwal
@@ -219,17 +222,23 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('halaman data2') }}" class="nav-link">
+                                    <a href="{{ route('halaman data2') }}"
+                                        class="nav-link btn bg-transparent text-white text-start w-100">
+                                        <i class="nav-icon  fa-solid fa-database"></i>
                                         <p>Data Dokter</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('ruangan') }}" class="nav-link">
+                                    <a href="{{ route('ruangan') }}"
+                                        class="nav-link btn bg-transparent text-white text-start w-100">
+                                        <i class="nav-icon  fa-solid fa-home"></i>
                                         <p>Ruangan</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('saran') }}" class="nav-link">
+                                    <a href="{{ route('saran') }}"
+                                        class="nav-link btn bg-transparent text-white text-start w-100">
+                                        <i class="nav-icon  fa-solid fa-edit"></i>
                                         <p>Saran</p>
                                     </a>
                                 </li>

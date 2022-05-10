@@ -66,10 +66,10 @@ http://www.tooplate.com/view/2091-ziggy
 
             <a href="{{ route('Map user', ['state' => 0]) }}" style="background-color: #68A7AD"
                 class="btn text-white  {{ $state == 0 ? 'btn-success' : 'btn-info' }}">Rumah Sakit</a>
-            <a href="{{ route('Map user', ['state' => 1]) }}" style="background-color: #5584AC"
+            <a href="{{ route('Map user', ['state' => 1]) }}" style="background-color: #74959A"
                 class="btn text-white {{ $state == 1 ? 'btn-success' : 'btn-info' }}">Puskesmas</a>
         </div>
-        <div class="card bg-primary m-4">
+        <div class="card m-4" style="background-color: #99C4C8">
 
             <div class="card-header border-0">
                 <h3 class="card-title text-white">
@@ -91,13 +91,8 @@ http://www.tooplate.com/view/2091-ziggy
                     <ul>
                         <li><a href="https://www.facebook.com/tooplate"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                     </ul>
-                    <p class="text-white">Copyright &copy; 2017 Company Name
-
-                        | Design: <a href="https://www.facebook.com/tooplate" target="_parent">Tooplate</a></p>
+                    <p>Copyright &copy; Dinak Kesehatan Kabupaten Pidie | 2022</p>
                 </div>
             </div>
         </div>
@@ -163,8 +158,7 @@ http://www.tooplate.com/view/2091-ziggy
 <!-- Make sure you put this AFTER Leaflet's CSS -->
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
 integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-crossorigin="">
-</script>
+crossorigin=""></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
 integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -172,8 +166,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- Make sure you put this AFTER Leaflet's CSS -->
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
 integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-crossorigin="">
-</script>
+crossorigin=""></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
 integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
 crossorigin="anonymous" referrerpolicy="no-referrer"></script>

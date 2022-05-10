@@ -7,14 +7,10 @@
     <div class="container-xl">
         <div class="table-responsive">
             <div class="table-wrapper">
-                <div class="table-title">
+                <div class="table-title" style="background-color:#43919B">
                     <div class="row">
                         <div class="col-sm-6">
                             <h2>Data <b>Saran</b></h2>
-                        </div>
-                        <div class="col-sm-6">
-                            <a href="{{ route('tambah rumahsakit') }}" class="btn btn-success"><i
-                                    class="material-icons">&#xE147;</i> <span>Masukkan Data Baru</span></a>
                         </div>
                     </div>
                 </div>
