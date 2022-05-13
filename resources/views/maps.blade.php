@@ -1,15 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-
     <div class="container">
         <div class="card p-4">
             <div id="map"></div>
         </div>
 
     </div>
-
-
 @endsection
 @section('styles')
     <!-- Leaflet CSS -->
@@ -57,16 +54,16 @@
 @endsection
 
 @push('scripts')
-
     <!-- Leaflet JavaScript -->
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin="">
-    </script>
+        crossorigin=""></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
         integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
+    <script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
     <script type="text/javascript">
         var s = [5.3811231139126, 95.958859920501];
         var color = {!! json_encode($color) !!};
@@ -126,11 +123,7 @@
 
             info.update(layer.feature.properties);
         }
-        for (var i = 0; i < data.length; i++) {
-            marker = new L.marker([data[i][1], data[i][2]])
-                .bindPopup(data[i][0])
-                .addTo(map);
-        }
+      
         var geojson;
 
         function resetHighlight(e) {
@@ -159,27 +152,26 @@
             position: 'bottomright'
         });
 
-        //pemanggilan legend
-        legend.onAdd = function(map) {
-
-            var div = L.DomUtil.create('div', 'info legend'),
-                grades = [0, 12, 25, 37, 50, 62, 75, 87], //pretty break untuk 8
-                labels = [],
-                from, to;
-
-            for (var i = 0; i < grades.length; i++) {
-                from = grades[i];
-                to = grades[i + 1];
-
-                labels.push(
-                    '<i style="background:' + getColor(from + 1) + '"></i> ' +
-                    from + (to ? '&ndash;' + to : '+'));
-            }
-
-            div.innerHTML = '<h4>Legenda:</h4><br>' + labels.join('<br>');
-            return div;
-        };
-
-        legend.addTo(map);
+       
+        var markersLayer = new L.LayerGroup();
+        map.addLayer(markersLayer);
+        var controlSearch = new L.Control.Search({
+            position: 'topleft',
+            layer: markersLayer,
+            initial: false,
+            zoom: 12,
+            marker: false,
+            autoType: false
+        });
+        map.addControl(controlSearch);
+        for (var i = 0; i < data.length; i++) {
+            var title = data[i][0],
+                loc = [data[i][1], data[i][2]],
+                marker = new L.Marker(new L.latLng(loc), {
+                    title: title
+                });
+            marker.bindPopup(title);
+            markersLayer.addLayer(marker);
+        }
     </script>
 @endpush

@@ -170,6 +170,8 @@ crossorigin=""></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
 integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
+    <script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
 <script type="text/javascript">
     var s = [5.3811231139126, 95.958859920501];
     var color = {!! json_encode($color) !!};
@@ -281,4 +283,24 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     };
 
     legend.addTo(map);
+    var markersLayer = new L.LayerGroup();
+        map.addLayer(markersLayer);
+        var controlSearch = new L.Control.Search({
+            position: 'topleft',
+            layer: markersLayer,
+            initial: false,
+            zoom: 12,
+            marker: false,
+            autoType: false
+        });
+        map.addControl( controlSearch );
+        for (var i = 0; i < datamap.length; i++) {
+            var title = datamap[i][0],
+                loc = [datamap[i][1], datamap[i][2]],
+                marker = new L.Marker(new L.latLng(loc), {
+                    title: title
+                });
+            marker.bindPopup(title);
+            markersLayer.addLayer(marker);
+        }
 </script>
