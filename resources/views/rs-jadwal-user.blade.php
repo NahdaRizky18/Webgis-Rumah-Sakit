@@ -77,8 +77,8 @@ http://www.tooplate.com/view/2091-ziggy
 
 
     <section class="w-100">
-        <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 btn btn-outline-info me-2">
-            <i class="fa-regular fa-arrow-left"></i>
+        <a href="{{ route('Data user') }}" class="text-decoration-none text-dark m-4 py-1 btn btn-outline-info me-2">
+           <i class="fa-solid fa-arrow-left"></i>
         </a>
 
     </section>
