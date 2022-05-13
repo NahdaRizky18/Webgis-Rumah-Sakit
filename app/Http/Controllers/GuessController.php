@@ -121,7 +121,7 @@ class GuessController extends Controller
     {
         $rs = "";
         if ($id == 1) {
-            $rs = 'RSUD TGK.CHICK DITIRO';
+            $rs = 'RSUD TGK.CHIK DITIRO';
         } else if ($id == 2) {
             $rs = "RSUD ABDULLAH SYAFI'I";
         } else if ($id == 3) {

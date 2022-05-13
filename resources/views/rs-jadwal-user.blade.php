@@ -76,9 +76,9 @@ http://www.tooplate.com/view/2091-ziggy
 <body>
 
 
-    <section class="w-100" style="background-color: #2B333F">
+    <section class="w-100">
         <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 btn btn-outline-info me-2">
-            <h4>Kembali</h4>
+            <i class="fa-regular fa-arrow-left"></i>
         </a>
 
     </section>
