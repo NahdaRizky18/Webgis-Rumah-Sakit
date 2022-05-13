@@ -362,7 +362,7 @@
         };
 
         legend.addTo(map);
-        var markersLayer = new L.LayerGroup(); //layer contain searched elements
+        var markersLayer = new L.LayerGroup();
         map.addLayer(markersLayer);
         var controlSearch = new L.Control.Search({
             position: 'topleft',
@@ -374,11 +374,11 @@
         });
         map.addControl( controlSearch );
         for (var i = 0; i < datamap.length; i++) {
-            var title = datamap[i][0], //value searched
-                loc = [datamap[i][1], datamap[i][2]], //position found
+            var title = datamap[i][0],
+                loc = [datamap[i][1], datamap[i][2]],
                 marker = new L.Marker(new L.latLng(loc), {
                     title: title
-                }); //se property searched
+                });
             marker.bindPopup(title);
             markersLayer.addLayer(marker);
         }
