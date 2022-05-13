@@ -105,7 +105,7 @@ class UserController extends Controller
         $list_poli = $data2->groupBy('rumahsakit')->get();
         $user = User::where('rumahsakit', $rs)->first();
         $kelas = $user->ruangan->unique('kelas');
-        $kelasData = Ruangan::where('kelas', $kelas_id)->get();
+        $kelasData = Ruangan::where(['kelas' => $kelas_id,'user_id'=>$user->id])->get();
         $ruangan = [];
         foreach ($user->ruangan as $item) {
             if (isset($ruangan[$item->kelas])) {
