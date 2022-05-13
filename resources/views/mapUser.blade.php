@@ -92,7 +92,7 @@ http://www.tooplate.com/view/2091-ziggy
                         <li><a href="https://www.facebook.com/tooplate"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                     </ul>
-                    <p>Copyright &copy; Dinak Kesehatan Kabupaten Pidie | 2022</p>
+                    <p>Copyright &copy; Dinas Kesehatan Kabupaten Pidie | 2022</p>
                 </div>
             </div>
         </div>
@@ -196,7 +196,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     };
     //menampilkan pop up info tematik
     info.update = function(props) {
-        this._div.innerHTML = '<h4>Kecamatan</h4>' + (props ?
+        this._div.innerHTML = '<h4>Lokasi Rumah Sakit</h4>' + (props ?
             '<b>' + props.NAMOBJ + '</b><br />' + props.MhsSIF + ' orang' :
             'Gerakkan mouse Anda');
     };

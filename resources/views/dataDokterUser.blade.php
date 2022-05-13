@@ -101,10 +101,11 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="row">
                 <div class="col-md-12">
                     <ul>
-                        <li><a href="https://www.facebook.com/tooplate"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.facebook.com/tooplate"><i class="nav-icon fas fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="nav-icon fas fa-twitter"></i></a></li>
                     </ul>
-                    <p>Copyright &copy; Dinak Kesehatan Pidie</p>
+                    <p>Copyright &copy; Dinas Kesehatan Pidie | 2022</p>
                 </div>
             </div>
         </div>

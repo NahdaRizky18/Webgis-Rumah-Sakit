@@ -88,7 +88,7 @@
         };
         //menampilkan pop up info tematik
         info.update = function(props) {
-            this._div.innerHTML = '<h4>Kecamatan</h4>' + (props ?
+            this._div.innerHTML = '<h4>Lokasi Rumah Sakit</h4>' + (props ?
                 '<b>' + props.NAMOBJ + '</b><br />' + props.MhsSIF + ' orang' :
                 'Gerakkan mouse Anda');
         };
