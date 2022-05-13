@@ -108,7 +108,7 @@ http://www.tooplate.com/view/2091-ziggy
                                 @foreach ($item->jadwal as $jadwal)
                                     <div class="mb-2">
                                         <p class="mb-0 text-white"> Spesialis {{ $item->spesialis2 }}</p>
-                                        <p class="mb-0 text-white">Jadwal : {{ $jadwal->jadwal->isoFormat('LL') }}
+                                        <p class="mb-0 text-white">Jadwal : {{ $jadwal->jadwal->isoFormat('dddd') }} {{ $jadwal->jadwal->isoFormat('LL') }}
 
                                         </p>
                                         <p class="mb-0 text-white">
