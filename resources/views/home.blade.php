@@ -44,61 +44,20 @@
     <div class="container py-4">
         <h4>Jadwal Poliklinik </h4>
         <div class="row mb-2">
+            @foreach ($rs as $item)
+                
             <div class="col">
                 <!-- small box -->
-                <a href="{{ route('rs jadwal', ['id' => 1]) }}" style="text-decoration: none">
+                <a href="{{ route('rs jadwal', ['id' => $item->id]) }}" style="text-decoration: none">
                     <div class="card p-2 text-white text-white" style="background-color: #99C4C8">
                         <div class="text-center">
-                            <p>RSUD TGK.CHICK DITIRO</p>
+                            <p>{{$item->rumah_sakit}}</p>
                         </div>
                     </div>
                 </a>
             </div>
+            @endforeach
 
-            <!-- ./col -->
-            <div class="col">
-                <!-- small box -->
-                <a href="{{ route('rs jadwal', ['id' => 2]) }}" style="text-decoration: none">
-                    <div class="card p-2 text-white text-white" style="background-color: #A0BCC2">
-                        <div class="text-center">
-                            <p>RSUD ABDULLAH SYAFI'I </p>
-                        </div>
-
-                    </div>
-                </a>
-            </div>
-            <!-- ./col -->
-            <div class="col">
-                <!-- small box -->
-                <a href="{{ route('rs jadwal', ['id' => 3]) }}" style="text-decoration: none">
-                    <div class="card p-2 text-white text-white" style="background-color:  #74959A">
-                        <div class="text-center">
-                            <p>RS CITRA HUSADA</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- ./col -->
-            <div class="col">
-                <!-- small box -->
-                <a href="{{ route('rs jadwal', ['id' => 4]) }}" style="text-decoration: none">
-                    <div class="card p-2 text-white rm text-white" style="background-color: #68A7AD">
-                        <div class="text-center">
-                            <p>RS MUFID</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <!-- small box -->
-                <a href="{{ route('rs jadwal', ['id' => 5]) }}" style="text-decoration: none">
-                    <div class="card p-2 text-white rm text-white" style="background-color: #1c93a5">
-                        <div class="text-center">
-                            <p>RS IBNU SINA</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
             <!-- ./col -->
         </div>
         <div>
