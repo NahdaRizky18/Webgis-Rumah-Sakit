@@ -39,7 +39,9 @@
         th {
             background: #eee;
         }
-
+        .search-input{
+            color: black;
+        }
     </style>
     <div class="container py-4">
         <h4>Jadwal Poliklinik </h4>
@@ -331,6 +333,11 @@
             marker: false,
             autoType: false
         });
+         controlSearch.on('search:locationfound', function(e) {
+
+           e.layer.openPopup();
+
+        }).on('search:collapsed', function(e) {});
         map.addControl( controlSearch );
         for (var i = 0; i < datamap.length; i++) {
             var title = datamap[i][0],
