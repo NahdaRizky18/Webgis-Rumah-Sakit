@@ -93,7 +93,7 @@ http://www.tooplate.com/view/2091-ziggy
         <a href="{{ route('data dokter') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
             <h4>Data Dokter</h4>
         </a>
-        <a href="{{route('panduan-user')}}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
+        <a href="{{ route('panduan-user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
             <h4>Panduan</h4>
         </a>
     </section>
@@ -103,22 +103,21 @@ http://www.tooplate.com/view/2091-ziggy
         <h4>Jadwal Poliklinik </h4>
         <div class="row mb-2">
             @foreach ($data as $item)
-                
-            <div class="col">
-                <!-- small box -->
-                <a href="{{ route('rs jadwal user', ['id' => $item->id]) }}" style="text-decoration: none">
-                    <div class="card p-2 text-white rm text-white" style="background-color: #99C4C8">
-                        
-                        <div class="text-center">
-                            <img src="{{asset('/storage/'.$item->gambar)}}" width="200" width="100" alt="">
-                            <h6 class="mt-2">{{$item->rumah_sakit}}</h6>
+                <div class="col">
+                    <!-- small box -->
+                    <a href="{{ route('rs jadwal user', ['id' => $item->id]) }}" style="text-decoration: none">
+                        <div class="card p-2 text-black rm text-black" style="background-color:white">
+
+                            <div class="text-center">
+                                <img src="{{ asset('/storage/' . $item->gambar) }}" width="150" width="100" alt="">
+                                <h6 class="mt-1">{{ $item->rumah_sakit }}</h6>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
             @endforeach
 
-           
+
             <!-- ./col -->
         </div>
         <div>
