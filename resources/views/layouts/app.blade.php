@@ -108,8 +108,8 @@
                         <div class="col-md-4">
                             <img src="{{ asset('storage/img/logo.png') }}" width="450" alt="">
                         </div>
-                        <div class="col">
-                            <span class=" font-weight-light"> RUMAH SAKIT <br> PIDIE</span>
+                        <div class="col-md-7">
+                            <span class=" font-weight-light"> RUMAH SAKIT <br>KABUPATEN <br> PIDIE</span>
                         </div>
                     </div>
                 </a>
