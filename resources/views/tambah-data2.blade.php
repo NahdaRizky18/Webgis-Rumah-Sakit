@@ -22,8 +22,8 @@
                             <label>poliklinik</label>
                             <input name="poli" type="text" class="form-control" required>
                         </div>
-                    </div>
                 <button class="btn btn-primary float-end mt-4 w-100" type="submit">Tambah</button>
+                    </div>
             </form>
         </div>
 
