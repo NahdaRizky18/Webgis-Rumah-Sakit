@@ -287,6 +287,11 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         marker: false,
         autoType: false
     });
+    controlSearch.on('search:locationfound', function(e) {
+
+           e.layer.openPopup();
+
+        }).on('search:collapsed', function(e) {});
     function nilai(nilai) {
             var m = '';
             for (var n = 0; n < nilai; ++n) {
