@@ -43,9 +43,7 @@
         <nav class="{{auth()->user()? 'main-header':''}} navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="{{ route('welcome') }}" class="nav-link">Home</a>
-                </li>
+              
                 <li class="nav-item d-none d-sm-inline-block">
                     @if (auth()->user())
                         @if (auth()->user()->level == 'ADMIN')
@@ -117,7 +115,7 @@
                 <div class="sidebar">
                     <!-- Sidebar user panel (optional) -->
                     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                        <div class="info text-white">
+                        <div class="text-white">
 
 
                             {{ Auth::user()->name }}
