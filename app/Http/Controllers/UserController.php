@@ -47,7 +47,13 @@ class UserController extends Controller
             $color[$item->kecamatan] = $item->warna;
         }
         foreach ($data as $item) {
-            $coor[$index2] = [$item->alamat, $item->lat, $item->long, $item->rumah_sakit ? $item->rumah_sakit : ($item->puskesmas ? $item->puskesmas : $item->klinik), $item->no_hp, $item->gambar ? $item->gambar : ''];
+            $nilai = 0;
+            if ($item->rumah_sakit) {
+                if ($item->rumahsakit->sum('nilai')) {
+                    $nilai = $item->rumahsakit->sum('nilai') / $item->rumahsakit->count();
+                }
+            }
+            $coor[$index2] = [$item->alamat, $item->lat, $item->long, $item->rumah_sakit ? $item->rumah_sakit : ($item->puskesmas ? $item->puskesmas : $item->klinik), $item->no_hp, $item->gambar ? $item->gambar : '', $nilai];
             $index2++;
         }
         $kecamatan = $tematik->pluck('kecamatan');

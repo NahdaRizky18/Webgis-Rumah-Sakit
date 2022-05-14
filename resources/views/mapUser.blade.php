@@ -231,13 +231,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
         info.update(layer.feature.properties);
     }
-    for (var i = 0; i < datamap.length; i++) {
-        marker = new L.marker([datamap[i][1], datamap[i][2]])
-            .bindPopup((datamap[i][5] ? "<div class='text-center'><img width='200' src='{{ asset('storage/') }}/" +
-                    datamap[i][5] + "'></div>" : "") + datamap[i][0] + "<br/>" + datamap[i][3] + "<br/> No HP :" +
-                datamap[i][4])
-            .addTo(map);
-    }
+   
     var geojson;
 
     function resetHighlight(e) {
@@ -293,9 +287,21 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         marker: false,
         autoType: false
     });
+    function nilai(nilai) {
+            var m = '';
+            for (var n = 0; n < nilai; ++n) {
+                m += '<i class="fa-solid fa-star' +
+                    (nilai == n + .5 ? '-half' : "") +
+                    '" aria-hidden="true"></i>';
+                "<br/>";
+            }
+            return m;
+        }
     map.addControl(controlSearch);
     for (var i = 0; i < datamap.length; i++) {
-        var title = (datamap[i][5] ? "<div class='text-center'><img width='200' src='{{ asset('storage/') }}/" + datamap[i][5] + "'></div>" : "") + datamap[i][0] + "<br/>" + datamap[i][3] + "<br/> No HP :" + datamap[i][4],
+        var title = (datamap[i][5] ? "<div class='text-center'><img width='200' src='{{ asset('storage/') }}/" + 
+                    datamap[i][5] + "'></div>" : "") +'<div>' + nilai(datamap[i][6]) + '</div>' + datamap[i][0] + "<br/>" + datamap[i][3] + "<br/> No HP :" +
+                datamap[i][4],
         loc = [datamap[i][1], datamap[i][2]],
         marker = new L.Marker(new L.latLng(loc), {
             title: datamap[i][3]

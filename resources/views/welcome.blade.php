@@ -232,7 +232,7 @@ http://www.tooplate.com/view/2091-ziggy
     <script>
         window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
     </script>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
     <script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
     <script type="text/javascript">
         var s = [5.3811231139126, 95.958859920501];
@@ -289,7 +289,7 @@ http://www.tooplate.com/view/2091-ziggy
 
         });
         var userMarker = new L.marker();
-      
+
 
         function zoomToFeature(e) {
             map.fitBounds(e.target.getBounds());
@@ -336,7 +336,7 @@ http://www.tooplate.com/view/2091-ziggy
             updateMarker(latitude, longitude);
 
         });
-        var markersLayer = new L.LayerGroup(); 
+        var markersLayer = new L.LayerGroup();
         map.addLayer(markersLayer);
         var controlSearch = new L.Control.Search({
             position: 'topleft',
@@ -346,16 +346,17 @@ http://www.tooplate.com/view/2091-ziggy
             marker: false,
             autoType: false
         });
-        map.addControl( controlSearch );
-        
+        map.addControl(controlSearch);
+
         for (var i = 0; i < data.length; i++) {
-            var title = data[i][3],
-                loc = [data[i][1], data[i][2]], 
+            var title = "<strong>" + data[i][3] +
+                '</strong><br/> <div class="text-center"></div><div>' + nilai(data[i][5]) + '</div><button class="w-100 btn btn-outline-primary mt-1" onclick="return keSini(&quot;' + data[i][4] + '&quot;,&quot;' + data[i][3] + '&quot;)">Pilih</button>',
+                loc = [data[i][1], data[i][2]],
                 marker = new L.Marker(new L.latLng(loc), {
-                    title: title,
+                    title: data[i][3],
                     icon: icon
-                }); 
-            marker.bindPopup("<strong>"+data[i][3]+"</strong><br/><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(" + data[i][1] + "," + data[i][2] + ")'>Ke Sini</button>");
+                });
+            marker.bindPopup(title);
             markersLayer.addLayer(marker);
         }
     </script>
