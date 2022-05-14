@@ -128,6 +128,7 @@ class UserController extends Controller
         return view('dataUser', [
             'list_poli' => $list_poli,
             'poli' => $poli,
+            'data' => $data->get(),
             'dokter' => $dokter,
             'perawat' => $perawat,
             'colors' => $colors,

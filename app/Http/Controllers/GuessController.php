@@ -120,20 +120,10 @@ class GuessController extends Controller
     public function jadwalUser($id)
     {
         $rs = "";
-        if ($id == 1) {
-            $rs = 'RSUD TGK.CHIK DITIRO';
-        } else if ($id == 2) {
-            $rs = "RSUD ABDULLAH SYAFI'I";
-        } else if ($id == 3) {
-            $rs = 'RS CITRA HUSADA';
-        } else if ($id == 4) {
-            $rs = 'RS MUFID';
-        } else if ($id == 5) {
-            $rs = 'RS IBNU SINA';
-        }
+        $d = HalamanData::find($id);
         $colors = ['#495371', '#74959A', '#98B4AA', '#1C658C', '#398AB9'];
 
-        $data = User::whereHas('dokter')->where('rumahsakit', $rs)->first();
+        $data = User::whereHas('dokter')->where('rumahsakit', $d->rumah_sakit)->first();
         return view('rs-jadwal-user', ['data' => $data, 'colors' => $colors]);
     }
     public function dokter(){
