@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <div>
-            <a href="{{ route('home') }}" class="text-decoration-none text-dark m-4 py-1 btn btn-outline-info me-2">
+            <a href="{{ route('home') }}" class="text-decoration-none text-dark mb-2 py-1 btn btn-outline-info me-2">
                 <i class="fa-solid fa-arrow-left"></i>
             </a>
         </div>
