@@ -132,7 +132,7 @@
 
                                 <li class="nav-item">
                                     <a href="{{ route('home') }}"
-                                        class="nav-link btn bg-transparent text-white text-start w-100">
+                                        class="nav-link btn {{ request()->route()->getName() == 'home'? 'text-white bg-info': '' }} text-white text-start w-100">
                                         <i class="nav-icon fas fa-th"></i>
                                         <p>
                                             Dashboard
@@ -193,7 +193,7 @@
                                                 <a class="dropdown-item {{ request()->route()->getName() == 'halaman tematik'? 'text-white bg-info': '' }}"
                                                     href="{{ route('halaman tematik') }}">Data Tematik</a>
                                             </li>
-                                            <li class="nav-item ">
+                                            <li class="nav-item w-100">
                                                 <a class="dropdown-item {{ request()->route()->getName() == 'rumah sakit'? 'text-white bg-info': '' }}"
                                                     href="{{ route('rumah sakit') }}">Rumah
                                                     Sakit</a>
@@ -203,7 +203,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('panduan') }}"
-                                        class="nav-link btn bg-transparent text-white text-start w-100">
+                                        class="nav-link btn {{ request()->route()->getName() == 'panduan'? 'text-white bg-info': '' }} text-white text-start w-100">
                                         <i class="nav-icon fa-solid fa-book"></i>
                                         <p>
                                             Panduan
