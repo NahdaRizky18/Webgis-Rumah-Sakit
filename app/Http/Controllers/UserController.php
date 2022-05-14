@@ -34,16 +34,20 @@ class UserController extends Controller
         $index = 0;
         $index2 = 0;
         $tematik = Tematik::all();
-       
+        if ($state != "") {
+            $link = '../storage/';
+        } else {
+            $link = 'storage/';
+        }
         foreach ($tematik as $item) {
-            $geofile[$index] = 'storage/' . $item->geojson;
+            $geofile[$index] = $link . $item->geojson;
             $index++;
         }
         foreach ($tematik as $item) {
             $color[$item->kecamatan] = $item->warna;
         }
         foreach ($data as $item) {
-            $coor[$index2] = [$item->alamat, $item->lat, $item->long, $item->rumah_sakit? $item->rumah_sakit : ($item->puskesmas? $item->puskesmas : $item->klinik),$item->no_hp,$item->gambar? $item->gambar : ''];
+            $coor[$index2] = [$item->alamat, $item->lat, $item->long, $item->rumah_sakit ? $item->rumah_sakit : ($item->puskesmas ? $item->puskesmas : $item->klinik), $item->no_hp, $item->gambar ? $item->gambar : ''];
             $index2++;
         }
         $kecamatan = $tematik->pluck('kecamatan');
@@ -57,11 +61,12 @@ class UserController extends Controller
             'color' => $color,
             'data' => $coor,
             'tematik' => $tematik,
-            'state'=>$state,
+            'state' => $state,
             'kecamatan' => $kecamatan
         ]);
     }
-    public function ruteUser(){
+    public function ruteUser()
+    {
         $coor = [];
         $arr = [];
         $index = 0;
@@ -105,7 +110,7 @@ class UserController extends Controller
         $list_poli = $data2->groupBy('rumahsakit')->get();
         $user = User::where('rumahsakit', $rs)->first();
         $kelas = $user->ruangan->unique('kelas');
-        $kelasData = Ruangan::where(['kelas' => $kelas_id,'user_id'=>$user->id])->get();
+        $kelasData = Ruangan::where(['kelas' => $kelas_id, 'user_id' => $user->id])->get();
         $ruangan = [];
         foreach ($user->ruangan as $item) {
             if (isset($ruangan[$item->kelas])) {

@@ -295,7 +295,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         });
         map.addControl( controlSearch );
         for (var i = 0; i < datamap.length; i++) {
-            var title = datamap[i][0],
+            var title = datamap[i][3],
                 loc = [datamap[i][1], datamap[i][2]],
                 marker = new L.Marker(new L.latLng(loc), {
                     title: title
