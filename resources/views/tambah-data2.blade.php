@@ -5,8 +5,7 @@
         <div class="card p-4">
             <form action="{{ route('data rumah sakit') }}" method="post" enctype="multipart/form-data">
                 @csrf
-                <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 mx-auto">
 
                         <div class="form-group">
                             <label>Nama Dokter</label>
@@ -24,8 +23,7 @@
                             <input name="poli" type="text" class="form-control" required>
                         </div>
                     </div>
-                </div>
-                <button class="btn btn-primary float-end mt-4" type="submit">Tambah</button>
+                <button class="btn btn-primary float-end mt-4 w-100" type="submit">Tambah</button>
             </form>
         </div>
 
