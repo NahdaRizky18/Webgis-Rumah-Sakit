@@ -108,7 +108,7 @@ class HomeController extends Controller
     public function jadwal($id){
         $rs = "";
         if ($id == 1) {
-            $rs = 'RSUD TGK.CHICK DITIRO';
+            $rs = 'RSUD TGK.CHIK DITIRO';
         }else if($id == 2){
             $rs = "RSUD ABDULLAH SYAFI'I";
         } else if ($id == 3) {
