@@ -16,6 +16,10 @@ class GuessController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function panduanUser()
+    {
+        return view('panduanUser');
+    }
     public function index()
     {
         $geofile = [];

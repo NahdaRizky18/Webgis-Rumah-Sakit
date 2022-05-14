@@ -25,10 +25,7 @@ class HomeController extends Controller
     public function panduan(){
         return view('panduan');
     }
-    public function panduanUser()
-    {
-        return view('panduanUser');
-    }
+   
     /**
      * Show the application dashboard.
      *
