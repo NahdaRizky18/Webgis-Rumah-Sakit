@@ -5,8 +5,7 @@
         <div class="card p-4">
             <form action="{{ route('store rumahsakit') }}" method="post" enctype="multipart/form-data">
                 @csrf
-                <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 mx-auto">
                         <div class="form-group">
                             <label>Nama user</label>
                             <input name="name" type="text" class="form-control" required>
@@ -30,8 +29,7 @@
                                 <option value="RS IBNU SINA"> RS IBNU SINA </option>
                             </select>
                         </div>
-                    </div>
-                    <button class="btn btn-primary float-end mt-4" type="submit">Tambah</button>
+                    <button class="btn btn-primary float-end mt-4 w-100" type="submit">Tambah</button>
             </form>
         </div>
 
