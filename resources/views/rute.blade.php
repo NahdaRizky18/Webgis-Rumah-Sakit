@@ -54,9 +54,15 @@
             background-color: white;
             padding: 1rem
         }
-        .leaflet-right{
+
+        .leaflet-right {
             max-width: 50%;
         }
+
+        .search-input {
+            color: black;
+        }
+
     </style>
 @endsection
 
@@ -65,16 +71,14 @@
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin="">
-    </script>
+        crossorigin=""></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
         integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
 
-    <script src="{{ asset('storage/js/leaflet-routing-machine/dist/leaflet-routing-machine.min.js') }}">
-    </script>
- <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
+    <script src="{{ asset('storage/js/leaflet-routing-machine/dist/leaflet-routing-machine.min.js') }}"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
     <script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
     <script type="text/javascript">
         var s = [5.3811231139126, 95.958859920501];
@@ -116,11 +120,11 @@
         }
         var icon = L.icon({
             iconUrl: "{{ asset('storage/img/hospital.png') }}",
-            iconSize: [38,38], // size of the icon
-         
+            iconSize: [38, 38], // size of the icon
+
         });
-        var userMarker =  new L.marker();
-       
+        var userMarker = new L.marker();
+
         function zoomToFeature(e) {
             map.fitBounds(e.target.getBounds());
         }
@@ -165,7 +169,7 @@
             $('#longitude').val(longitude);
             updateMarker(latitude, longitude);
         });
-        var markersLayer = new L.LayerGroup(); 
+        var markersLayer = new L.LayerGroup();
         map.addLayer(markersLayer);
         var controlSearch = new L.Control.Search({
             position: 'topleft',
@@ -175,16 +179,24 @@
             marker: false,
             autoType: false
         });
-        map.addControl( controlSearch );
-        
+        controlSearch.on('search:locationfound', function(e) {
+
+            e.layer.openPopup();
+
+        }).on('search:collapsed', function(e) {});
+        map.addControl(controlSearch);
+
         for (var i = 0; i < data.length; i++) {
             var title = data[i][3],
-                loc = [data[i][1], data[i][2]], 
+                loc = [data[i][1], data[i][2]],
                 marker = new L.Marker(new L.latLng(loc), {
                     title: title,
                     icon: icon
-                }); 
-            marker.bindPopup("<strong>"+data[i][3]+"</strong><br/><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(" + data[i][1] + "," + data[i][2] + ")'>Ke Sini</button>");
+                });
+            marker.bindPopup("<strong>" + data[i][3] +
+                "</strong><br/><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(" + data[i][
+                    1
+                ] + "," + data[i][2] + ")'>Ke Sini</button>");
             markersLayer.addLayer(marker);
         }
     </script>

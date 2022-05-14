@@ -50,6 +50,10 @@
             opacity: 0.7;
         }
 
+        .search-input {
+            color: black;
+        }
+
     </style>
 @endsection
 
@@ -123,7 +127,7 @@
 
             info.update(layer.feature.properties);
         }
-      
+
         var geojson;
 
         function resetHighlight(e) {
@@ -152,7 +156,7 @@
             position: 'bottomright'
         });
 
-       
+
         var markersLayer = new L.LayerGroup();
         map.addLayer(markersLayer);
         var controlSearch = new L.Control.Search({
@@ -163,6 +167,11 @@
             marker: false,
             autoType: false
         });
+        controlSearch.on('search:locationfound', function(e) {
+
+            e.layer.openPopup();
+
+        }).on('search:collapsed', function(e) {});
         map.addControl(controlSearch);
         for (var i = 0; i < data.length; i++) {
             var title = data[i][0],

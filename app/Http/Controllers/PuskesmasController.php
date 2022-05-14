@@ -39,7 +39,7 @@ class PuskesmasController extends Controller
             $color[$item->kecamatan] = $item->warna;
         }
         foreach ($data as $item) {
-            $coor[$index2] = [$item->alamat, $item->lat, $item->long];
+            $coor[$index2] = [$item->puskesmas? $item->puskesmas : $item->klinik, $item->lat, $item->long];
             $index2++;
         }
         return view('maps', [
