@@ -17,7 +17,7 @@
 					</div>
 				</div>
 			</div>
-			<table class="table table-striped table-hover">
+			<table class="table table-striped table-hover" id="table">
 				<thead>
 					<tr>
 						<th>
@@ -140,6 +140,8 @@
             }
           });
       });
-  
+  $(document).ready(function() {
+            $('#table').DataTable();
+        });
 </script>
 @endsection

@@ -97,10 +97,8 @@
                     }
                 });
         });
-        $(document).ready(function() {
-            $('#table').DataTable(
-                pageLength: 50
-            );
+       $(document).ready(function() {
+            $('#table').DataTable();
         });
     </script>
 @endsection
