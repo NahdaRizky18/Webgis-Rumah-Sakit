@@ -257,6 +257,11 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             marker: false,
             autoType: false
         });
+        controlSearch.on('search:locationfound', function(e) {
+
+           e.layer.openPopup();
+
+        }).on('search:collapsed', function(e) {});
         map.addControl( controlSearch );
         
         for (var i = 0; i < data.length; i++) {
