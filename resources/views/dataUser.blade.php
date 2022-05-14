@@ -112,7 +112,7 @@ http://www.tooplate.com/view/2091-ziggy
                     <div class="card p-2 text-white rm text-white" style="background-color: #99C4C8">
                         
                         <div class="text-center">
-                            <img src="{{asset('/storage/'.$item->gambar)}}" width="200" alt="">
+                            <img src="{{asset('/storage/'.$item->gambar)}}" width="200" width="100" alt="">
                             <h6 class="mt-2">{{$item->rumah_sakit}}</h6>
                         </div>
                     </div>

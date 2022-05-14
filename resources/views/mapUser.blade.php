@@ -304,9 +304,9 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         }
     map.addControl(controlSearch);
     for (var i = 0; i < datamap.length; i++) {
-        var title = (datamap[i][5] ? "<div class='text-center'><img width='200' src='{{ asset('storage/') }}/" + 
+        var title = '<a href="{{Request::root()}}/rs-jadwal-user/'+datamap[i][7]+'" style="text-decoration: none">'+(datamap[i][5] ? "<div class='text-center'><img width='200' src='{{ asset('storage/') }}/" + 
                     datamap[i][5] + "'></div>" : "") +'<div>' + nilai(datamap[i][6]) + '</div>' + datamap[i][0] + "<br/>" + datamap[i][3] + "<br/> No HP :" +
-                datamap[i][4],
+                datamap[i][4]+'</a>',
         loc = [datamap[i][1], datamap[i][2]],
         marker = new L.Marker(new L.latLng(loc), {
             title: datamap[i][3]
