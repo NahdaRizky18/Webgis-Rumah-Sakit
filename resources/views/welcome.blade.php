@@ -155,7 +155,7 @@ http://www.tooplate.com/view/2091-ziggy
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <a href="#" class="btn bg-white btn-outline-info py-2">
+                    <a href="{{route('panduan-user')}}" class="btn bg-white btn-outline-info py-2">
                         <div class="service-item">
                             <div class="icon">
                                 <i class="fa-solid fa-book h1"></i>

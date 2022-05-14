@@ -22,7 +22,13 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-
+    public function panduan(){
+        return view('panduan');
+    }
+    public function panduanUser()
+    {
+        return view('panduanUser');
+    }
     /**
      * Show the application dashboard.
      *

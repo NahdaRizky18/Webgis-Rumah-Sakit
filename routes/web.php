@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/rumah-sakit/saran', [App\Http\Controllers\RumahSakitController::class, 'saran'])->name( 'saran');
 Route::get('/rumah-sakit/saran-delete/{id}', [App\Http\Controllers\RumahSakitController::class, 'destroySaran'])->name('delete saran');
-Route::get( '/rs', [ App\Http\Controllers\HomeController::class, 'rs'])->name('rs');
+Route::get( '/panduan', [ App\Http\Controllers\HomeController::class, 'panduan'])->name('panduan');
+Route::get( '/panduan-user', [ App\Http\Controllers\HomeController::class, 'panduanUser'])->name('panduan-user');
+Route::get('/rs', [App\Http\Controllers\HomeController::class, 'rs'])->name('rs');
 Route::get('/data-dokter', [App\Http\Controllers\GuessController::class, 'dokter'])->name('data dokter');
 Route::get('/rs-user', [App\Http\Controllers\GuessController::class, 'rsUser'])->name('rs user');
 Route::get('/rs-jadwal/{id}', [App\Http\Controllers\HomeController::class, 'jadwal'])->name('rs jadwal');
