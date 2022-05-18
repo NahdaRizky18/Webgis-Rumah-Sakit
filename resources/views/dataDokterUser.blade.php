@@ -39,22 +39,25 @@ http://www.tooplate.com/view/2091-ziggy
 
 
     <section class="w-100" style="background-color: #68A7AD">
-        <a href="{{ route('welcome') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Home</h4>
+        <a href="{{ route('welcome') }}" class="text-decoration-none text-white m-3 py-1 me-2 btn">
+            <h5>Home</h5>
         </a>
-        <a href="{{ route('Map user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Maps</h4>
+        <a href="{{ route('Map user') }}" class="text-decoration-none text-white m-3 py-1 me-2 btn">
+            <h5>Maps</h5>
         </a>
-        <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Jadwal Poliklinik</h4>
+        <a href="{{ route('rute user') }}" class="text-decoration-none text-white m-3 py-1 me-2 btn">
+            <h5>Rute</h5>
         </a>
-        <a href="{{ route('data dokter') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn"
+        <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-3 py-1 me-2 btn">
+            <h5>Jadwal Poliklinik</h5>
+        </a>
+        <a href="{{ route('data dokter') }}" class="text-decoration-none text-white m-3 py-1 me-2 btn"
             style="border-bottom:1px solid cyan;">
-            <h4>Data Dokter</h4>
+            <h5>Data Dokter</h5>
         </a>
 
-        <a href="{{route('panduan-user')}}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Panduan</h4>
+        <a href="{{ route('panduan-user') }}" class="text-decoration-none text-white m-3 py-1 me-2 btn">
+            <h5>Panduan</h5>
         </a>
     </section>
 
@@ -99,11 +102,11 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="row">
                 <div class="col-md-12">
                     <ul>
-                        <li><a href="https://www.facebook.com/tooplate"><i class="nav-icon fas fa-facebook"></i></a>
+                        <li><a href="https://www.facebook.com/DinasKesehatanPidie"><i class="fa fa-facebook-f"></i></a>
                         </li>
-                        <li><a href="#"><i class="nav-icon fas fa-twitter"></i></a></li>
+                        <li><a href="https://dinkes.pidiekab.go.id/"><i class="fa fa-globe"></i></a></li>
                     </ul>
-                    <p>Copyright &copy; Dinas Kesehatan Pidie | 2022</p>
+                    <p class="text-white">Dinas Kesehatan Kabupaten Pidie | 2022 </p>
                 </div>
             </div>
         </div>

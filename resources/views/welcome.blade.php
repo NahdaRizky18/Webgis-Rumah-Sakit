@@ -24,8 +24,10 @@ http://www.tooplate.com/view/2091-ziggy
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
@@ -155,7 +157,7 @@ http://www.tooplate.com/view/2091-ziggy
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <a href="{{route('panduan-user')}}" class="btn bg-white btn-outline-info py-2">
+                    <a href="{{ route('panduan-user') }}" class="btn bg-white btn-outline-info py-2">
                         <div class="service-item">
                             <div class="icon">
                                 <i class="fa-solid fa-book h1"></i>
@@ -218,10 +220,11 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="row">
                 <div class="col-md-12">
                     <ul>
-                        <li><a href="https://www.facebook.com/tooplate"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.facebook.com/DinasKesehatanPidie"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li><a href="https://dinkes.pidiekab.go.id/"><i class="fa fa-globe"></i></a></li>
                     </ul>
-                    <p>Copyright &copy; Dinas Kesehatan Kabupaten Pidie | 2022</p>
+                    <p class="text-white">Dinas Kesehatan Kabupaten Pidie | 2022 </p>
                 </div>
             </div>
         </div>
@@ -349,7 +352,9 @@ http://www.tooplate.com/view/2091-ziggy
 
         for (var i = 0; i < data.length; i++) {
             var title = "<strong>" + data[i][3] +
-                '</strong><br/> <div class="text-center"></div><div>' + nilai(data[i][5]) + '</div><button class="w-100 btn btn-outline-primary mt-1" onclick="return keSini(&quot;' + data[i][4] + '&quot;,&quot;' + data[i][3] + '&quot;)">Pilih</button>',
+                '</strong><br/> <div class="text-center"></div><div>' + nilai(data[i][5]) +
+                '</div><button class="w-100 btn btn-outline-primary mt-1" onclick="return keSini(&quot;' + data[i][4] +
+                '&quot;,&quot;' + data[i][3] + '&quot;)">Pilih</button>',
                 loc = [data[i][1], data[i][2]],
                 marker = new L.Marker(new L.latLng(loc), {
                     title: data[i][3],
