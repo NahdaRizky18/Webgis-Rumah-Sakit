@@ -95,7 +95,7 @@ http://www.tooplate.com/view/2091-ziggy
 
         </style>
         <div class="container">
-            <div class="row">
+            <div class="row gy-4">
                 @foreach ($data->dokter as $item)
                     @if (count($item->jadwal))
                         <div class="col-md-4">
