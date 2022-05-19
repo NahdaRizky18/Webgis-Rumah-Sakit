@@ -38,24 +38,25 @@ http://www.tooplate.com/view/2091-ziggy
 
 
     <section class="w-100" style="background-color: #68A7AD">
-        <a href="{{ route('welcome') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Home</h4>
+        <a href="{{ route('welcome') }}" class="text-decoration-none text-white m-3 py-1 me-2 btn">
+            <h5>Home</h5>
         </a>
-        <a href="{{ route('Map user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Maps</h4>
+        <a href="{{ route('Map user') }}" class="text-decoration-none text-white m-3 py-1 me-2 btn">
+            <h5>Maps</h5>
         </a>
-        <a href="{{ route('rute user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn"
+        <a href="{{ route('rute user') }}" class="text-decoration-none text-white m-3 py-1 me-2 btn"
             style="border-bottom:1px solid cyan;">
-            <h4>Rute</h4>
+            <h5>Rute</h5>
         </a>
-        <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Jadwal Poliklinik</h4>
+        <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-3 py-1 me-2 btn">
+            <h5>Jadwal Poliklinik</h5>
         </a>
-        <a href="{{ route('data dokter') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Data Dokter</h4>
+        <a href="{{ route('data dokter') }}" class="text-decoration-none text-white m-3 py-1 me-2 btn">
+            <h5>Data Dokter</h5>
         </a>
-        <a href="{{route('panduan-user')}}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Panduan</h4>
+
+        <a href="{{ route('panduan-user') }}" class="text-decoration-none text-white m-3 py-1 me-2 btn">
+            <h5>Panduan</h5>
         </a>
     </section>
 
@@ -81,10 +82,11 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="row">
                 <div class="col-md-12">
                     <ul>
-                        <li><a href="https://www.facebook.com/tooplate"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.facebook.com/DinasKesehatanPidie"><i class="fa fa-facebook-f"></i></a>
+                        </li>
+                        <li><a href="https://dinkes.pidiekab.go.id/"><i class="fa fa-globe"></i></a></li>
                     </ul>
-                    <p>Copyright &copy; Dinas Kesehatan Kabupaten Pidie | 2022</p>
+                    <p class="text-white">Dinas Kesehatan Kabupaten Pidie | 2022 </p>
                 </div>
             </div>
         </div>
@@ -155,7 +157,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script src="{{ asset('storage/js/leaflet-routing-machine/dist/leaflet-routing-machine.min.js') }}"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
-    <script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
+<script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
 <script type="text/javascript">
     var s = [5.3811231139126, 95.958859920501];
     var data = {!! json_encode($data) !!}
@@ -200,7 +202,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     });
     var userMarker = new L.marker();
-  
+
     function zoomToFeature(e) {
         map.fitBounds(e.target.getBounds());
     }
@@ -245,31 +247,34 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         $('#longitude').val(longitude);
         updateMarker(latitude, longitude);
     });
-    var markersLayer = new L.LayerGroup(); 
-        map.addLayer(markersLayer);
-        var controlSearch = new L.Control.Search({
-            position: 'topleft',
-            layer: markersLayer,
-            initial: false,
-            zoom: 12,
-            marker: false,
-            autoType: false
-        });
-        controlSearch.on('search:locationfound', function(e) {
+    var markersLayer = new L.LayerGroup();
+    map.addLayer(markersLayer);
+    var controlSearch = new L.Control.Search({
+        position: 'topleft',
+        layer: markersLayer,
+        initial: false,
+        zoom: 12,
+        marker: false,
+        autoType: false
+    });
+    controlSearch.on('search:locationfound', function(e) {
 
-           e.layer.openPopup();
+        e.layer.openPopup();
 
-        }).on('search:collapsed', function(e) {});
-        map.addControl( controlSearch );
-        
-        for (var i = 0; i < data.length; i++) {
-            var title = data[i][3],
-                loc = [data[i][1], data[i][2]], 
-                marker = new L.Marker(new L.latLng(loc), {
-                    title: title,
-                    icon: icon
-                }); 
-            marker.bindPopup("<strong>"+data[i][3]+"</strong><br/><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(" + data[i][1] + "," + data[i][2] + ")'>Ke Sini</button>");
-            markersLayer.addLayer(marker);
-        }
+    }).on('search:collapsed', function(e) {});
+    map.addControl(controlSearch);
+
+    for (var i = 0; i < data.length; i++) {
+        var title = data[i][3],
+            loc = [data[i][1], data[i][2]],
+            marker = new L.Marker(new L.latLng(loc), {
+                title: title,
+                icon: icon
+            });
+        marker.bindPopup("<strong>" + data[i][3] +
+            "</strong><br/><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(" + data[i][
+                1
+            ] + "," + data[i][2] + ")'>Ke Sini</button>");
+        markersLayer.addLayer(marker);
+    }
 </script>

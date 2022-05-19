@@ -20,12 +20,14 @@ http://www.tooplate.com/view/2091-ziggy
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
@@ -53,24 +55,25 @@ http://www.tooplate.com/view/2091-ziggy
 
 
     <section class="w-100" style="background-color: #68A7AD">
-        <a href="{{ route('welcome') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Home</h4>
+        <a href="{{ route('welcome') }}" class="text-decoration-none text-white m-3 py-1 me-2 btn">
+            <h5>Home</h5>
         </a>
-        <a href="{{ route('Map user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn"
+        <a href="{{ route('Map user') }}" class="text-decoration-none text-white m-3 py-1 me-2 btn"
             style="border-bottom:1px solid cyan;">
-            <h4>Maps</h4>
+            <h5>Maps</h5>
         </a>
-        <a href="{{ route('rute user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Rute</h4>
+        <a href="{{ route('rute user') }}" class="text-decoration-none text-white m-3 py-1 me-2 btn">
+            <h5>Rute</h5>
         </a>
-        <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Jadwal Poliklinik</h4>
+        <a href="{{ route('Data user') }}" class="text-decoration-none text-white m-3 py-1 me-2 btn">
+            <h5>Jadwal Poliklinik</h5>
         </a>
-        <a href="{{ route('data dokter') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Data Dokter</h4>
+        <a href="{{ route('data dokter') }}" class="text-decoration-none text-white m-3 py-1 me-2 btn">
+            <h5>Data Dokter</h5>
         </a>
-        <a href="{{route('panduan-user')}}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
-            <h4>Panduan</h4>
+
+        <a href="{{ route('panduan-user') }}" class="text-decoration-none text-white m-3 py-1 me-2 btn">
+            <h5>Panduan</h5>
         </a>
     </section>
 
@@ -102,10 +105,11 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="row">
                 <div class="col-md-12">
                     <ul>
-                        <li><a href="https://www.facebook.com/tooplate"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.facebook.com/DinasKesehatanPidie"><i class="fa fa-facebook-f"></i></a>
+                        </li>
+                        <li><a href="https://dinkes.pidiekab.go.id/"><i class="fa fa-globe"></i></a></li>
                     </ul>
-                    <p>Copyright &copy; Dinas Kesehatan Kabupaten Pidie | 2022</p>
+                    <p class="text-white">Dinas Kesehatan Kabupaten Pidie | 2022 </p>
                 </div>
             </div>
         </div>
@@ -244,7 +248,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
         info.update(layer.feature.properties);
     }
-   
+
     var geojson;
 
     function resetHighlight(e) {
@@ -302,29 +306,33 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     });
     controlSearch.on('search:locationfound', function(e) {
 
-           e.layer.openPopup();
+        e.layer.openPopup();
 
-        }).on('search:collapsed', function(e) {});
+    }).on('search:collapsed', function(e) {});
+
     function nilai(nilai) {
-            var m = '';
-            for (var n = 0; n < nilai; ++n) {
-                m += '<i class="fa-solid fa-star' +
-                    (nilai == n + .5 ? '-half' : "") +
-                    '" aria-hidden="true"></i>';
-                "<br/>";
-            }
-            return m;
+        var m = '';
+        for (var n = 0; n < nilai; ++n) {
+            m += '<i class="fa-solid fa-star' +
+                (nilai == n + .5 ? '-half' : "") +
+                '" aria-hidden="true"></i>';
+            "<br/>";
         }
+        return m;
+    }
     map.addControl(controlSearch);
     for (var i = 0; i < datamap.length; i++) {
-        var title = '<a href="{{Request::root()}}/rs-jadwal-user/'+datamap[i][7]+'" style="text-decoration: none">'+(datamap[i][5] ? "<div class='text-center'><img width='200' src='{{ asset('storage/') }}/" + 
-                    datamap[i][5] + "'></div>" : "") +'<div>' + nilai(datamap[i][6]) + '</div>' + datamap[i][0] + "<br/>" + datamap[i][3] + "<br/> No HP :" +
-                datamap[i][4]+'</a>',
-        loc = [datamap[i][1], datamap[i][2]],
-        marker = new L.Marker(new L.latLng(loc), {
-            title: datamap[i][3]
-        });
-    marker.bindPopup(title);
-    markersLayer.addLayer(marker);
+        var title = '<a href="{{ Request::root() }}/rs-jadwal-user/' + datamap[i][7] +
+            '" style="text-decoration: none">' + (datamap[i][5] ?
+                "<div class='text-center'><img width='200' src='{{ asset('storage/') }}/" +
+                datamap[i][5] + "'></div>" : "") + '<div>' + nilai(datamap[i][6]) + '</div>' + datamap[i][0] + "<br/>" +
+            datamap[i][3] + "<br/> No HP :" +
+            datamap[i][4] + '</a>',
+            loc = [datamap[i][1], datamap[i][2]],
+            marker = new L.Marker(new L.latLng(loc), {
+                title: datamap[i][3]
+            });
+        marker.bindPopup(title);
+        markersLayer.addLayer(marker);
     }
 </script>

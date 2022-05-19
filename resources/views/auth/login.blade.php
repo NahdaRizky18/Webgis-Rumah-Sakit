@@ -17,7 +17,7 @@ Template 2091 Ziggy
 http://www.tooplate.com/view/2091-ziggy
 
 -->
-    <title>Vaksinasi COVID-19 Dinas Kesehatan Kota Banda Aceh</title>
+    <title>Rumah Sakit Kabupaten Pidie</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -93,16 +93,16 @@ http://www.tooplate.com/view/2091-ziggy
 <body>
 
 
-     <section class="w-100" style="background-color: #68A7AD">
-        <a href="{{ route('welcome') }}" class="text-decoration-none text-white m-4 py-1 me-2 btn">
+    <section class="w-100" style="background-color: #68A7AD">
+        <a href="{{ route('welcome') }}" class="text-decoration-none text-white m-2 py-1 me-2 btn">
             <h4>Home</h4>
         </a>
-      
+
     </section>
 
-  
 
-    <section class="second-section" style=" background-color: #EDE6DB">
+
+    <section class="second-section" style=" background-color: #dededc">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
@@ -117,8 +117,9 @@ http://www.tooplate.com/view/2091-ziggy
                                     class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                        name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                    <input id="email" type="email"
+                                        class="form-control @error('email') is-invalid @enderror" name="email"
+                                        value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -160,7 +161,7 @@ http://www.tooplate.com/view/2091-ziggy
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn" style="background-color: #68A7AD">
                                         {{ __('Login') }}
                                     </button>
 
@@ -182,12 +183,11 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="row">
                 <div class="col-md-12">
                     <ul>
-                        <li><a href="https://web.facebook.com/search/top?q=dinas%20kesehatan%20kota%20banda%20aceh"><i
-                                    class="fab fa-facebook-f"></i></a>
+                        <li><a href="https://www.facebook.com/DinasKesehatanPidie"><i class="fab fa-facebook-f"></i></a>
                         </li>
-                        <li><a href="https://dinkes.bandaacehkota.go.id/"><i class="fa fa-globe"></i></a></li>
+                        <li><a href="https://dinkes.pidiekab.go.id/"><i class="fa fa-globe"></i></a></li>
                     </ul>
-                    <p class="text-white">Dinas Kesehatan Kota Banda Aceh | 2022 </p>
+                    <p class="text-white">Dinas Kesehatan Kabupaten Pidie | 2022 </p>
                 </div>
             </div>
         </div>
