@@ -192,7 +192,7 @@
                     <div class="col">
 
                         <div class="card p-3 mb-3 text-white  p-3"
-                            style="background-color:{{ $colors2[$loop->index % 5 == 0] }}">
+                            style="background-color:{{ $colors2[$loop->index % 5] }}">
                             <div class="inner">
                                 <h5>{{ $item->rumahsakit }}</h5>
                             </div>
