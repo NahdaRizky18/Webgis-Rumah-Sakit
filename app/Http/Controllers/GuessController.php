@@ -130,8 +130,9 @@ class GuessController extends Controller
         $data = User::whereHas('dokter')->where('rumahsakit', $d->rumah_sakit)->first();
         return view('rs-jadwal-user', ['data' => $data, 'colors' => $colors]);
     }
-    public function dokter(){
+    public function dokter()
+    {
         $data = HalamanData2::all();
-        return view('dataDokterUser',['data'=>$data]);
+        return view('dataDokterUser', ['data' => $data]);
     }
 }
