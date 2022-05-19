@@ -7,7 +7,7 @@
             <form action="{{ route('update data2', ['id' => $id]) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 mx-auto">
                       
                         <div class="form-group">
                             <label>Nama Dokter</label>
