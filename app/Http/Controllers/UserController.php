@@ -108,6 +108,7 @@ class UserController extends Controller
             $rs = 'RS IBNU SINA';
         }
         $colors = ['#495371', '#398AB9'];
+        $colors2 = ['#495371','#398AB9','#398AB9','#398AB9', '#398AB9'];
         $data = new HalamanData();
         $data2 = new HalamanData2();
         $poli = $data2->where('poli', '!=', '-')->groupBy('poli')->get()->count();
@@ -135,7 +136,8 @@ class UserController extends Controller
             'kelas' => $kelas,
             'ruangan' => $ruangan,
             'kelasData' => $kelasData,
-            'id' => $id
+            'id' => $id,
+            'colors2' => $colors2
         ]);
     }
 }
