@@ -107,8 +107,8 @@ class UserController extends Controller
         } else if ($id == 5) {
             $rs = 'RS IBNU SINA';
         }
-        $colors = ['#495371', '#398AB9'];
-        $colors2 = ['#495371','#398AB9','#398AB9','#398AB9', '#398AB9'];
+        $colors = ['#68A7AD', '#E5CB9F',];
+        $colors2 = ['#112B3C', '#E5CB9F', '#43919B', '#E5CB9F', '#112B3C'];
         $data = new HalamanData();
         $data2 = new HalamanData2();
         $poli = $data2->where('poli', '!=', '-')->groupBy('poli')->get()->count();

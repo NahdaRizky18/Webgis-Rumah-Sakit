@@ -125,7 +125,7 @@ class GuessController extends Controller
     {
         $rs = "";
         $d = HalamanData::find($id);
-        $colors = ['#495371', '#74959A', '#98B4AA', '#1C658C', '#398AB9'];
+        $colors = ['#112B3C', '#98B4AA', '#98B4AA', '#1C658C', '#398AB9'];
 
         $data = User::whereHas('dokter')->where('rumahsakit', $d->rumah_sakit)->first();
         return view('rs-jadwal-user', ['data' => $data, 'colors' => $colors]);

@@ -26,7 +26,9 @@
     </script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="{{ asset('storage/css/tooplate-style.css') }}" rel="stylesheet">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 <style>
@@ -94,8 +96,8 @@
     </section>
 
 
-    <div class="container py-4">
-        <h4>Jadwal Poliklinik </h4>
+    <div class="container py-4 ">
+        <h4 class=" text-center">Jadwal Poliklinik </h4>
         <div class="row mb-2">
             @foreach ($data as $item)
                 <div class="col">
@@ -187,7 +189,7 @@
             <!-- small box -->
 
             <div class="row">
-                <h4>Poliklinik yang tersedia</h4>
+                <h4 class=" text-center">Poliklinik yang tersedia</h4>
                 @foreach ($list_poli as $item)
                     <div class="col">
 

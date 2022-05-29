@@ -83,7 +83,7 @@ http://www.tooplate.com/view/2091-ziggy
             <a href="{{ route('Map user', ['state' => 0]) }}" style="background-color: #68A7AD"
                 class="btn text-white  {{ $state == 0 ? 'btn-success' : 'btn-info' }}">Rumah Sakit</a>
             <a href="{{ route('Map user', ['state' => 1]) }}" style="background-color: #74959A"
-                class="btn text-white {{ $state == 1 ? 'btn-success' : 'btn-info' }}">Puskesmas</a>
+                class="btn text-white {{ $state == 1 ? 'btn-success' : 'btn-info' }}">Faskes Rawat Inap</a>
         </div>
         <div class="card m-4" style="background-color: #99C4C8">
 
