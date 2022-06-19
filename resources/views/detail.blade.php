@@ -4,53 +4,53 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">Detail Place</div>
+                    <div class="card-header" style="background-color: #68A7AD">Detail Rumah Sakit</div>
                     <div class="card-body">
                         <table class="table">
                             <tbody>
                                 <tr>
-                                    <td>Alamat</td>
-                                    <td>{{ $data->alamat }}</td>
+                                    <td><i class="nav-icon  fa-solid fa-home"></i> Alamat :<br> {{ $data->alamat }},
+                                        Kecamatan {{ $data->tematik->kecamatan }} <br>
+                                    </td>
+                                    <td></td>
                                 </tr>
                                 <tr>
-                                    <td>Kecamatan</td>
-                                    <td>{{ $data->tematik->kecamatan }}</td>
+                                    <td><i class="nav-icon  fa-solid fa-hospital"></i> Rumah sakit :
+                                        <br>{{ $data->rumah_sakit }} <br>
+                                    </td>
+                                    <td></td>
                                 </tr>
                                 <tr>
-                                    <td>Rumah sakit</td>
-                                    <td>{{ $data->rumah_sakit }}</td>
-                                </tr>
-                                 <tr>
-                                    <td>Nomor HP</td>
+                                    <td><i class=" nav-icon  fa-solid fa-phone"></i> Kontak </td>
                                     <td>{{ $data->no_hp }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Jumlah Poliklinik</td>
+                                    <td><i class=" nav-icon  fa-solid fa-stethoscope"></i> Jumlah Poliklinik</td>
                                     <td>{{ $data->jumlah_poliklinik }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Jumlah Kamar</td>
+                                    <td><i class=" nav-icon  fa-solid fa-bed"></i> Jumlah Kamar</td>
                                     <td>{{ $data->jumlah_kamar }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Dokter Umum</td>
+                                    <td><i class=" nav-icon  fa-solid fa-user"></i> Dokter Umum</td>
                                     <td>{{ $data->dokter_umum }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Dokter Spesialis</td>
+                                    <td><i class=" nav-icon  fa-solid fa-user"></i> Dokter Spesialis</td>
                                     <td>{{ $data->dokter_spesialis }}</td>
                                 </tr>
-                                
+
                                 <tr>
-                                    <td>Perawat</td>
+                                    <td><i class=" nav-icon  fa-solid fa-user"></i> Perawat</td>
                                     <td>{{ $data->perawat }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Longitude</td>
+                                    <td><i class=" nav-icon  fa-solid fa-map-marker-alt mr-1"></i> Longitude</td>
                                     <td>{{ $data->long }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Latitude</td>
+                                    <td><i class=" nav-icon  fa-solid fa-map-marker-alt mr-1"></i> Latitude</td>
                                     <td>{{ $data->lat }}</td>
                                 </tr>
                             </tbody>
@@ -62,13 +62,12 @@
             </div>
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">Detail Place</div>
+                    <div class="card-header" style="background-color: #68A7AD">Detail Lokasi Rumah Sakit</div>
                     <div class="card-body" id="mapid"></div>
                 </div>
             </div>
         </div>
     </div>
-
 @endsection
 @section('styles')
     <!-- Leaflet CSS -->
@@ -84,13 +83,11 @@
 @endsection
 
 @push('scripts')
-
     <!-- Leaflet JavaScript -->
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin="">
-    </script>
+        crossorigin=""></script>
 
     <script>
         var map = L.map('mapid').setView([{{ $data->lat }}, {{ $data->long }}],

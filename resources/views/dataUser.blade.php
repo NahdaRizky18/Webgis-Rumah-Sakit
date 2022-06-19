@@ -119,7 +119,7 @@
         </div>
         <div>
             <div class="mb-2 card">
-                <div class="card-header">
+                <div class="card-header" style="background-color:#dededc">
 
                     <label>Daftar informasi ketersediaan tempat tidur</label>
                 </div>
@@ -218,11 +218,11 @@
             <div class="row">
                 <div class="col-md-12">
                     <ul>
-                        <li><a href="https://www.facebook.com/DinasKesehatanPidie"><i class="fa fa-facebook-f"></i></a>
+                        <li><a href="https://www.facebook.com/DinasKesehatanPidie"><i class="fab fa-facebook-f"></i></a>
                         </li>
                         <li><a href="https://dinkes.pidiekab.go.id/"><i class="fa fa-globe"></i></a></li>
                     </ul>
-                    <p class="text-white">Dinas Kesehatan Kabupaten Pidie | 2022 </p>
+                    <p class="text-white">Nahda Rizky | 2022 </p>
                 </div>
             </div>
         </div>

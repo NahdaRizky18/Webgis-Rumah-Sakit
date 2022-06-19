@@ -116,7 +116,7 @@ http://www.tooplate.com/view/2091-ziggy
         </a>
     </section>
 
-    <section class="second-section" style=" background-color: #EDE6DB">
+    <section class="second-section" style=" background-color: #dededc">
         <div class="container">
             <div class="card p-4">
                 <div class="row">
@@ -168,11 +168,11 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="row">
                 <div class="col-md-12">
                     <ul>
-                        <li><a href="https://www.facebook.com/DinasKesehatanPidie"><i class="fa fa-facebook-f"></i></a>
+                        <li><a href="https://www.facebook.com/DinasKesehatanPidie"><i class="fab fa-facebook-f"></i></a>
                         </li>
                         <li><a href="https://dinkes.pidiekab.go.id/"><i class="fa fa-globe"></i></a></li>
                     </ul>
-                    <p class="text-white">Dinas Kesehatan Kabupaten Pidie | 2022 </p>
+                    <p class="text-white">Nahda Rizky | 2022 </p>
                 </div>
             </div>
         </div>

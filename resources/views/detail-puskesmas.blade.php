@@ -4,28 +4,27 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">Detail Place</div>
+                    <div class="card-header" style="background-color: #68A7AD">Detail Faskes Kesehatan</div>
                     <div class="card-body">
                         <table class="table">
                             <tbody>
                                 <tr>
-                                    <td>Alamat</td>
-                                    <td>{{ $data->alamat }}</td>
+                                    <td><i class="nav-icon  fa-solid fa-home"></i> Alamat :<br> {{ $data->alamat }},
+                                        Kecamatan {{ $data->tematik->kecamatan }} <br>
+                                    </td>
+                                    <td></td>
                                 </tr>
                                 <tr>
-                                    <td>Kecamatan</td>
-                                    <td>{{ $data->tematik->kecamatan }}</td>
+                                    <td><i class="nav-icon  fa-solid fa-hospital"></i> Rawat Inap :<br>
+                                        {{ $data->puskesmas ? $data->puskesmas : $data->klinik }} <br> </td>
+                                    <td></td>
                                 </tr>
                                 <tr>
-                                    <td>Rawat Inap</td>
-                                    <td>{{ $data->puskesmas ? $data->puskesmas : $data->klinik }}</td>
+                                    <td><i class="nav-icon  fa-solid fa-calendar"></i> Ketersediaan</td>
+                                    <td>{{ $data->ketersediaan ? 'TERSEDIA' : 'TIDAK TERSEDIA' }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Ketersediaan</td>
-                                    <td>{{ $data->ketersediaan ? 'TERSEDIA':'TIDAK TERSEDIA' }}</td>
-                                </tr>
-                                <tr>
-                                    <td>No HP</td>
+                                    <td><i class="nav-icon  fa-solid fa-phone"></i> No HP</td>
                                     <td>{{ $data->no_hp }}</td>
                                 </tr>
                             </tbody>
@@ -37,13 +36,12 @@
             </div>
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">Detail Place</div>
+                    <div class="card-header" style="background-color: #68A7AD">Detail Lokasi Faskes Kesehatan</div>
                     <div class="card-body" id="mapid"></div>
                 </div>
             </div>
         </div>
     </div>
-
 @endsection
 @section('styles')
     <!-- Leaflet CSS -->
@@ -59,13 +57,11 @@
 @endsection
 
 @push('scripts')
-
     <!-- Leaflet JavaScript -->
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin="">
-    </script>
+        crossorigin=""></script>
 
     <script>
         var map = L.map('mapid').setView([{{ $data->lat }}, {{ $data->long }}],

@@ -16,7 +16,7 @@ Template 2091 Ziggy
 http://www.tooplate.com/view/2091-ziggy
 
 -->
-    <title> WEBGIS Rumah Sakit</title>
+    <title>Rumah Sakit Kabupaten Pidie</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -80,9 +80,9 @@ http://www.tooplate.com/view/2091-ziggy
     <section class="second-section p-0">
         <div class="card w-100 m-4 d-block border-0">
 
-            <a href="{{ route('Map user', ['state' => 0]) }}" style="background-color: #68A7AD"
+            <a href="{{ route('Map user', ['state' => 0]) }}" style="background-color: #E5CB9F"
                 class="btn text-white  {{ $state == 0 ? 'btn-success' : 'btn-info' }}">Rumah Sakit</a>
-            <a href="{{ route('Map user', ['state' => 1]) }}" style="background-color: #74959A"
+            <a href="{{ route('Map user', ['state' => 1]) }}" style="background-color: #22577E"
                 class="btn text-white {{ $state == 1 ? 'btn-success' : 'btn-info' }}">Faskes Rawat Inap</a>
         </div>
         <div class="card m-4" style="background-color: #99C4C8">
@@ -105,11 +105,11 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="row">
                 <div class="col-md-12">
                     <ul>
-                        <li><a href="https://www.facebook.com/DinasKesehatanPidie"><i class="fa fa-facebook-f"></i></a>
+                        <li><a href="https://www.facebook.com/DinasKesehatanPidie"><i class="fab fa-facebook-f"></i></a>
                         </li>
                         <li><a href="https://dinkes.pidiekab.go.id/"><i class="fa fa-globe"></i></a></li>
                     </ul>
-                    <p class="text-white">Dinas Kesehatan Kabupaten Pidie | 2022 </p>
+                    <p class="text-white">Nahda Rizky| 2022 </p>
                 </div>
             </div>
         </div>

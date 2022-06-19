@@ -104,9 +104,12 @@ http://www.tooplate.com/view/2091-ziggy
 
     <section class="second-section" style=" background-color: #dededc">
         <div class="row justify-content-center">
-            <div class="col-md-6">
+            <div class="col-md-6 p-2">
+                <div>
+                    <h3 class=" text-center">--- WEBGIS Rumah Sakit Kabupaten Pidie ---</h3>
+                </div>
                 <div class="card">
-                    <div class="card-header">{{ __('Login') }}</div>
+                    <div class="card-header text-center" style="background-image: ">{{ __('LOGIN') }}</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
@@ -187,7 +190,7 @@ http://www.tooplate.com/view/2091-ziggy
                         </li>
                         <li><a href="https://dinkes.pidiekab.go.id/"><i class="fa fa-globe"></i></a></li>
                     </ul>
-                    <p class="text-white">Dinas Kesehatan Kabupaten Pidie | 2022 </p>
+                    <p class="text-white"> Nahda Rizky | 2022 </p>
                 </div>
             </div>
         </div>

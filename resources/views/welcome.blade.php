@@ -102,7 +102,7 @@ http://www.tooplate.com/view/2091-ziggy
 
     <a href="{{ route('login') }}"
         class="text-decoration-none text-white position-absolute m-4 py-1 btn btn-outline-info">
-        <h4>Log in</h4>
+        <h4>LOGIN</h4>
     </a>
     <section class="first-section">
         <div class="container">
@@ -137,7 +137,7 @@ http://www.tooplate.com/view/2091-ziggy
                     <a href="{{ route('Data user') }}" class="btn bg-white btn-outline-info py-2">
                         <div class="service-item">
                             <div class="icon">
-                                <i class="fa-solid  fa-th h1"></i>
+                                <i class="fa-solid  fa-calendar h1"></i>
                             </div>
                             <h4>Jadwal Poliklinik</h4>
                             <p>Anda dapat melihat semua jadwal Poliklinik yang tersedia di setiap Rumah Sakit Di
@@ -224,7 +224,7 @@ http://www.tooplate.com/view/2091-ziggy
                         </li>
                         <li><a href="https://dinkes.pidiekab.go.id/"><i class="fa fa-globe"></i></a></li>
                     </ul>
-                    <p class="text-white">Dinas Kesehatan Kabupaten Pidie | 2022 </p>
+                    <p class="text-white">Nahda Rizky| 2022 </p>
                 </div>
             </div>
         </div>

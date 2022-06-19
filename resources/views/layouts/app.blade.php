@@ -32,7 +32,9 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
 
     @yield('styles')
@@ -40,10 +42,10 @@
 
 <body>
     <div id="app">
-        <nav class="{{auth()->user()? 'main-header':''}} navbar navbar-expand navbar-white navbar-light">
+        <nav class="{{ auth()->user() ? 'main-header' : '' }} navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
-              
+
                 <li class="nav-item d-none d-sm-inline-block">
                     @if (auth()->user())
                         @if (auth()->user()->level == 'ADMIN')
@@ -83,7 +85,7 @@
                         <div id="drop" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                     document.getElementById('logout-form').submit();">
+                                                                                                                                                                                                                                                             document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
@@ -130,7 +132,7 @@
                                 <li class="nav-item">
                                     <a href="{{ route('home') }}"
                                         class="nav-link btn {{ request()->route()->getName() == 'home'? 'text-white bg-info': '' }} text-white text-start w-100">
-                                        <i class="nav-icon fas fa-th"></i>
+                                        <i class="nav-icon fas fa-home"></i>
                                         <p>
                                             Dashboard
                                         </p>
@@ -211,7 +213,7 @@
                                 <li class="nav-item">
                                     <a href="{{ route('jadwal') }}"
                                         class="nav-link btn bg-transparent text-white text-start w-100">
-                                        <i class="nav-icon fas fa-th"></i>
+                                        <i class="nav-icon fas fa-calendar"></i>
                                         <p>
                                             Jadwal
                                         </p>
