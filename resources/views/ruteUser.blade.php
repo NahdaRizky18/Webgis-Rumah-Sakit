@@ -66,8 +66,8 @@ http://www.tooplate.com/view/2091-ziggy
 
             <div class="card-header border-0">
                 <h3 class="card-title text-white">
-                    <i class="fas fa-map-marker-alt mr-1 "></i>
-                    Maps
+                    <i class="fas fa-map-marker-alt mr-1  "></i>
+                    Untuk Melihat Rute Pilih Titik Lokasi lalu Klik Kesini
                 </h3>
 
             </div>
