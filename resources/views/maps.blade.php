@@ -53,7 +53,6 @@
         .search-input {
             color: black;
         }
-
     </style>
 @endsection
 
@@ -140,6 +139,13 @@
         }
 
         function onEachFeature(feature, layer) {
+            layer.bindPopup('', {
+                maxHeight: 200
+            }), layer.bindTooltip(feature.properties.NAMOBJ, {
+                permanent: true,
+                direction: 'center',
+                className: 'bg-transparent border-0 text-white shadow-none font-weight-bold'
+            });
             layer.on({
                 mouseover: highlightFeature,
                 mouseout: resetHighlight,
@@ -160,7 +166,7 @@
         var markersLayer = new L.LayerGroup();
         map.addLayer(markersLayer);
         var controlSearch = new L.Control.Search({
-            position: 'topleft',
+            position: 'topright',
             layer: markersLayer,
             initial: false,
             zoom: 12,

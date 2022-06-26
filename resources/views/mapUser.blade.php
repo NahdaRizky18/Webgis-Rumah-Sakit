@@ -211,15 +211,6 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         this.update();
         return this._div;
     };
-    //menampilkan pop up info tematik
-    info.update = function(props) {
-        this._div.innerHTML = '<h4>Lokasi Rumah Sakit</h4>' + (props ?
-            '<b>' + props.NAMOBJ + '</b><br />' + props.MhsSIF + ' orang' :
-            'Gerakkan mouse Anda');
-    };
-
-    info.addTo(map);
-
     function style(feature) {
         return {
             weight: 2,
@@ -261,6 +252,13 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     }
 
     function onEachFeature(feature, layer) {
+          layer.bindPopup('', {
+                    maxHeight: 200
+                }), layer.bindTooltip(feature.properties.NAMOBJ, {
+                    permanent: true,
+                    direction: 'center',
+                    className: 'bg-transparent border-0 text-white shadow-none font-weight-bold'
+                });
         layer.on({
             mouseover: highlightFeature,
             mouseout: resetHighlight,
@@ -297,7 +295,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     var markersLayer = new L.LayerGroup();
     map.addLayer(markersLayer);
     var controlSearch = new L.Control.Search({
-        position: 'topleft',
+        position: 'topright',
         layer: markersLayer,
         initial: false,
         zoom: 12,

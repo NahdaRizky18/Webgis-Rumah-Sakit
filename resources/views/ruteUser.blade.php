@@ -147,17 +147,27 @@ http://www.tooplate.com/view/2091-ziggy
     }
 </style>
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-crossorigin=""></script>
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
-integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
-crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
 
 <script src="{{ asset('storage/js/leaflet-routing-machine/dist/leaflet-routing-machine.min.js') }}"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
 <script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
 <script type="text/javascript">
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+
+    function keSini(lat, lng) {
+        var latLng = L.latLng(lat, lng);
+        control.spliceWaypoints(control.getWaypoints().length - 1, 1, latLng);
+    }
     var s = [5.3811231139126, 95.958859920501];
     var data = {!! json_encode($data) !!}
     var map = L.map('map').setView(
@@ -233,47 +243,69 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     });
     control.addTo(map);
 
-    function keSini(lat, lng) {
-        var latLng = L.latLng(lat, lng);
-        control.spliceWaypoints(control.getWaypoints().length - 1, 1, latLng);
+    function showPosition(position) {
+        var latPoint = position.coords.latitude;
+        var longPoint = position.coords.longitude;
+
+
+
+        updateMarker(latPoint, longPoint)
+        control.setWaypoints(L.latLng(latPoint, longPoint))
+
+        map.on('click', function(e) {
+            let latitude = e.latlng.lat.toString().substring(0, 15);
+            let longitude = e.latlng.lng.toString().substring(0, 15);
+            control.setWaypoints(L.latLng(latitude, longitude))
+            $('#latitude').val(latitude);
+            $('#longitude').val(longitude);
+            updateMarker(latitude, longitude);
+        });
+        var markersLayer = new L.LayerGroup();
+        map.addLayer(markersLayer);
+        var controlSearch = new L.Control.Search({
+            position: 'topleft',
+            layer: markersLayer,
+            initial: false,
+            zoom: 12,
+            marker: false,
+            autoType: false
+        });
+        controlSearch.on('search:locationfound', function(e) {
+
+            e.layer.openPopup();
+
+        }).on('search:collapsed', function(e) {});
+        map.addControl(controlSearch);
+
+        for (var i = 0; i < data.length; i++) {
+            var title = data[i][3],
+                loc = [data[i][1], data[i][2]],
+                marker = new L.Marker(new L.latLng(loc), {
+                    title: title,
+                    icon: icon
+                });
+            marker.bindPopup("<strong>" + data[i][3] +
+                "</strong><br/><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(" + data[i]
+                [
+                    1
+                ] + "," + data[i][2] + ")'>Ke Sini</button>");
+            markersLayer.addLayer(marker);
+        }
     }
-
-    map.on('click', function(e) {
-        let latitude = e.latlng.lat.toString().substring(0, 15);
-        let longitude = e.latlng.lng.toString().substring(0, 15);
-        control.setWaypoints(L.latLng(latitude, longitude))
-        $('#latitude').val(latitude);
-        $('#longitude').val(longitude);
-        updateMarker(latitude, longitude);
-    });
-    var markersLayer = new L.LayerGroup();
-    map.addLayer(markersLayer);
-    var controlSearch = new L.Control.Search({
-        position: 'topleft',
-        layer: markersLayer,
-        initial: false,
-        zoom: 12,
-        marker: false,
-        autoType: false
-    });
-    controlSearch.on('search:locationfound', function(e) {
-
-        e.layer.openPopup();
-
-    }).on('search:collapsed', function(e) {});
-    map.addControl(controlSearch);
-
-    for (var i = 0; i < data.length; i++) {
-        var title = data[i][3],
-            loc = [data[i][1], data[i][2]],
-            marker = new L.Marker(new L.latLng(loc), {
-                title: title,
-                icon: icon
-            });
-        marker.bindPopup("<strong>" + data[i][3] +
-            "</strong><br/><button class='w-100 btn btn-outline-primary mt-1' onclick='return keSini(" + data[i][
-                1
-            ] + "," + data[i][2] + ")'>Ke Sini</button>");
-        markersLayer.addLayer(marker);
-    }
+       function showError(error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    x.innerHTML = "User denied the request for Geolocation."
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    x.innerHTML = "Location information is unavailable."
+                    break;
+                case error.TIMEOUT:
+                    x.innerHTML = "The request to get user location timed out."
+                    break;
+                case error.UNKNOWN_ERROR:
+                    x.innerHTML = "An unknown error occurred."
+                    break;
+            }
+        }
 </script>
