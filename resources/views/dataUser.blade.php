@@ -171,7 +171,7 @@
                     @endif
                     <div class="row mt-2">
                         @foreach ($kelas as $item)
-                            <div class="col-md-3 mb-2 ">
+                            <div class="col-md-2 mb-2 me-4">
                                 <a href="{{ route('Data user', ['id' => $id, 'kelas_id' => $item->kelas]) }}"
                                     style="text-decoration: none">
                                     <div class="card p-2 text-center rm"
