@@ -24,7 +24,7 @@
 
                                     </p>
                                     <p class="mb-0 text-white">
-                                        Pukul {{ $jadwal->jadwal->isoFormat('H:MM a') }}
+                                        Pukul {{ $jadwal->jadwal->isoFormat('H:mm a') }}
                                     </p>
                                 </div>
                             @endforeach
