@@ -53,6 +53,14 @@
         .search-input {
             color: black;
         }
+
+        .leaflet-container .leaflet-control-search {
+            height: 250px !important
+        }
+
+        .leaflet-control-search .search-tooltip {
+            top: 27% !important
+        }
     </style>
 @endsection
 

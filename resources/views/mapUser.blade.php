@@ -168,7 +168,13 @@ http://www.tooplate.com/view/2091-ziggy
         overflow-y: auto;
         padding: 5px;
     }
-
+    
+    .leaflet-container .leaflet-control-search {
+        height: 250px !important
+    }
+    .leaflet-control-search .search-tooltip{
+        top: 27% !important
+    }
 </style>
 
 <!-- Leaflet JavaScript -->
