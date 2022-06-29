@@ -94,16 +94,17 @@ http://www.tooplate.com/view/2091-ziggy
         .leaflet-right {
             max-width: 50%;
         }
-
     </style>
 </head>
 
 <body>
+    <div class="d-flex justify-content-end">
+        <a href="{{ route('login') }}"
+            class="text-decoration-none text-white position-absolute m-4 py-1 btn btn-outline-info ">
+            <h4>LOGIN</h4>
+        </a>
+    </div>
 
-    <a href="{{ route('login') }}"
-        class="text-decoration-none text-white position-absolute m-4 py-1 btn btn-outline-info">
-        <h4>LOGIN</h4>
-    </a>
     <section class="first-section">
         <div class="container">
             <div class="row">
@@ -220,7 +221,8 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="row">
                 <div class="col-md-12">
                     <ul>
-                        <li><a href="https://www.facebook.com/DinasKesehatanPidie"><i class="fab fa-facebook-f"></i></a>
+                        <li><a href="https://www.facebook.com/DinasKesehatanPidie"><i
+                                    class="fab fa-facebook-f"></i></a>
                         </li>
                         <li><a href="https://dinkes.pidiekab.go.id/"><i class="fa fa-globe"></i></a></li>
                     </ul>
