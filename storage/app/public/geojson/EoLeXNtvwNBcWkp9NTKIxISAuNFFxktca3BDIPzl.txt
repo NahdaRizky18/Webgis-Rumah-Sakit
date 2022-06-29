@@ -1,0 +1,19 @@
+- buat pemberitahuan untuk memberikan rating
+
+
+- rating di bagian sara masih belum dijumlahkan
+- pada maps rumah sakit di pop upnya ada button lihat detail dan jadwal poliklinik
+- pada maps rumah sakit lihat detail
+
+
+- ada kelas yg double di kesedian ruangan padahal di phpnya sudah gk ada (seperti kelas I) 
+- ada tambahan lagi bg di dashboar user ada tampilan sarana yg ada di rumah sakit
+
+
+precision = 0,649583600256246
+recall = 0,8318293683347006
+
+f1 = ((0,8318293683347006 x 0,649583600256246) / (0,8318293683347006 + 0,649583600256246)) x 2
+   = 0.72
+
+blob:http://localhost:3000/426ba474-0b29-4aa4-b203-1c1de4b0c737

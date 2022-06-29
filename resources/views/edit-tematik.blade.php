@@ -12,7 +12,7 @@
                             <label>Kecamatan</label>
                             <input name="kecamatan" type="text" class="form-control" required value="{{$data->kecamatan}}">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group d-none">
                             <label>Warna</label>
                             <input name="warna" type="color" class="form-control" required value="{{$data->warna}}">
                         </div>
