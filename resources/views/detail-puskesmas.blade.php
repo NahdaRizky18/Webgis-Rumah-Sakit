@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
+         @guest
+            <a href="{{ route('Map user') }}" class="text-decoration-none text-dark m-4 py-1 btn btn-outline-info me-2">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+        @endguest
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
