@@ -39,32 +39,32 @@
         th {
             background: #eee;
         }
-        .search-input{
+
+        .search-input {
             color: black;
         }
     </style>
-    <div class="container py-4">
-        <h4>Jadwal Poliklinik </h4>
+    <div class="container py-2">
+        <h4 class=" text-center">Jadwal Poliklinik </h4>
         <div class="row mb-2">
             @foreach ($rs as $item)
-                
-            <div class="col">
-                <!-- small box -->
-                <a href="{{ route('rs jadwal', ['id' => $item->id]) }}" style="text-decoration: none">
-                    <div class="card p-2 text-white text-white" style="background-color: #99C4C8">
-                        <div class="text-center">
-                            <p>{{$item->rumah_sakit}}</p>
+                <div class="col">
+                    <!-- small box -->
+                    <a href="{{ route('rs jadwal', ['id' => $item->id]) }}" style="text-decoration: none">
+                        <div class="card p-2 text-white text-white" style="background-color: #5584AC">
+                            <div class="text-center">
+                                <p>{{ $item->rumah_sakit }}</p>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
             @endforeach
 
             <!-- ./col -->
         </div>
         <div>
             <div class="mb-2 card">
-                <div class="card-header">
+                <div class="card-header" style="background-color:#A0BCC2">
 
                     <label>Daftar informasi ketersediaan tempat tidur</label>
                 </div>
@@ -198,7 +198,6 @@
             overflow-y: auto;
             padding: 5px;
         }
-
     </style>
 @endsection
 @push('scripts')
@@ -277,7 +276,7 @@
 
             info.update(layer.feature.properties);
         }
-     
+
         var geojson;
 
         function resetHighlight(e) {
@@ -333,12 +332,12 @@
             marker: false,
             autoType: false
         });
-         controlSearch.on('search:locationfound', function(e) {
+        controlSearch.on('search:locationfound', function(e) {
 
-           e.layer.openPopup();
+            e.layer.openPopup();
 
         }).on('search:collapsed', function(e) {});
-        map.addControl( controlSearch );
+        map.addControl(controlSearch);
         for (var i = 0; i < datamap.length; i++) {
             var title = datamap[i][0],
                 loc = [datamap[i][1], datamap[i][2]],
