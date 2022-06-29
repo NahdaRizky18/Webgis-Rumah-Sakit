@@ -72,6 +72,9 @@
     .poli:hover .dokter{
         display: inline
     }
+    table{
+        font-size: 12px !important;
+    }
 </style>
 
 <body>
@@ -208,9 +211,9 @@
                                 $home = new HomeController();
                                 $getPoli = $home->getPoli($item->rumahsakit);
                             @endphp
-                            @foreach ($getPoli as $item)
-                                @if ($item->poli != '-' || !$item->poli)
-                                    <p class="mb-0 text-white poli">{{ $item->poli }} - <span class="text-info dokter">{{ $item->nama_dokter }}</span></p>
+                            @foreach ($getPoli as $itemPoli)
+                                @if ($itemPoli->poli != '-' || !$itemPoli->poli)
+                                    <p class="mb-0 text-white poli">{{ $itemPoli->poli }} - <span class="text-info dokter">{{ $itemPoli->nama_dokter }}</span></p>
                                 @endif
                             @endforeach
                         </div>
