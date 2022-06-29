@@ -72,6 +72,7 @@
         var s = [5.3811231139126, 95.958859920501];
         var color = {!! json_encode($color) !!};
         var data = {!! json_encode($data) !!}
+    var jumlah = {!! json_encode($jumlah) !!}
         var map = L.map('map').setView(
             s, 11
         );
@@ -90,22 +91,24 @@
             return this._div;
         };
         //menampilkan pop up info tematik
-        info.update = function(props) {
-            this._div.innerHTML = '<h4>Lokasi Rumah Sakit</h4>' + (props ?
-                '<b>' + props.NAMOBJ + '</b><br />' + props.MhsSIF + ' orang' :
-                'Gerakkan mouse Anda');
-        };
-
-        info.addTo(map);
+    
 
         function style(feature) {
+              warna = "";
+            if (jumlah[feature.properties.NAMOBJ] == 0) {
+                warna = 'red';
+            } else if (jumlah[feature.properties.NAMOBJ] >= 1 && jumlah[feature.properties.NAMOBJ] <= 2) {
+                warna = 'yellow';
+            } else if (jumlah[feature.properties.NAMOBJ] >= 3) {
+                warna = 'green';
+            }
             return {
                 weight: 2,
                 opacity: 1,
                 color: 'white',
                 dashArray: '3',
                 fillOpacity: 0.7,
-                fillColor: color[feature.properties.NAMOBJ]
+                fillColor: warna
             };
 
         }
