@@ -335,8 +335,9 @@ http://www.tooplate.com/view/2091-ziggy
             datamap[i][4] + '<br/>' +
             '<a  href="{{ Request::root() }}' +( datamap[i][8] == 'rs' ? '/detail-map/':'/puskesmas-get/')+ datamap[i][7] +
             '" class="btn btn-primary text-white me-3 mt-2">Detail</a>' +
-            '<a  href="{{ Request::root() }}/rs-jadwal-user/' + datamap[i][7] +
-            '" class="btn btn-info text-white me-3 mt-2">Jadwal</a>',
+            ( datamap[i][8] == 'rs' ?  '<a  href="{{ Request::root() }}/rs-jadwal-user/' + datamap[i][7] +
+            '" class="btn btn-info text-white me-3 mt-2">Jadwal</a>':'')
+           ,
             loc = [datamap[i][1], datamap[i][2]],
             marker = new L.Marker(new L.latLng(loc), {
                 title: datamap[i][3]
