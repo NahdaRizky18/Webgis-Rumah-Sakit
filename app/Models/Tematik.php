@@ -17,4 +17,8 @@ class Tematik extends Model
     {
         return $this->hasMany(HalamanData::class, 'tematik_id', 'id');
     }
+    function puskesmas()
+    {
+        return $this->hasMany(Puskesmas::class, 'tematik_id', 'id');
+    }
 }
