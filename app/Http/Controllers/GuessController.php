@@ -44,7 +44,6 @@ class GuessController extends Controller
             $coor[$index2] = [$item->alamat, $item->lat, $item->long, $item->rumah_sakit, $item->id, $nilai];
             $index2++;
         }
-        dd($coor);
         return view('welcome', [
             'geofile' => $geofile,
             'color' => $color,

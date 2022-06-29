@@ -56,7 +56,6 @@ class UserController extends Controller
             $coor[$index2] = [$item->alamat, $item->lat, $item->long, $item->rumah_sakit ? $item->rumah_sakit : ($item->puskesmas ? $item->puskesmas : $item->klinik), $item->no_hp, $item->gambar ? $item->gambar : '', $nilai, $item->id, $item->rumah_sakit ? 'rs' : 'ps'];
             $index2++;
         }
-        dd($coor);
 
         if ($state) {
             $jumlah = Tematik::withCount('puskesmas')->pluck('puskesmas_count', 'kecamatan');
