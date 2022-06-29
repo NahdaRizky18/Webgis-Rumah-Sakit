@@ -67,7 +67,7 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="card-header border-0">
                 <h3 class="card-title text-white">
                     <i class="fas fa-map-marker-alt mr-1  "></i>
-                    Untuk Melihat Rute Pilih Titik Lokasi lalu Klik Kesini
+                    Pilih Titik Lokasi yang dituju
                 </h3>
 
             </div>
@@ -292,20 +292,21 @@ http://www.tooplate.com/view/2091-ziggy
             markersLayer.addLayer(marker);
         }
     }
-       function showError(error) {
-            switch (error.code) {
-                case error.PERMISSION_DENIED:
-                    x.innerHTML = "User denied the request for Geolocation."
-                    break;
-                case error.POSITION_UNAVAILABLE:
-                    x.innerHTML = "Location information is unavailable."
-                    break;
-                case error.TIMEOUT:
-                    x.innerHTML = "The request to get user location timed out."
-                    break;
-                case error.UNKNOWN_ERROR:
-                    x.innerHTML = "An unknown error occurred."
-                    break;
-            }
+
+    function showError(error) {
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+                x.innerHTML = "User denied the request for Geolocation."
+                break;
+            case error.POSITION_UNAVAILABLE:
+                x.innerHTML = "Location information is unavailable."
+                break;
+            case error.TIMEOUT:
+                x.innerHTML = "The request to get user location timed out."
+                break;
+            case error.UNKNOWN_ERROR:
+                x.innerHTML = "An unknown error occurred."
+                break;
         }
+    }
 </script>

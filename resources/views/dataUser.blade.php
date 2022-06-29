@@ -66,7 +66,6 @@
     th {
         background: #eee;
     }
-
 </style>
 
 <body>
@@ -106,7 +105,8 @@
                         <div class="card p-2 text-black rm text-black" style="background-color:white">
 
                             <div class="text-center">
-                                <img src="{{ asset('/storage/' . $item->gambar) }}" width="150" width="100" alt="">
+                                <img src="{{ asset('/storage/' . $item->gambar) }}" width="150" width="100"
+                                    alt="">
                                 <h6 class="mt-1">{{ $item->rumah_sakit }}</h6>
                             </div>
                         </div>
@@ -119,7 +119,7 @@
         </div>
         <div>
             <div class="mb-2 card">
-                <div class="card-header" style="background-color:#dededc">
+                <div class="card-header" style="background-color:#A0BCC2">
 
                     <label>Daftar informasi ketersediaan tempat tidur</label>
                 </div>
@@ -169,9 +169,9 @@
                             </table>
                         </div>
                     @endif
-                    <div class="row mt-2">
+                    <div class="row mt-2 ">
                         @foreach ($kelas as $item)
-                            <div class="col-md-2 mb-2 me-4">
+                            <div class="col-md-3 mb-2 me-1 mx-auto ">
                                 <a href="{{ route('Data user', ['id' => $id, 'kelas_id' => $item->kelas]) }}"
                                     style="text-decoration: none">
                                     <div class="card p-2 text-center rm"
@@ -218,7 +218,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <ul>
-                        <li><a href="https://www.facebook.com/DinasKesehatanPidie"><i class="fab fa-facebook-f"></i></a>
+                        <li><a href="https://www.facebook.com/DinasKesehatanPidie"><i
+                                    class="fab fa-facebook-f"></i></a>
                         </li>
                         <li><a href="https://dinkes.pidiekab.go.id/"><i class="fa fa-globe"></i></a></li>
                     </ul>
