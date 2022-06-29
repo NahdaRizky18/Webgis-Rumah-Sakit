@@ -53,7 +53,6 @@
         .search-input {
             color: black;
         }
-
     </style>
 @endsection
 
@@ -72,7 +71,7 @@
         var s = [5.3811231139126, 95.958859920501];
         var color = {!! json_encode($color) !!};
         var data = {!! json_encode($data) !!}
-    var jumlah = {!! json_encode($jumlah) !!}
+        var jumlah = {!! json_encode($jumlah) !!}
         var map = L.map('map').setView(
             s, 11
         );
@@ -91,10 +90,10 @@
             return this._div;
         };
         //menampilkan pop up info tematik
-    
+
 
         function style(feature) {
-              warna = "";
+            warna = "";
             if (jumlah[feature.properties.NAMOBJ] == 0) {
                 warna = 'red';
             } else if (jumlah[feature.properties.NAMOBJ] >= 1 && jumlah[feature.properties.NAMOBJ] <= 2) {

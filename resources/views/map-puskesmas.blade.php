@@ -69,6 +69,7 @@
         var color = {!! json_encode($color) !!};
         console.log(color)
         var data = {!! json_encode($data) !!}
+        var jumlah = {!! json_encode($jumlah) !!}
         var map = L.map('map').setView(
             s, 11
         );
@@ -96,13 +97,21 @@
         info.addTo(map);
 
         function style(feature) {
+              warna = "";
+            if (jumlah[feature.properties.NAMOBJ] == 0) {
+                warna = 'red';
+            } else if (jumlah[feature.properties.NAMOBJ] >= 1 && jumlah[feature.properties.NAMOBJ] <= 2) {
+                warna = 'yellow';
+            } else if (jumlah[feature.properties.NAMOBJ] >= 3) {
+                warna = 'green';
+            }
             return {
                 weight: 2,
                 opacity: 1,
                 color: 'white',
                 dashArray: '3',
                 fillOpacity: 0.7,
-                fillColor: color[feature.properties.NAMOBJ]
+                fillColor: warna
             };
 
         }
