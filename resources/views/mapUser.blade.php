@@ -299,9 +299,18 @@ http://www.tooplate.com/view/2091-ziggy
             grades = [0, 12, 25, 37, 50, 62, 75, 87], //pretty break untuk 8
             from, to;
         labels = []
+        
         for (var i = 0; i < kecamatan.length; i++) {
+              warna = "";
+            if (jumlah[kecamatan[i]] == 0) {
+                warna = 'red';
+            } else if (jumlah[kecamatan[i]] >= 1 && jumlah[kecamatan[i]] <= 2) {
+                warna = 'yellow';
+            } else if (jumlah[kecamatan[i]] >= 3) {
+                warna = 'green';
+            }
             labels.push(
-                '<i style="background:' + color[kecamatan[i]] + '"></i> - ' + kecamatan[i]);
+                '<i style="background:' + warna + '"></i> - ' + kecamatan[i]);
         }
 
         div.innerHTML = '<h4>Legenda:</h4>' + labels.join('<br>');
