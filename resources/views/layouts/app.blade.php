@@ -99,7 +99,7 @@
                             <img src="{{ asset('storage/img/logo.png') }}" width="450" alt="">
                         </div>
                         <div class="col-md-7">
-                            <span class=" font-weight-bold"> RUMAH SAKIT <br>KABUPATEN <br> PIDIE</span>
+                            <span style="font-weight: 500!important"> RUMAH SAKIT <br>KABUPATEN <br> PIDIE</span>
                         </div>
                     </div>
                 </a>
