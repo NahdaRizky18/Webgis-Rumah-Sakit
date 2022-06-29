@@ -31,7 +31,9 @@ http://www.tooplate.com/view/2091-ziggy
 
     <link href="{{ asset('storage/css/tooplate-style.css') }}" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 <style>
@@ -69,7 +71,6 @@ http://www.tooplate.com/view/2091-ziggy
     th {
         background: #eee;
     }
-
 </style>
 
 <body>
@@ -77,7 +78,7 @@ http://www.tooplate.com/view/2091-ziggy
 
     <section class="w-100">
         <a href="{{ route('Data user') }}" class="text-decoration-none text-dark m-4 py-1 btn btn-outline-info me-2">
-           <i class="fa-solid fa-arrow-left"></i>
+            <i class="fa-solid fa-arrow-left"></i>
         </a>
 
     </section>
@@ -93,9 +94,12 @@ http://www.tooplate.com/view/2091-ziggy
                 transform: scale(1.05);
                 cursor: pointer;
             }
-
         </style>
         <div class="container">
+            <div class="text-center mb-4">
+                <h2>{{ $data->rumahsakit }}</h2>
+            </div>
+
             <div class="row gy-4">
                 @foreach ($data->dokter as $item)
                     @if (count($item->jadwal))
@@ -107,7 +111,8 @@ http://www.tooplate.com/view/2091-ziggy
                                 @foreach ($item->jadwal as $jadwal)
                                     <div class="mb-2">
                                         <p class="mb-0 text-white"> Spesialis {{ $item->spesialis2 }}</p>
-                                        <p class="mb-0 text-white">Jadwal : {{ $jadwal->jadwal->isoFormat('dddd') }} {{ $jadwal->jadwal->isoFormat('LL') }}
+                                        <p class="mb-0 text-white">Jadwal : {{ $jadwal->jadwal->isoFormat('dddd') }}
+                                            {{ $jadwal->jadwal->isoFormat('LL') }}
 
                                         </p>
                                         <p class="mb-0 text-white">
