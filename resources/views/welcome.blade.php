@@ -279,7 +279,7 @@ http://www.tooplate.com/view/2091-ziggy
             var m = '';
             for (var n = 0; n < nilai; ++n) {
                 m += '<i class="fa-solid fa-star' +
-                    (nilai == n + .5 ? '-sharp-half' : "") +
+                    (nilai == n + .5 ? '-half' : "") +
                     '" aria-hidden="true"></i>';
                 "<br/>";
             }

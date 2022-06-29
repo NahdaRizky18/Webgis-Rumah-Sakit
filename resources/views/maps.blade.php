@@ -71,7 +71,6 @@
     <script type="text/javascript">
         var s = [5.3811231139126, 95.958859920501];
         var color = {!! json_encode($color) !!};
-        console.log(color)
         var data = {!! json_encode($data) !!}
         var map = L.map('map').setView(
             s, 11
