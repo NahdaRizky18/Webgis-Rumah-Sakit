@@ -42,10 +42,12 @@ class PuskesmasController extends Controller
             $coor[$index2] = [$item->puskesmas? $item->puskesmas : $item->klinik, $item->lat, $item->long];
             $index2++;
         }
+            $jumlah = Tematik::withCount('puskesmas')->pluck('puskesmas_count', 'kecamatan');
         return view('maps', [
             'geofile' => $geofile,
             'color' => $color,
-            'data' => $coor
+            'data' => $coor,
+            'jumlah' => $jumlah
         ]);
     }
     /**
