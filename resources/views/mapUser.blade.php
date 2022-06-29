@@ -168,11 +168,12 @@ http://www.tooplate.com/view/2091-ziggy
         overflow-y: auto;
         padding: 5px;
     }
-    
+
     .leaflet-container .leaflet-control-search {
         height: 250px !important
     }
-    .leaflet-control-search .search-tooltip{
+
+    .leaflet-control-search .search-tooltip {
         top: 27% !important
     }
 </style>
@@ -180,19 +181,19 @@ http://www.tooplate.com/view/2091-ziggy
 <!-- Leaflet JavaScript -->
 <!-- Make sure you put this AFTER Leaflet's CSS -->
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-crossorigin=""></script>
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
-integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
-crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- Leaflet JavaScript -->
 <!-- Make sure you put this AFTER Leaflet's CSS -->
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-crossorigin=""></script>
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
-integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
-crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
 <script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
 <script type="text/javascript">
@@ -217,6 +218,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         this.update();
         return this._div;
     };
+
     function style(feature) {
         return {
             weight: 2,
@@ -258,13 +260,13 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     }
 
     function onEachFeature(feature, layer) {
-          layer.bindPopup('', {
-                    maxHeight: 200
-                }), layer.bindTooltip(feature.properties.NAMOBJ, {
-                    permanent: true,
-                    direction: 'center',
-                    className: 'bg-transparent border-0 text-white shadow-none font-weight-bold'
-                });
+        layer.bindPopup('', {
+            maxHeight: 200
+        }), layer.bindTooltip(feature.properties.NAMOBJ, {
+            permanent: true,
+            direction: 'center',
+            className: 'bg-transparent border-0 text-white shadow-none font-weight-bold'
+        });
         layer.on({
             mouseover: highlightFeature,
             mouseout: resetHighlight,
@@ -326,12 +328,15 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     }
     map.addControl(controlSearch);
     for (var i = 0; i < datamap.length; i++) {
-        var title = '<a href="{{ Request::root() }}/rs-jadwal-user/' + datamap[i][7] +
-            '" style="text-decoration: none">' + (datamap[i][5] ?
+        var title =  (datamap[i][5] ?
                 "<div class='text-center'><img width='200' src='{{ asset('storage/') }}/" +
                 datamap[i][5] + "'></div>" : "") + '<div>' + nilai(datamap[i][6]) + '</div>' + datamap[i][0] + "<br/>" +
             datamap[i][3] + "<br/> No HP :" +
-            datamap[i][4] + '</a>',
+            datamap[i][4] + '<br/>' +
+            '<a  href="{{ Request::root() }}' +( datamap[i][8] == 'rs' ? '/detail-map/':'/puskesmas-get/')+ datamap[i][7] +
+            '" class="btn btn-primary text-white me-3 mt-2">Detail</a>' +
+            '<a  href="{{ Request::root() }}/rs-jadwal-user/' + datamap[i][7] +
+            '" class="btn btn-info text-white me-3 mt-2">Jadwal</a>',
             loc = [datamap[i][1], datamap[i][2]],
             marker = new L.Marker(new L.latLng(loc), {
                 title: datamap[i][3]

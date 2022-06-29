@@ -53,7 +53,7 @@ class UserController extends Controller
                     $nilai = $item->rumahsakit->sum('nilai') / $item->rumahsakit->count();
                 }
             }
-            $coor[$index2] = [$item->alamat, $item->lat, $item->long, $item->rumah_sakit ? $item->rumah_sakit : ($item->puskesmas ? $item->puskesmas : $item->klinik), $item->no_hp, $item->gambar ? $item->gambar : '', $nilai, $item->id];
+            $coor[$index2] = [$item->alamat, $item->lat, $item->long, $item->rumah_sakit ? $item->rumah_sakit : ($item->puskesmas ? $item->puskesmas : $item->klinik), $item->no_hp, $item->gambar ? $item->gambar : '', $nilai, $item->id, $item->rumah_sakit ? 'rs' : 'ps'];
             $index2++;
         }
         $kecamatan = $tematik->pluck('kecamatan');
