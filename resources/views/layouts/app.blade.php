@@ -66,7 +66,7 @@
                 <li class="nav-item">
 
                     @guest
-                @else
+                    @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#drop" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -99,7 +99,7 @@
                             <img src="{{ asset('storage/img/logo.png') }}" width="450" alt="">
                         </div>
                         <div class="col-md-7">
-                            <span class=" font-weight-light"> RUMAH SAKIT <br>KABUPATEN <br> PIDIE</span>
+                            <span class=" font-weight-bold"> RUMAH SAKIT <br>KABUPATEN <br> PIDIE</span>
                         </div>
                     </div>
                 </a>
