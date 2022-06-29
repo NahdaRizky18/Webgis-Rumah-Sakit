@@ -141,9 +141,12 @@ http://www.tooplate.com/view/2091-ziggy
     }
 
     .leaflet-right .leaflet-control {
-        max-height: 8rem;
+        max-height: 37rem;
         overflow-y: auto;
         padding: 5px;
+    }
+    .leaflet-routing-container{
+        background-color: white
     }
 </style>
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
