@@ -56,6 +56,7 @@ class UserController extends Controller
             $coor[$index2] = [$item->alamat, $item->lat, $item->long, $item->rumah_sakit ? $item->rumah_sakit : ($item->puskesmas ? $item->puskesmas : $item->klinik), $item->no_hp, $item->gambar ? $item->gambar : '', $nilai, $item->id, $item->rumah_sakit ? 'rs' : 'ps'];
             $index2++;
         }
+        $jumlah = Tematik::withCount('data')->pluck('data_count', 'kecamatan');
         $kecamatan = $tematik->pluck('kecamatan');
         return view('mapUser', [
             'list_poli' => $list_poli,
@@ -68,7 +69,8 @@ class UserController extends Controller
             'data' => $coor,
             'tematik' => $tematik,
             'state' => $state,
-            'kecamatan' => $kecamatan
+            'kecamatan' => $kecamatan,
+            'jumlah' => $jumlah
         ]);
     }
     public function ruteUser()

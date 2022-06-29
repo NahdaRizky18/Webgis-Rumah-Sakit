@@ -13,4 +13,8 @@ class Tematik extends Model
         'warna',
         'geojson'
     ];
+    function data()
+    {
+        return $this->hasMany(HalamanData::class, 'tematik_id', 'id');
+    }
 }

@@ -201,6 +201,7 @@ http://www.tooplate.com/view/2091-ziggy
     var color = {!! json_encode($color) !!};
     var datamap = {!! json_encode($data) !!}
     var kecamatan = {!! json_encode($kecamatan) !!}
+    var jumlah = {!! json_encode($jumlah) !!}
     var map = L.map('map').setView(
         s, 11
     );
@@ -220,13 +221,21 @@ http://www.tooplate.com/view/2091-ziggy
     };
 
     function style(feature) {
+        warna = "";
+            if (jumlah[feature.properties.NAMOBJ] == 0) {
+                warna = 'red';
+            } else if (jumlah[feature.properties.NAMOBJ] >= 1 && jumlah[feature.properties.NAMOBJ] <= 2) {
+                warna = 'yellow';
+            } else if (jumlah[feature.properties.NAMOBJ] >= 3) {
+                warna = 'green';
+            }
         return {
             weight: 2,
             opacity: 1,
             color: 'white',
             dashArray: '3',
             fillOpacity: 0.7,
-            fillColor: color[feature.properties.NAMOBJ]
+            fillColor: warna
         };
 
     }
