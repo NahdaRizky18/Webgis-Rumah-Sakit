@@ -300,18 +300,9 @@ http://www.tooplate.com/view/2091-ziggy
             from, to;
         labels = []
         
-        for (var i = 0; i < kecamatan.length; i++) {
-              warna = "";
-            if (jumlah[kecamatan[i]] == 0) {
-                warna = 'red';
-            } else if (jumlah[kecamatan[i]] >= 1 && jumlah[kecamatan[i]] <= 2) {
-                warna = 'yellow';
-            } else if (jumlah[kecamatan[i]] >= 3) {
-                warna = 'green';
-            }
-            labels.push(
-                '<i style="background:' + warna + '"></i> - ' + kecamatan[i]);
-        }
+      labels.push('<i style="background:red"></i> - Tidak ada rumah sakit'  );
+      labels.push('<i style="background:yellow"></i> - Rumah sakit 1-2'  );
+      labels.push('<i style="background:green"></i> - Rumah sakit lebih dari 3'  );
 
         div.innerHTML = '<h4>Legenda:</h4>' + labels.join('<br>');
         return div;
