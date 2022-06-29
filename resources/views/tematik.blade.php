@@ -26,7 +26,6 @@
                                 No
                             </th>
                             <th>Kecamatan</th>
-                            <th>Warna</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
