@@ -204,7 +204,7 @@
                             @endphp
                             @foreach ($getPoli as $item)
                                 @if ($item->poli != '-' || !$item->poli)
-                                    <p class="mb-0 text-white">{{ $item->poli }}</p>
+                                    <p class="mb-0 text-white">{{ $item->poli }} - <span class="text-info">{{ $item->nama_dokter }}</span></p>
                                 @endif
                             @endforeach
                         </div>
