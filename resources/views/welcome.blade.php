@@ -100,7 +100,8 @@ http://www.tooplate.com/view/2091-ziggy
 <body>
     <div class="d-flex justify-content-end">
         <a href="{{ route('login') }}"
-            class="text-decoration-none text-white position-absolute m-4 py-1 btn btn-outline-info ">
+            class="text-decoration-none text-white position-absolute m-4 py-1 btn btn-outline-info "
+            style="background-color: #126E82">
             <h4>LOGIN</h4>
         </a>
     </div>

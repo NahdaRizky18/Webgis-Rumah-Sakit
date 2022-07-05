@@ -99,7 +99,6 @@ http://www.tooplate.com/view/2091-ziggy
             <div class="text-center mb-4">
                 <h2>{{ $data->rumahsakit }}</h2>
             </div>
-
             <div class="row gy-4">
                 @foreach ($data->dokter as $item)
                     @if (count($item->jadwal))

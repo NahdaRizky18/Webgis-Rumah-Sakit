@@ -141,11 +141,12 @@ http://www.tooplate.com/view/2091-ziggy
     }
 
     .leaflet-right .leaflet-control {
-        max-height: 37rem;
+        max-height: 18rem;
         overflow-y: auto;
         padding: 5px;
     }
-    .leaflet-routing-container{
+
+    .leaflet-routing-container {
         background-color: white
     }
 </style>

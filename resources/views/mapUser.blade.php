@@ -222,13 +222,13 @@ http://www.tooplate.com/view/2091-ziggy
 
     function style(feature) {
         warna = "";
-            if (jumlah[feature.properties.NAMOBJ] == 0) {
-                warna = 'red';
-            } else if (jumlah[feature.properties.NAMOBJ] >= 1 && jumlah[feature.properties.NAMOBJ] <= 2) {
-                warna = 'yellow';
-            } else if (jumlah[feature.properties.NAMOBJ] >= 3) {
-                warna = 'green';
-            }
+        if (jumlah[feature.properties.NAMOBJ] == 0) {
+            warna = 'red';
+        } else if (jumlah[feature.properties.NAMOBJ] >= 1 && jumlah[feature.properties.NAMOBJ] <= 2) {
+            warna = 'yellow';
+        } else if (jumlah[feature.properties.NAMOBJ] >= 3) {
+            warna = 'green';
+        }
         return {
             weight: 2,
             opacity: 1,
@@ -299,10 +299,10 @@ http://www.tooplate.com/view/2091-ziggy
             grades = [0, 12, 25, 37, 50, 62, 75, 87], //pretty break untuk 8
             from, to;
         labels = []
-        
-      labels.push('<i style="background:red"></i> - Tidak ada rumah sakit'  );
-      labels.push('<i style="background:yellow"></i> - Rumah sakit 1-2'  );
-      labels.push('<i style="background:green"></i> - Rumah sakit lebih dari 3'  );
+
+        labels.push('<i style="background:red"></i> - Tidak ada rumah sakit/faskes');
+        labels.push('<i style="background:yellow"></i> - Rumah sakit/faskes 1-2');
+        labels.push('<i style="background:green"></i> - Rumah sakit/faskes lebih dari 3');
 
         div.innerHTML = '<h4>Legenda:</h4>' + labels.join('<br>');
         return div;
@@ -337,16 +337,16 @@ http://www.tooplate.com/view/2091-ziggy
     }
     map.addControl(controlSearch);
     for (var i = 0; i < datamap.length; i++) {
-        var title =  (datamap[i][5] ?
+        var title = (datamap[i][5] ?
                 "<div class='text-center'><img width='200' src='{{ asset('storage/') }}/" +
                 datamap[i][5] + "'></div>" : "") + '<div>' + nilai(datamap[i][6]) + '</div>' + datamap[i][0] + "<br/>" +
             datamap[i][3] + "<br/> No HP :" +
             datamap[i][4] + '<br/>' +
-            '<a  href="{{ Request::root() }}' +( datamap[i][8] == 'rs' ? '/detail-map/':'/puskesmas-get/')+ datamap[i][7] +
+            '<a  href="{{ Request::root() }}' + (datamap[i][8] == 'rs' ? '/detail-map/' : '/puskesmas-get/') +
+            datamap[i][7] +
             '" class="btn btn-primary text-white me-3 mt-2">Detail</a>' +
-            ( datamap[i][8] == 'rs' ?  '<a  href="{{ Request::root() }}/rs-jadwal-user/' + datamap[i][7] +
-            '" class="btn btn-info text-white me-3 mt-2">Jadwal</a>':'')
-           ,
+            (datamap[i][8] == 'rs' ? '<a  href="{{ Request::root() }}/rs-jadwal-user/' + datamap[i][7] +
+                '" class="btn btn-info text-white me-3 mt-2">Jadwal</a>' : ''),
             loc = [datamap[i][1], datamap[i][2]],
             marker = new L.Marker(new L.latLng(loc), {
                 title: datamap[i][3]

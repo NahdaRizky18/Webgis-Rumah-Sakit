@@ -66,14 +66,17 @@
     th {
         background: #eee;
     }
-    .dokter{
+
+    .dokter {
         display: none
     }
-    .poli:hover .dokter{
+
+    .poli:hover .dokter {
         display: inline
     }
-    table{
-        font-size: 12px !important;
+
+    table {
+        font-size: 15px !important;
     }
 </style>
 
@@ -180,7 +183,7 @@
                     @endif
                     <div class="row mt-2 ">
                         @foreach ($kelas as $item)
-                            <div class="col-md-3 mb-2 me-1 mx-auto ">
+                            <div class="col-md-4 mb-2 me-0 mx-auto ">
                                 <a href="{{ route('Data user', ['id' => $id, 'kelas_id' => $item->kelas]) }}"
                                     style="text-decoration: none">
                                     <div class="card p-2 text-center rm"
@@ -213,7 +216,8 @@
                             @endphp
                             @foreach ($getPoli as $itemPoli)
                                 @if ($itemPoli->poli != '-' || !$itemPoli->poli)
-                                    <p class="mb-0 text-white poli">{{ $itemPoli->poli }} - <span class="text-info dokter">{{ $itemPoli->nama_dokter }}</span></p>
+                                    <p class="mb-0 text-white poli">{{ $itemPoli->poli }} - <span
+                                            class="text-info dokter">{{ $itemPoli->nama_dokter }}</span></p>
                                 @endif
                             @endforeach
                         </div>

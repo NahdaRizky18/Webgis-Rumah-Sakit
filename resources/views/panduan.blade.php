@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<link rel="stylesheet" href="{{ asset('storage/css/halaman-data.css') }}">
+    <link rel="stylesheet" href="{{ asset('storage/css/halaman-data.css') }}">
     <div class="container">
 
         <div class="card p-4">
