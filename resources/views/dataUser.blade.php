@@ -76,7 +76,11 @@
     }
 
     table {
+<<<<<<< Updated upstream
         font-size: 15px !important;
+=======
+        font-size: 12px !important;
+>>>>>>> Stashed changes
     }
 </style>
 
@@ -250,6 +254,45 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>
         window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript">
+        $.fn.setCaret = function(pos) {
+            return this.each(function() {
+                var elem = this,
+                    range;
+
+                if (elem.createTextRange) {
+                    range = elem.createTextRange();
+                    range.move('character', pos);
+                } else {
+                    if (elem.selectionStart !== undefined) {
+                        elem.setSelectionRange(pos, pos);
+                    }
+                }
+            });
+        }
+
+        if (!localStorage.getItem('rating')) {
+            Swal.fire({
+                title: `Beri rating!`,
+                text: "Berikan rating untuk rumah sakit",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+                showCloseButton: true,
+                showCancelButton: true,
+                confirmButtonText: '<i class="fa fa-thumbs-up"></i> Beri Rating',
+                cancelButtonText: 'Lain kali',
+            })
+            .then((result) => {
+                if (result.isConfirmed) {
+                    localStorage.setItem('rating', true);
+                    window.location.href = '/'
+                }
+            });
+        }
+        
     </script>
 </body>
 

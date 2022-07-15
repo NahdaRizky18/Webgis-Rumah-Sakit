@@ -239,8 +239,10 @@
                 </div>
                 <!-- /.sidebar -->
             </aside>
+
             @endif
             @guest
+
                 <main class="mt-4">
                 @else
                     <main class="content-wrapper mt-4">

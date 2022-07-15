@@ -28,9 +28,7 @@ http://www.tooplate.com/view/2091-ziggy
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="{{ asset('storage/css/tooplate-style.css') }}" rel="stylesheet">
 
@@ -45,7 +43,6 @@ http://www.tooplate.com/view/2091-ziggy
 
     <script src="{{ asset('storage/js/leaflet-routing-machine/dist/leaflet-routing-machine.min.js') }}"></script>
 
-    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin="" />
@@ -208,7 +205,7 @@ http://www.tooplate.com/view/2091-ziggy
                         </div>
                         <div class="form-group mt-4">
                             <label for="komentar">Komentar</label>
-                            <textarea name="komentar" id="komentar" class="form-control shadow" cols="30" rows="10"></textarea>
+                            <textarea tabindex="1" name="komentar" id="komentar" class="form-control shadow" cols="30" rows="10"></textarea>
                         </div>
                         <button class="mt-2 btn btn-primary float-end">Kirim</button>
                     </form>
@@ -365,6 +362,29 @@ http://www.tooplate.com/view/2091-ziggy
                 });
             marker.bindPopup(title);
             markersLayer.addLayer(marker);
+        }
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript">
+     
+        if (!localStorage.getItem('rating')) {
+            Swal.fire({
+                    title: `Beri rating!`,
+                    text: "Berikan rating untuk rumah sakit",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                    showCloseButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: '<i class="fa fa-thumbs-up"></i> Beri Rating',
+                    cancelButtonText: 'Lain kali',
+                })
+                .then((result) => {
+                    if (result.isConfirmed) {
+                        localStorage.setItem('rating', true);
+                        $('#komentar').focus();
+                    }
+                });
         }
     </script>
 </body>
