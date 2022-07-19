@@ -313,10 +313,17 @@
                 grades = [0, 12, 25, 37, 50, 62, 75, 87], //pretty break untuk 8
                 from, to;
             labels = []
+<<<<<<< HEAD
             for (var i = 0; i < kecamatan.length; i++) {
                 labels.push(
                     '<i style="background:' + color[kecamatan[i]] + '"></i> - Rumah sakit ' + jumlah[kecamatan[i]]);
             }
+=======
+
+            labels.push('<i style="background:red"></i> - Tidak Tersedia Rumah Sakit/Faskes');
+            labels.push('<i style="background:yellow"></i> - Tersedia 1-2 Rumah Sakit/Faskes');
+            labels.push('<i style="background:green"></i> - Tersedia >3 Rumah Sakit/Faskes');
+>>>>>>> 093d3a18b1d955a9001757278b23894680a166e9
 
             div.innerHTML = '<h4>Legenda:</h4>' + labels.join('<br>');
             return div;
