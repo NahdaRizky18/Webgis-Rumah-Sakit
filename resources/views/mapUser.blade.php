@@ -167,7 +167,7 @@ http://www.tooplate.com/view/2091-ziggy
         color: black;
     }
 
-    .leaflet-right .leaflet-control {
+    .info .legend .leaflet-control {
         max-height: 8rem;
         overflow-y: auto;
         padding: 5px;

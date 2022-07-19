@@ -52,7 +52,8 @@
         .search-input {
             color: black;
         }
-        .leaflet-right .leaflet-control {
+
+        .info .legend .leaflet-control {
             max-height: 8rem;
             overflow-y: auto;
             padding: 5px;
@@ -175,9 +176,10 @@
             for (var i = 0; i < kecamatan.length; i++) {
                 if (jumlah[kecamatan[i]] > 0) {
                     labels.push(
-                    '<i style="background:' + color[kecamatan[i]] + '"></i> - Rumah sakit ' + jumlah[kecamatan[i]]);
+                        '<i style="background:' + color[kecamatan[i]] + '"></i> - Rumah sakit ' + jumlah[kecamatan[
+                            i]]);
                 }
-                
+
             }
 
             div.innerHTML = '<h4>Legenda:</h4>' + labels.join('<br>');
