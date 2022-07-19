@@ -170,9 +170,9 @@
                 from, to;
             labels = []
 
-            labels.push('<i style="background:red"></i> - 0');
-            labels.push('<i style="background:yellow"></i> - 1-2');
-            labels.push('<i style="background:green"></i> - >3');
+            labels.push('<i style="background:red"></i> - Tidak Tersedia Rumah Sakit/Faskes');
+            labels.push('<i style="background:yellow"></i> - Tersedia 1-2 Rumah Sakit/Faskes');
+            labels.push('<i style="background:green"></i> - Tersedia >3 Rumah Sakit/Faskes');
 
             div.innerHTML = '<h4>Legenda:</h4>' + labels.join('<br>');
             return div;

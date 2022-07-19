@@ -10,7 +10,7 @@
                 <div class="table-title" style="background-color: #43919B">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h2>Data <b>Tematik</b></h2>
+                            <h2>Batas <b>Kecamatan</b></h2>
                         </div>
                         <div class="col-sm-6">
                             <a href="{{ route('tambah tematik') }}" class="btn btn-success"

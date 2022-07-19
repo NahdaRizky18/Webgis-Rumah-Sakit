@@ -127,45 +127,45 @@ http://www.tooplate.com/view/2091-ziggy
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin="" />
 <style>
-   #map {
-            min-height: 500px;
-        }
+    #map {
+        min-height: 500px;
+    }
 
-        .leaflet-control-attribution {
-            display: none !important
-        }
+    .leaflet-control-attribution {
+        display: none !important
+    }
 
-        .info {
-            padding: 6px 8px;
-            font: 14px/16px Arial, Helvetica, sans-serif;
-            background: white;
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-        }
+    .info {
+        padding: 6px 8px;
+        font: 14px/16px Arial, Helvetica, sans-serif;
+        background: white;
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+    }
 
-        .info h4 {
-            margin: 0 0 5px;
-            color: #777;
-        }
+    .info h4 {
+        margin: 0 0 5px;
+        color: #777;
+    }
 
-        .legend {
-            text-align: left;
-            line-height: 18px;
-            color: #555;
-        }
+    .legend {
+        text-align: left;
+        line-height: 18px;
+        color: #555;
+    }
 
-        .legend i {
-            width: 18px;
-            height: 18px;
-            float: left;
-            margin-right: 8px;
-            opacity: 0.7;
-        }
+    .legend i {
+        width: 18px;
+        height: 18px;
+        float: left;
+        margin-right: 8px;
+        opacity: 0.7;
+    }
 
-        .search-input {
-            color: black;
-        }
+    .search-input {
+        color: black;
+    }
 </style>
 
 <!-- Leaflet JavaScript -->
@@ -289,10 +289,9 @@ http://www.tooplate.com/view/2091-ziggy
             grades = [0, 12, 25, 37, 50, 62, 75, 87], //pretty break untuk 8
             from, to;
         labels = []
-
-        labels.push('<i style="background:red"></i> - 0');
-        labels.push('<i style="background:yellow"></i> - 1-2');
-        labels.push('<i style="background:green"></i> - >3');
+        labels.push('<i style="background:red"></i> - Tidak Tersedia Rumah Sakit/Faskes');
+        labels.push('<i style="background:yellow"></i> - Tersedia 1-2 Rumah Sakit/Faskes');
+        labels.push('<i style="background:green"></i> - Tersedia >3 Rumah Sakit/Faskes');
 
         div.innerHTML = '<h4>Legenda:</h4>' + labels.join('<br>');
         return div;

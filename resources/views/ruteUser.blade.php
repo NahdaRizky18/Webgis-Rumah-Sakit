@@ -127,7 +127,7 @@ http://www.tooplate.com/view/2091-ziggy
     }
 
     .legend {
-        text-align: left;
+        text-align: center;
         line-height: 18px;
         color: #555;
     }
@@ -141,7 +141,7 @@ http://www.tooplate.com/view/2091-ziggy
     }
 
     .leaflet-right .leaflet-control {
-        max-height: 18rem;
+        max-height: 15rem;
         overflow-y: auto;
         padding: 5px;
     }
