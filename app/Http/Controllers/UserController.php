@@ -57,10 +57,19 @@ class UserController extends Controller
             $index2++;
         }
 
+        $jumlah = [];
         if ($state) {
-            $jumlah = Tematik::withCount('puskesmas')->pluck('puskesmas_count', 'kecamatan');
+            $count = Tematik::withCount('puskesmas')->get();
+            $index = 0;
+            foreach ($count as $item) {
+                $jumlah[$item->kecamatan] = $item->puskesmas_count;
+            }
         } else {
-            $jumlah = Tematik::withCount('data')->pluck('data_count', 'kecamatan');
+            $count = Tematik::withCount('data')->get();
+            $index = 0;
+            foreach ($count as $item) {
+                $jumlah[$item->kecamatan] = $item->data_count;
+            }
         }
         $kecamatan = $tematik->pluck('kecamatan');
         return view('mapUser', [

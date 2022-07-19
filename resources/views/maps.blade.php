@@ -52,6 +52,11 @@
         .search-input {
             color: black;
         }
+        .leaflet-right .leaflet-control {
+            max-height: 8rem;
+            overflow-y: auto;
+            padding: 5px;
+        }
     </style>
 @endsection
 
@@ -71,6 +76,7 @@
         var color = {!! json_encode($color) !!};
         var data = {!! json_encode($data) !!}
         var jumlah = {!! json_encode($jumlah) !!}
+        var kecamatan = {!! json_encode($kecamatan) !!}
         var map = L.map('map').setView(
             s, 11
         );
@@ -89,24 +95,23 @@
             return this._div;
         };
         //menampilkan pop up info tematik
+        info.update = function(props) {
+            this._div.innerHTML = '<h4>Lokasi Rumah Sakit </h4>' + (props ?
+                '<b>' + props.NAMOBJ + '</b><br />' :
+                'Gerakkan mouse Anda');
+        };
+        //menampilkan pop up info tematik
+        info.addTo(map);
 
 
         function style(feature) {
-            warna = "";
-            if (jumlah[feature.properties.NAMOBJ] == 0) {
-                warna = 'red';
-            } else if (jumlah[feature.properties.NAMOBJ] >= 1 && jumlah[feature.properties.NAMOBJ] <= 2) {
-                warna = 'yellow';
-            } else if (jumlah[feature.properties.NAMOBJ] >= 3) {
-                warna = 'green';
-            }
             return {
                 weight: 2,
                 opacity: 1,
                 color: 'white',
                 dashArray: '3',
                 fillOpacity: 0.7,
-                fillColor: warna
+                fillColor: color[feature.properties.NAMOBJ]
             };
 
         }
@@ -165,14 +170,12 @@
 
         legend.onAdd = function(map) {
 
-            var div = L.DomUtil.create('div', 'info legend'),
-                grades = [0, 12, 25, 37, 50, 62, 75, 87], //pretty break untuk 8
-                from, to;
+            var div = L.DomUtil.create('div', 'info legend')
             labels = []
-
-            labels.push('<i style="background:red"></i> - 0');
-            labels.push('<i style="background:yellow"></i> - 1-2');
-            labels.push('<i style="background:green"></i> - >3');
+            for (var i = 0; i < kecamatan.length; i++) {
+                labels.push(
+                    '<i style="background:' + color[kecamatan[i]] + '"></i> - Rumah sakit ' + jumlah[kecamatan[i]]);
+            }
 
             div.innerHTML = '<h4>Legenda:</h4>' + labels.join('<br>');
             return div;

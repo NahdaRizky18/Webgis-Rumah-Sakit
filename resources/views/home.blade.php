@@ -249,22 +249,14 @@
 
         info.addTo(map);
 
-        function style(feature) {
-            warna = "";
-            if (jumlah[feature.properties.NAMOBJ] == 0) {
-                warna = 'red';
-            } else if (jumlah[feature.properties.NAMOBJ] >= 1 && jumlah[feature.properties.NAMOBJ] <= 2) {
-                warna = 'yellow';
-            } else if (jumlah[feature.properties.NAMOBJ] >= 3) {
-                warna = 'green';
-            }
+       function style(feature) {
             return {
                 weight: 2,
                 opacity: 1,
                 color: 'white',
                 dashArray: '3',
                 fillOpacity: 0.7,
-                fillColor: warna
+                fillColor: color[feature.properties.NAMOBJ]
             };
 
         }
@@ -321,10 +313,10 @@
                 grades = [0, 12, 25, 37, 50, 62, 75, 87], //pretty break untuk 8
                 from, to;
             labels = []
-
-            labels.push('<i style="background:red"></i> - 0');
-            labels.push('<i style="background:yellow"></i> - 1-2');
-            labels.push('<i style="background:green"></i> - >3');
+            for (var i = 0; i < kecamatan.length; i++) {
+                labels.push(
+                    '<i style="background:' + color[kecamatan[i]] + '"></i> - Rumah sakit ' + jumlah[kecamatan[i]]);
+            }
 
             div.innerHTML = '<h4>Legenda:</h4>' + labels.join('<br>');
             return div;

@@ -83,7 +83,12 @@ class HomeController extends Controller
             }
         }
         $kecamatan = $tematik->pluck('kecamatan');
-        $jumlah = Tematik::withCount('data')->pluck('data_count', 'kecamatan');
+        $jumlah = [];
+        $count = Tematik::withCount('data')->get();
+        $index =0;
+        foreach ($count as $item) {
+            $jumlah[$item->kecamatan] = $item->data_count;
+        }
         return view('home', [
             'rs' => $data,
             'list_poli' => $list_poli,
