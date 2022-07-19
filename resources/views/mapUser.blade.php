@@ -300,9 +300,9 @@ http://www.tooplate.com/view/2091-ziggy
             from, to;
         labels = []
 
-        labels.push('<i style="background:red"></i> - Tidak ada rumah sakit/faskes');
-        labels.push('<i style="background:yellow"></i> - Rumah sakit/faskes 1-2');
-        labels.push('<i style="background:green"></i> - Rumah sakit/faskes lebih dari 3');
+        labels.push('<i style="background:red"></i> - 0');
+        labels.push('<i style="background:yellow"></i> - 1-2');
+        labels.push('<i style="background:green"></i> - >3');
 
         div.innerHTML = '<h4>Legenda:</h4>' + labels.join('<br>');
         return div;

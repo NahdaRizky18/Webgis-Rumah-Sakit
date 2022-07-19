@@ -36,9 +36,7 @@
                                     {{ $loop->iteration }}
                                 </td>
                                 <td>{{ $item->kecamatan }}</td>
-                         
                                 <td class="w-25">
-
                                     <form action="{{ route('delete tematik', ['id' => $item->id]) }}" method="get">
                                         <a href="{{ route('edit tematik', ['id' => $item->id]) }}" class="edit"><i
                                                 class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>

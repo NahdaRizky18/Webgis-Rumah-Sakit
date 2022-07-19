@@ -22,10 +22,11 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-    public function panduan(){
+    public function panduan()
+    {
         return view('panduan');
     }
-   
+
     /**
      * Show the application dashboard.
      *
@@ -82,6 +83,7 @@ class HomeController extends Controller
             }
         }
         $kecamatan = $tematik->pluck('kecamatan');
+        $jumlah = Tematik::withCount('data')->pluck('data_count', 'kecamatan');
         return view('home', [
             'rs' => $data,
             'list_poli' => $list_poli,
@@ -93,10 +95,11 @@ class HomeController extends Controller
             'color' => $color,
             'data' => $coor,
             'tematik' => $tematik,
-            'kecamatan'=> $kecamatan,
+            'kecamatan' => $kecamatan,
             'kelas' => $kelas,
             'ruangan' => $ruangan,
             'kelasData' => $kelasData,
+            'jumlah' => $jumlah,
             'id' => $id
         ]);
     }
@@ -105,17 +108,18 @@ class HomeController extends Controller
         $poli = HalamanData2::where('rumahsakit', $rm)->groupBy('poli')->get();
         return $poli;
     }
-    public function rs(){
+    public function rs()
+    {
         return view('rs');
     }
-   
-    public function jadwal($id){
+
+    public function jadwal($id)
+    {
         $rs = "";
         $d = HalamanData::find($id);
         $colors = ['#495371', '#74959A', '#98B4AA', '#1C658C', '#398AB9'];
 
         $data = User::whereHas('dokter')->where('rumahsakit', $d->rumah_sakit)->first();
-        return view('rs-jadwal',['data'=>$data,'colors'=>$colors]);
+        return view('rs-jadwal', ['data' => $data, 'colors' => $colors]);
     }
-    
 }

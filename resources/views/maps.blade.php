@@ -164,7 +164,23 @@
             position: 'bottomright'
         });
 
+        legend.onAdd = function(map) {
 
+            var div = L.DomUtil.create('div', 'info legend'),
+                grades = [0, 12, 25, 37, 50, 62, 75, 87], //pretty break untuk 8
+                from, to;
+            labels = []
+
+            labels.push('<i style="background:red"></i> - 0');
+            labels.push('<i style="background:yellow"></i> - 1-2');
+            labels.push('<i style="background:green"></i> - >3');
+
+            div.innerHTML = '<h4>Legenda:</h4>' + labels.join('<br>');
+            return div;
+        };
+
+
+        legend.addTo(map);
         var markersLayer = new L.LayerGroup();
         map.addLayer(markersLayer);
         var controlSearch = new L.Control.Search({
