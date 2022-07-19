@@ -127,55 +127,45 @@ http://www.tooplate.com/view/2091-ziggy
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin="" />
 <style>
-    #map {
-        min-height: 500px;
-    }
+   #map {
+            min-height: 500px;
+        }
 
-    .leaflet-control-attribution {
-        display: none !important
-    }
+        .leaflet-control-attribution {
+            display: none !important
+        }
 
-    .info {
-        padding: 6px 8px;
-        font: 14px/16px Arial, Helvetica, sans-serif;
-        background: white;
-        background: rgba(255, 255, 255, 0.8);
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-        border-radius: 5px;
-    }
+        .info {
+            padding: 6px 8px;
+            font: 14px/16px Arial, Helvetica, sans-serif;
+            background: white;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
 
-    .info h4 {
-        margin: 0 0 5px;
-        color: #777;
-    }
+        .info h4 {
+            margin: 0 0 5px;
+            color: #777;
+        }
 
-    .legend {
-        text-align: left;
-        line-height: 18px;
-        color: #555;
-    }
+        .legend {
+            text-align: left;
+            line-height: 18px;
+            color: #555;
+        }
 
-    .legend i {
-        width: 18px;
-        height: 18px;
-        float: left;
-        margin-right: 8px;
-        opacity: 0.7;
-    }
+        .legend i {
+            width: 18px;
+            height: 18px;
+            float: left;
+            margin-right: 8px;
+            opacity: 0.7;
+        }
 
-    .leaflet-right .leaflet-control {
-        max-height: 8rem;
-        overflow-y: auto;
-        padding: 5px;
-    }
-
-    .leaflet-container .leaflet-control-search {
-        height: 250px !important
-    }
-
-    .leaflet-control-search .search-tooltip {
-        top: 27% !important
-    }
+        .search-input {
+            color: black;
+        }
 </style>
 
 <!-- Leaflet JavaScript -->
