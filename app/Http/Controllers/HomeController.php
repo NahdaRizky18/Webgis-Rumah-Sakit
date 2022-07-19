@@ -71,6 +71,7 @@ class HomeController extends Controller
             $coor[$index2] = [$item->rumah_sakit, $item->lat, $item->long];
             $index2++;
         }
+        $colors2 = ['#112B3C', '#43919B', '#112B3C', '#43919B', '#112B3C'];
         $user = User::where('rumahsakit', $rs)->first();
         $kelas = $user->ruangan->unique('kelas');
         $kelasData = Ruangan::where(['kelas' => $kelas_id, 'user_id' => $user->id])->get();
@@ -105,7 +106,8 @@ class HomeController extends Controller
             'ruangan' => $ruangan,
             'kelasData' => $kelasData,
             'jumlah' => $jumlah,
-            'id' => $id
+            'id' => $id,
+            'colors2' => $colors2
         ]);
     }
     public function getPoli($rm)
