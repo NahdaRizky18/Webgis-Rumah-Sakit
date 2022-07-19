@@ -5,7 +5,6 @@
         <div class="card p-4">
             <div id="map"></div>
         </div>
-
     </div>
 @endsection
 @section('styles')
