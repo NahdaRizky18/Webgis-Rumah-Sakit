@@ -203,7 +203,7 @@
                             @elseif(auth()->user()->level == 'RS')
                                 <li class="nav-item">
                                     <a href="{{ route('jadwal') }}"
-                                        class="nav-link btn bg-transparent text-white text-start w-100">
+                                        class="nav-link btn bg-transparent text-white text-start w-100  {{ request()->route()->getName() == 'jadwal'? 'text-white bg-info': '' }}">
                                         <i class="nav-icon fas fa-calendar"></i>
                                         <p>
                                             Jadwal
@@ -212,21 +212,21 @@
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('halaman data2') }}"
-                                        class="nav-link btn bg-transparent text-white text-start w-100">
+                                        class="nav-link {{ request()->route()->getName() == 'halaman data2'? 'bg-info': 'bg-transparent' }} text-white text-start w-100">
                                         <i class="nav-icon  fa-solid fa-database"></i>
                                         <p>Data Dokter</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('ruangan') }}"
-                                        class="nav-link btn bg-transparent text-white text-start w-100">
+                                        class="nav-link btn {{ request()->route()->getName() == 'ruangan'? 'bg-info': 'bg-transparent' }} text-white text-start w-100">
                                         <i class="nav-icon  fa-solid fa-home"></i>
                                         <p>Ruangan</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('saran') }}"
-                                        class="nav-link btn bg-transparent text-white text-start w-100">
+                                        class="nav-link btn {{ request()->route()->getName() == 'saran'? 'bg-info': 'bg-transparent' }} text-white text-start w-100">
                                         <i class="nav-icon  fa-solid fa-edit"></i>
                                         <p>Saran</p>
                                     </a>
