@@ -49,7 +49,6 @@
             margin-right: 8px;
             opacity: 0.7;
         }
-
     </style>
 @endsection
 
@@ -62,7 +61,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"
         integrity="sha512-Abr21JO2YqcJ03XGZRPuZSWKBhJpUAR6+2wH5zBeO4wAw4oksr8PRdF+BKIRsxvCdq+Mv4670rZ+dLnIyabbGw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-          <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
     <script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
     <script type="text/javascript">
         var s = [5.3811231139126, 95.958859920501];
@@ -70,6 +69,7 @@
         console.log(color)
         var data = {!! json_encode($data) !!}
         var jumlah = {!! json_encode($jumlah) !!}
+        var kecamatan = {!! json_encode($kecamatan) !!}
         var map = L.map('map').setView(
             s, 11
         );
@@ -97,21 +97,13 @@
         info.addTo(map);
 
         function style(feature) {
-              warna = "";
-            if (jumlah[feature.properties.NAMOBJ] == 0) {
-                warna = 'red';
-            } else if (jumlah[feature.properties.NAMOBJ] >= 1 && jumlah[feature.properties.NAMOBJ] <= 2) {
-                warna = 'yellow';
-            } else if (jumlah[feature.properties.NAMOBJ] >= 3) {
-                warna = 'green';
-            }
             return {
                 weight: 2,
                 opacity: 1,
                 color: 'white',
                 dashArray: '3',
                 fillOpacity: 0.7,
-                fillColor: warna
+                fillColor: color[feature.properties.NAMOBJ]
             };
 
         }
@@ -132,7 +124,7 @@
 
             info.update(layer.feature.properties);
         }
-       
+
         var geojson;
 
         function resetHighlight(e) {
@@ -161,6 +153,25 @@
             position: 'bottomright'
         });
 
+
+        //pemanggilan legend
+        legend.onAdd = function(map) {
+
+            var div = L.DomUtil.create('div', 'info legend')
+            labels = []
+            for (var i = 0; i < kecamatan.length; i++) {
+                if (jumlah[kecamatan[i]] > 0) {
+                    labels.push(
+                        '<i style="background:' + color[kecamatan[i]] + '"></i> - Rumah sakit ' + jumlah[kecamatan[
+                            i]]);
+                }
+
+            }
+
+            div.innerHTML = '<h4>Legenda:</h4>' + labels.join('<br>');
+            return div;
+        };
+        legend.addTo(map);
         var markersLayer = new L.LayerGroup();
         map.addLayer(markersLayer);
         var controlSearch = new L.Control.Search({
