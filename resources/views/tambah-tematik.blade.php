@@ -12,9 +12,9 @@
                             <label>Kecamatan</label>
                             <input name="kecamatan" type="text" class="form-control" required>
                         </div>
-                        <div class="form-group d-none">
+                        <div class="form-group">
                             <label>Warna</label>
-                            <input name="warna" type="color" class="form-control" value="#ffff" required>
+                            <input name="warna" type="color" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>GeoJson</label>

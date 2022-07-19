@@ -26,6 +26,7 @@
                                 No
                             </th>
                             <th>Kecamatan</th>
+                            <th>Warna</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -36,6 +37,7 @@
                                     {{ $loop->iteration }}
                                 </td>
                                 <td>{{ $item->kecamatan }}</td>
+                                <td><input type="color" disabled value="{{ $item->warna }}"></td>
                                 <td class="w-25">
                                     <form action="{{ route('delete tematik', ['id' => $item->id]) }}" method="get">
                                         <a href="{{ route('edit tematik', ['id' => $item->id]) }}" class="edit"><i
