@@ -203,7 +203,7 @@
                             @elseif(auth()->user()->level == 'RS')
                                 <li class="nav-item">
                                     <a href="{{ route('jadwal') }}"
-                                        class="nav-link btn bg-transparent text-white text-start w-100  {{ request()->route()->getName() == 'jadwal'? 'text-white bg-info': '' }}">
+                                        class="nav-link btn text-white text-start w-100  {{ request()->route()->getName() == 'jadwal'? 'bg-info': 'bg-transparent' }}">
                                         <i class="nav-icon fas fa-calendar"></i>
                                         <p>
                                             Jadwal
