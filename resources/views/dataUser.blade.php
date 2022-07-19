@@ -12,7 +12,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>Rumah Sakit</title>
+    <title>WEBGIS Rumah Sakit</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -76,11 +76,9 @@
     }
 
     table {
-<<<<<<< Updated upstream
-        font-size: 15px !important;
-=======
-        font-size: 12px !important;
->>>>>>> Stashed changes
+        <<<<<<< Updated upstream font-size: 15px !important;
+        =======font-size: 12px !important;
+        >>>>>>>Stashed changes
     }
 </style>
 
@@ -275,24 +273,23 @@
 
         if (!localStorage.getItem('rating')) {
             Swal.fire({
-                title: `Beri rating!`,
-                text: "Berikan rating untuk rumah sakit",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-                showCloseButton: true,
-                showCancelButton: true,
-                confirmButtonText: '<i class="fa fa-thumbs-up"></i> Beri Rating',
-                cancelButtonText: 'Lain kali',
-            })
-            .then((result) => {
-                if (result.isConfirmed) {
-                    localStorage.setItem('rating', true);
-                    window.location.href = '/'
-                }
-            });
+                    title: `Beri rating!`,
+                    text: "Berikan rating untuk rumah sakit",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                    showCloseButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: '<i class="fa fa-thumbs-up"></i> Beri Rating',
+                    cancelButtonText: 'Lain kali',
+                })
+                .then((result) => {
+                    if (result.isConfirmed) {
+                        localStorage.setItem('rating', true);
+                        window.location.href = '/'
+                    }
+                });
         }
-        
     </script>
 </body>
 
