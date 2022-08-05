@@ -82,13 +82,9 @@
         var map = L.map('map').setView(
             s, 11
         );
-
-
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
-
-
         var info = L.control();
 
         info.onAdd = function(map) {
