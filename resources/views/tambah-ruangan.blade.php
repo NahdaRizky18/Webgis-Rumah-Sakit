@@ -13,7 +13,24 @@
                         </div>
                         <div class="form-group">
                             <label>Kelas</label>
-                             <input name="kelas" type="tect" class="form-control" required>
+                             <select name="halaman_data2_id" class="form-control">
+                                <option value="">--pilih kelas--</option>
+                                <option value="VVIP">VVIP</option>
+                                <option value="VIP">VIP</option>
+                                <option value="UTAMA">UTAMA</option>
+                                <option value="KELAS I">KELAS I</option>
+                                <option value="KELAS II">KELAS II</option>
+                                <option value="KELAS III">KELAS III</option>
+                                <option value="ICU">ICU</option>
+                                <option value="ICCU">ICCU</option>
+                                <option value="NICU">NICU</option>
+                                <option value="PICU">PICU</option>
+                                <option value="IGD">IGD</option>
+                                <option value="UGD">UGD</option>
+                                <option value="BERSALIN">BERSALIN</option>
+                                <option value="HCU">HCU</option>
+                                <option value="ISOLASI">ISOLASI</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label>Kapasitas</label>

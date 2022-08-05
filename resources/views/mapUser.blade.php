@@ -217,16 +217,24 @@ http://www.tooplate.com/view/2091-ziggy
     };
 
     function style(feature) {
-        return {
-            weight: 2,
-            opacity: 1,
-            color: 'white',
-            dashArray: '3',
-            fillOpacity: 0.7,
-            fillColor: color[feature.properties.NAMOBJ]
-        };
+            warna = "";
+            if (jumlah[feature.properties.NAMOBJ] == 0) {
+                warna = 'red';
+            } else if (jumlah[feature.properties.NAMOBJ] >= 1 && jumlah[feature.properties.NAMOBJ] <= 2) {
+                warna = 'yellow';
+            } else if (jumlah[feature.properties.NAMOBJ] >= 3) {
+                warna = 'green';
+            }
+            return {
+                weight: 2,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: 0.7,
+                fillColor: warna
+            };
 
-    }
+        }
     //memunculkan highlight pada peta
     function highlightFeature(e) {
         var layer = e.target;
@@ -281,22 +289,20 @@ http://www.tooplate.com/view/2091-ziggy
     });
 
     //pemanggilan legend
-    legend.onAdd = function(map) {
+     legend.onAdd = function(map) {
 
-        var div = L.DomUtil.create('div', 'info legend')
-        labels = []
-        for (var i = 0; i < kecamatan.length; i++) {
-            if (jumlah[kecamatan[i]] > 0) {
-                labels.push(
-                    '<i style="background:' + color[kecamatan[i]] + '"></i> - Rumah sakit ' + jumlah[kecamatan[
-                        i]]);
-            }
+            var div = L.DomUtil.create('div', 'info legend'),
+                grades = [0, 12, 25, 37, 50, 62, 75, 87], //pretty break untuk 8
+                from, to;
+            labels = []
 
-        }
+            labels.push('<i style="background:red"></i> - Tidak Tersedia Rumah Sakit/Faskes');
+            labels.push('<i style="background:yellow"></i> - Tersedia 1-2 Rumah Sakit/Faskes');
+            labels.push('<i style="background:green"></i> - Tersedia >3 Rumah Sakit/Faskes');
 
-        div.innerHTML = '<h4>Legenda:</h4>' + labels.join('<br>');
-        return div;
-    };
+            div.innerHTML = '<h4>Legenda:</h4>' + labels.join('<br>');
+            return div;
+        };
     legend.addTo(map);
     var markersLayer = new L.LayerGroup();
     map.addLayer(markersLayer);

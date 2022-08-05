@@ -105,14 +105,22 @@
         info.addTo(map);
 
 
-        function style(feature) {
+       function style(feature) {
+            warna = "";
+            if (jumlah[feature.properties.NAMOBJ] == 0) {
+                warna = 'red';
+            } else if (jumlah[feature.properties.NAMOBJ] >= 1 && jumlah[feature.properties.NAMOBJ] <= 2) {
+                warna = 'yellow';
+            } else if (jumlah[feature.properties.NAMOBJ] >= 3) {
+                warna = 'green';
+            }
             return {
                 weight: 2,
                 opacity: 1,
                 color: 'white',
                 dashArray: '3',
                 fillOpacity: 0.7,
-                fillColor: color[feature.properties.NAMOBJ]
+                fillColor: warna
             };
 
         }
@@ -171,21 +179,18 @@
 
         legend.onAdd = function(map) {
 
-            var div = L.DomUtil.create('div', 'info legend')
+            var div = L.DomUtil.create('div', 'info legend'),
+                grades = [0, 12, 25, 37, 50, 62, 75, 87], //pretty break untuk 8
+                from, to;
             labels = []
-            for (var i = 0; i < kecamatan.length; i++) {
-                if (jumlah[kecamatan[i]] > 0) {
-                    labels.push(
-                        '<i style="background:' + color[kecamatan[i]] + '"></i> - Rumah sakit ' + jumlah[kecamatan[
-                            i]]);
-                }
 
-            }
+            labels.push('<i style="background:red"></i> - Tidak Tersedia Rumah Sakit/Faskes');
+            labels.push('<i style="background:yellow"></i> - Tersedia 1-2 Rumah Sakit/Faskes');
+            labels.push('<i style="background:green"></i> - Tersedia >3 Rumah Sakit/Faskes');
 
             div.innerHTML = '<h4>Legenda:</h4>' + labels.join('<br>');
             return div;
         };
-
 
         legend.addTo(map);
         var markersLayer = new L.LayerGroup();

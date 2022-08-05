@@ -76,9 +76,9 @@
     }
 
     table {
-        <<<<<<< Updated upstream font-size: 15px !important;
-        =======font-size: 12px !important;
-        >>>>>>>Stashed changes
+        font-size: 15px !important;
+        font-size: 12px !important;
+  
     }
 </style>
 
