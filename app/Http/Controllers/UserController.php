@@ -84,7 +84,8 @@ class UserController extends Controller
             'tematik' => $tematik,
             'state' => $state,
             'kecamatan' => $kecamatan,
-            'jumlah' => $jumlah
+            'jumlah' => $jumlah,
+            'state'=>$state
         ]);
     }
     public function ruteUser()

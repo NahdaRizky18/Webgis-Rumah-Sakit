@@ -54,7 +54,8 @@ class PuskesmasController extends Controller
             'color' => $color,
             'data' => $coor,
             'jumlah' => $jumlah,
-            'kecamatan'=> $kecamatan
+            'kecamatan'=> $kecamatan,
+            'state' => 1
         ]);
     }
     /**

@@ -198,6 +198,7 @@ http://www.tooplate.com/view/2091-ziggy
     var datamap = {!! json_encode($data) !!}
     var kecamatan = {!! json_encode($kecamatan) !!}
     var jumlah = {!! json_encode($jumlah) !!}
+    var state = {!! json_encode($state) !!}
     var map = L.map('map').setView(
         s, 11
     );
@@ -295,10 +296,15 @@ http://www.tooplate.com/view/2091-ziggy
                 grades = [0, 12, 25, 37, 50, 62, 75, 87], //pretty break untuk 8
                 from, to;
             labels = []
-
-            labels.push('<i style="background:red"></i> - Tidak Tersedia Rumah Sakit/Faskes');
-            labels.push('<i style="background:yellow"></i> - Tersedia 1-2 Rumah Sakit/Faskes');
-            labels.push('<i style="background:green"></i> - Tersedia >3 Rumah Sakit/Faskes');
+            kondisi = "";
+            if (state) {
+                kondisi ='Faskes'
+            }else{
+                kondisi = 'Rumah sakit'
+            }
+            labels.push('<i style="background:red"></i> - Tidak Tersedia '+kondisi);
+            labels.push('<i style="background:yellow"></i> - Tersedia 1-2 '+kondisi);
+            labels.push('<i style="background:green"></i> - Tersedia >3 '+kondisi);
 
             div.innerHTML = '<h4>Legenda:</h4>' + labels.join('<br>');
             return div;

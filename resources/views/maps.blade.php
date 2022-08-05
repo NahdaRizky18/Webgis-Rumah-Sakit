@@ -78,6 +78,7 @@
         var data = {!! json_encode($data) !!}
         var jumlah = {!! json_encode($jumlah) !!}
         var kecamatan = {!! json_encode($kecamatan) !!}
+    var state = {!! json_encode($state) !!}
         var map = L.map('map').setView(
             s, 11
         );
@@ -105,7 +106,7 @@
         info.addTo(map);
 
 
-       function style(feature) {
+        function style(feature) {
             warna = "";
             if (jumlah[feature.properties.NAMOBJ] == 0) {
                 warna = 'red';
@@ -183,11 +184,14 @@
                 grades = [0, 12, 25, 37, 50, 62, 75, 87], //pretty break untuk 8
                 from, to;
             labels = []
-
-            labels.push('<i style="background:red"></i> - Tidak Tersedia Rumah Sakit/Faskes');
-            labels.push('<i style="background:yellow"></i> - Tersedia 1-2 Rumah Sakit/Faskes');
-            labels.push('<i style="background:green"></i> - Tersedia >3 Rumah Sakit/Faskes');
-
+            if (state) {
+                kondisi = 'Faskes'
+            } else {
+                kondisi = 'Rumah sakit'
+            }
+            labels.push('<i style="background:red"></i> - Tidak Tersedia ' + kondisi);
+            labels.push('<i style="background:yellow"></i> - Tersedia 1-2 ' + kondisi);
+            labels.push('<i style="background:green"></i> - Tersedia >3 ' + kondisi);
             div.innerHTML = '<h4>Legenda:</h4>' + labels.join('<br>');
             return div;
         };
